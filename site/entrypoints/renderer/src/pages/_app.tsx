@@ -4,7 +4,7 @@ import { IntlProvider }  from 'react-intl'
 import { ThemeProvider } from '@ui/theme'
 
 const App = ({ Component, pageProps, ...props }) => (
-  <IntlProvider locale='en-EN'>
+  <IntlProvider locale='en' defaultLocale='en' messages={{}}>
     <ThemeProvider>
       <Component {...pageProps} {...props} />
     </ThemeProvider>

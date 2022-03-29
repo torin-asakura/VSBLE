@@ -1,5 +1,13 @@
-import React          from 'react'
+import React             from 'react'
 
-import { Navigation } from '@site/navigation-fragment'
+import { SignUpCTA }     from '@site/call-to-actions-fragment'
+import { GetStartedCTA } from '@site/call-to-actions-fragment'
+import { Navigation }    from '@site/navigation-fragment'
 
-export const IndexPage = () => <Navigation />
+export const IndexPage = () => (
+  <>
+    <Navigation />
+    <SignUpCTA />
+    <GetStartedCTA />
+  </>
+)
