@@ -1,25 +1,22 @@
-import { AppLink }    from '@atls/react-app-links'
+import { AppLink }          from '@atls/react-app-links'
 
-import React          from 'react'
-import { FC }         from 'react'
-import { useIntl }    from 'react-intl'
+import React                from 'react'
+import { FC }               from 'react'
+import { FormattedMessage } from 'react-intl'
 
-import { Divider }    from '@ui/divider'
-import { Box }        from '@ui/layout'
-import { Layout }     from '@ui/layout'
-import { Column }     from '@ui/layout'
-import { Row }        from '@ui/layout'
-import { NextLink }   from '@ui/link'
-import { Text }       from '@ui/text'
-import { Space }      from '@ui/text'
-import { capitalize } from '@ui/utils'
+import { Divider }          from '@ui/divider'
+import { Box }              from '@ui/layout'
+import { Layout }           from '@ui/layout'
+import { Column }           from '@ui/layout'
+import { Row }              from '@ui/layout'
+import { NextLink }         from '@ui/link'
+import { Text }             from '@ui/text'
+import { Space }            from '@ui/text'
+import { capitalize }       from '@ui/utils'
 
-import messages       from '../messages'
-import { User }       from './menu.interfaces'
+import { User }             from './menu.interfaces'
 
 const Menu: FC = () => {
-  const intl = useIntl()
-
   const user: User = {
     firstName: 'Aiden',
     lastName: 'Frost',
@@ -101,7 +98,11 @@ const Menu: FC = () => {
         <Layout flexBasis={14} />
         <Row>
           <AppLink subdomain='accounts' pathname='/auth/logout'>
-            {(url) => <NextLink path={url}>{intl.formatMessage(messages.logOut)}</NextLink>}
+            {(url) => (
+              <NextLink path={url}>
+                <FormattedMessage id='avatar.log_out' defaultMessage='Log Out' />
+              </NextLink>
+            )}
           </AppLink>
         </Row>
       </Column>

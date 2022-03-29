@@ -1486,6 +1486,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@site/call-to-actions-fragment@workspace:site/fragments/call-to-actions":
+  version: 0.0.0-use.local
+  resolution: "@site/call-to-actions-fragment@workspace:site/fragments/call-to-actions"
+  dependencies:
+    "@atls/react-user": ^0.1.44
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/button": "workspace:0.0.1"
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@atls/react-user": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/index-page@workspace:0.0.1, @site/index-page@workspace:site/pages/index-page":
   version: 0.0.0-use.local
   resolution: "@site/index-page@workspace:site/pages/index-page"

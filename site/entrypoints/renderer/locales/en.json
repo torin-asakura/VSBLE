@@ -1,0 +1,11 @@
+{
+  "navigation.search": "Search",
+  "navigation.job_requests": "Job requests",
+  "navigation.image_requests": "Image requests",
+  "navigation.favourites": "Favourites",
+  "navigation.cart": "Cart",
+  "navigation.log_in": "Log In",
+  "navigation.sign_up": "Sign Up",
+  "navigation.upload_image": "Upload Images",
+  "avatar.log_out": "Log Out"
+}

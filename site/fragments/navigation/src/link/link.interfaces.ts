@@ -2,6 +2,6 @@ import { ReactNode } from 'react'
 
 export interface LinkProps {
   icon: ReactNode
-  text: string
+  text: string | ReactNode
   path: string
 }
