@@ -17,21 +17,21 @@ export const UploadIcon = (props: IconProps) => {
       {...props}
     >
       <path
-        d='M4.75 14.75V16.25C4.75 17.9069 6.09315 19.25 7.75 19.25H16.25C17.9069 19.25 19.25 17.9069 19.25 16.25V14.75'
+        d='M1 17V19C1 21.2092 3.03788 23 5.55172 23H18.4483C20.9622 23 23 21.2092 23 19V17'
         stroke={theme.colors.background[props.color] || props.color || 'black'}
         strokeWidth={1.5}
         strokeLinecap='round'
         strokeLinejoin='round'
       />
       <path
-        d='M12 14.25V5'
+        d='M12 16V1'
         stroke={theme.colors.background[props.color] || props.color || 'black'}
         strokeWidth={1.5}
         strokeLinecap='round'
         strokeLinejoin='round'
       />
       <path
-        d='M8.75 8.25L12 4.75L15.25 8.25'
+        d='M7 6L12 1L17 6'
         stroke={theme.colors.background[props.color] || props.color || 'black'}
         strokeWidth={1.5}
         strokeLinecap='round'

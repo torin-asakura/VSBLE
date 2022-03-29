@@ -5,6 +5,7 @@ import { createAppearanceStyles } from '@atls-ui-parts/button'
 
 import { prop }                   from 'styled-tools'
 import { switchProp }             from 'styled-tools'
+import { ifProp }                 from 'styled-tools'
 
 const smallNormalSizeStyles = createShapeStyles({
   fontFamily: prop('theme.fonts.primary'),
@@ -38,10 +39,22 @@ const appearancePrimaryStyles = createAppearanceStyles({
   borderColor: prop('theme.colors.button.primary.default.border'),
 })
 
+const appearancePrimaryHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.primary.hover.font'),
+  backgroundColor: prop('theme.colors.button.primary.hover.background'),
+  borderColor: prop('theme.colors.button.primary.hover.border'),
+})
+
 const appearanceSecondaryStyles = createAppearanceStyles({
   fontColor: prop('theme.colors.button.secondary.default.font'),
   backgroundColor: prop('theme.colors.button.secondary.default.background'),
   borderColor: prop('theme.colors.button.secondary.default.border'),
+})
+
+const appearanceSecondaryHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.secondary.hover.font'),
+  backgroundColor: prop('theme.colors.button.secondary.hover.background'),
+  borderColor: prop('theme.colors.button.secondary.hover.border'),
 })
 
 const appearanceGhostStyles = createAppearanceStyles({
@@ -60,7 +73,11 @@ export const shapeStyles = switchProp(prop('size', 'normal'), {
 })
 
 export const variantStyles = switchProp(prop('variant', 'primary'), {
-  primary: appearancePrimaryStyles,
-  secondary: appearanceSecondaryStyles,
+  primary: ifProp(prop('hover', false), appearancePrimaryHoverStyles, appearancePrimaryStyles),
+  secondary: ifProp(
+    prop('hover', false),
+    appearanceSecondaryHoverStyles,
+    appearanceSecondaryStyles
+  ),
   ghost: appearanceGhostStyles,
 })

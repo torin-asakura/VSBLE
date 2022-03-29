@@ -26,4 +26,9 @@ export const replacements = {
   UploadIcon: getReplacement('background')('black'),
   ArrowUpIcon: getReplacement('background')('black'),
   ArrowDownIcon: getReplacement('background')('black'),
+  LoupeIcon: getReplacement('background')('#0D0D0D'),
+  BookmarkIcon: getReplacement('background')('black'),
+  BriefcaseIcon: getReplacement('background')('black'),
+  ShoppingCartIcon: getReplacement('background')('black'),
+  InboxIcon: getReplacement('background')('black'),
 }
