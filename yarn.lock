@@ -1486,7 +1486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@site/call-to-actions-fragment@workspace:site/fragments/call-to-actions":
+"@site/call-to-actions-fragment@workspace:0.0.1, @site/call-to-actions-fragment@workspace:site/fragments/call-to-actions":
   version: 0.0.0-use.local
   resolution: "@site/call-to-actions-fragment@workspace:site/fragments/call-to-actions"
   dependencies:
@@ -1497,6 +1497,7 @@ __metadata:
     "@types/styled-system": ^5.1.15
     "@ui/button": "workspace:0.0.1"
     "@ui/condition": "workspace:0.0.1"
+    "@ui/image": "workspace:0.0.1"
     "@ui/layout": "workspace:0.0.1"
     "@ui/text": "workspace:0.0.1"
     react: ^17.0.2
@@ -1514,6 +1515,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@site/index-page@workspace:site/pages/index-page"
   dependencies:
+    "@site/call-to-actions-fragment": "workspace:0.0.1"
     "@site/navigation-fragment": 0.0.1
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15

@@ -31,7 +31,7 @@ export const Navigation = () => {
 
   return (
     <Box height={72} width='100%' justifyContent='center'>
-      <Layout width={1440}>
+      <Layout width={['100%', '100%', 1440]}>
         <Layout flexShrink={0} flexBasis={24} />
         <Column fill>
           <Layout flexBasis={24} />

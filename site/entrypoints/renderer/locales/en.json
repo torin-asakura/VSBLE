@@ -7,5 +7,11 @@
   "navigation.log_in": "Log In",
   "navigation.sign_up": "Sign Up",
   "navigation.upload_image": "Upload Images",
-  "avatar.log_out": "Log Out"
+  "avatar.log_out": "Log Out",
+  "call_to_actions.sign_up_as_a_brand": "Sign Up as a Brand",
+  "call_to_actions.sign_up_as_a_creator": "Sign Up as a Creator",
+  "call_to_actions.find_selected_creators_worldwide": "Find selected creators worldwide",
+  "call_to_actions.showcase_your_work_and_win_clients": "Showcase your work and wind clients",
+  "call_to_actions.get_started": "Get started, It's Free",
+  "call_to_actions.sign_up_for_free": "Sign Up For Free"
 }
