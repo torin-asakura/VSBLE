@@ -3,22 +3,32 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.tsx",
+  "dependencies": {
+    "@ui/avatar": "workspace:0.0.1",
+    "@ui/button": "workspace:0.0.1",
+    "@ui/condition": "workspace:0.0.1",
+    "@ui/divider": "workspace:0.0.1",
+    "@ui/icons": "workspace:0.0.1",
+    "@ui/layout": "workspace:0.0.1",
+    "@ui/link": "workspace:0.0.1",
+    "@ui/logo": "workspace:0.0.1",
+    "@ui/text": "workspace:0.0.1",
+    "@ui/utils": "workspace:0.0.1"
+  },
   "devDependencies": {
-    "@atls-ui-proto/button": "^0.0.5",
-    "@atls-ui-proto/layout": "^0.0.2",
-    "@atls-ui-proto/placeholder": "^0.0.1",
-    "@atls-ui-proto/text": "^0.0.5",
-    "@atls/react-identity-links": "0.0.3",
     "@atls/react-user": "^0.1.44",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@types/react": "^17.0.38",
     "@types/styled-system": "^5.1.15",
     "react": "^17.0.2",
+    "react-intl": "^5.24.8",
     "styled-system": "^5.1.5",
     "styled-tools": "^1.7.2"
   },
   "peerDependencies": {
-    "react": "^17.0.1"
+    "@atls/react-user": "*",
+    "react": "^17.0.1",
+    "react-intl": "*"
   }
 }
