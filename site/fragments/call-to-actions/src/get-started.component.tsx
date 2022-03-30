@@ -15,7 +15,6 @@ const GetStartedCTA: FC = () => (
     <Row justifyContent='center'>
       <Layout width={['100%', '100%', 1440]} justifyContent='center'>
         <Column alignItems='center' fill>
-          <Layout flexBasis={69} />
           <Row justifyContent='center'>
             <Text
               fontSize={['giant', 'giant', 'colossal']}
@@ -38,7 +37,6 @@ const GetStartedCTA: FC = () => (
               />
             </Button>
           </Row>
-          <Layout flexBasis={70} />
         </Column>
       </Layout>
     </Row>

@@ -18,7 +18,6 @@ const SignUpCTA: FC = () => (
   <WithoutUser>
     <Row>
       <Column alignItems='center' fill>
-        <Layout flexBasis={16} />
         <Layout width={['100%', '100%', 1440]} justifyContent='center'>
           <Layout flexBasis={24} />
           <Layout flexDirection={['column', 'column', 'row']}>
@@ -47,7 +46,7 @@ const SignUpCTA: FC = () => (
               content={
                 <FormattedMessage
                   id='call_to_actions.showcase_your_work_and_win_clients'
-                  defaultMessage='Showcase your work and wind clients'
+                  defaultMessage='Showcase your work and win clients'
                 />
               }
               action={doNothing}

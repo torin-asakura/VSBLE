@@ -1,17 +1,21 @@
 {
-  "name": "@site/call-to-actions-fragment",
+  "name": "@site/filters-fragment",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "dependencies": {
+    "@site/store": "workspace:0.0.1",
     "@ui/button": "workspace:0.0.1",
     "@ui/condition": "workspace:0.0.1",
+    "@ui/icons": "workspace:0.0.1",
     "@ui/image": "workspace:0.0.1",
+    "@ui/input": "workspace:0.0.1",
     "@ui/layout": "workspace:0.0.1",
+    "@ui/switch": "workspace:0.0.1",
     "@ui/text": "workspace:0.0.1"
   },
   "devDependencies": {
-    "@atls/react-user": "^0.1.44",
+    "@apollo/client": "^3.5.10",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@types/react": "^17.0.38",
@@ -22,7 +26,7 @@
     "styled-tools": "^1.7.2"
   },
   "peerDependencies": {
-    "@atls/react-user": "*",
+    "@apollo/client": "*",
     "react": "^17.0.1",
     "react-intl": "*"
   }
