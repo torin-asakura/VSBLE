@@ -6,4 +6,5 @@ module.exports = {
     esmExternals: 'loose',
     outputStandalone: true,
   },
+  basePath: '/VSBLE'
 }
