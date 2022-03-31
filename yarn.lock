@@ -1681,6 +1681,36 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@site/footer-fragment@workspace:0.0.1, @site/footer-fragment@workspace:site/fragments/footer":
+  version: 0.0.0-use.local
+  resolution: "@site/footer-fragment@workspace:site/fragments/footer"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/button": "workspace:0.0.1"
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/divider": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/input": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/logo": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/index-page@workspace:0.0.1, @site/index-page@workspace:site/pages/index-page":
   version: 0.0.0-use.local
   resolution: "@site/index-page@workspace:site/pages/index-page"
@@ -1688,6 +1718,7 @@ __metadata:
     "@site/call-to-actions-fragment": "workspace:0.0.1"
     "@site/creators-fragment": "workspace:0.0.1"
     "@site/filters-fragment": "workspace:0.0.1"
+    "@site/footer-fragment": "workspace:0.0.1"
     "@site/navigation-fragment": 0.0.1
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15

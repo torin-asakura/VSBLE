@@ -35,5 +35,16 @@
   "filters.videography": "Videography",
   "filters.apply": "Apply",
   "filters.search": "Search",
-  "creators.here_are_some_trending": "Here are some trending Creators"
+  "creators.here_are_some_trending": "Here are some trending Creators",
+  "footer.copyright": "Copyright © Vsble.space",
+  "footer.all_right_reserved": "All rights reserved",
+  "footer.imprint": "Imprint",
+  "footer.privacy": "Privacy",
+  "footer.terms": "Terms",
+  "footer.cookie_policy": "Cookie policy",
+  "footer.brands_access": "Brands access",
+  "footer.creator_access": "Creator access",
+  "footer.contact": "Contact",
+  "footer.lets_be_in_touch": "Let’s be in touch",
+  "footer.send": "Send"
 }
