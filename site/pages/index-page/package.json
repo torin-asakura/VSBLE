@@ -4,6 +4,7 @@
   "license": "BSD-3-Clause",
   "main": "src/index.tsx",
   "dependencies": {
+    "@site/creators-fragment": "workspace:0.0.1",
     "@site/filters-fragment": "workspace:0.0.1",
     "@ui/layout": "workspace:0.0.1"
   },
