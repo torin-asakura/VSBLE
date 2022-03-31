@@ -4,4 +4,5 @@ export interface CardProps {
   role: string
   location: string
   description: string
+  imageSrc: string
 }

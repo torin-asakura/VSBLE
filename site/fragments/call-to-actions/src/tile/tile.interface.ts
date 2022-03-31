@@ -4,4 +4,5 @@ export interface TileProps {
   actionName: string | ReactNode
   action: () => any
   content: string | ReactNode
+  imageSrc: string
 }
