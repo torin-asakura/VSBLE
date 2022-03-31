@@ -7,6 +7,7 @@ import { ForwardRefRenderFunction } from 'react'
 import { forwardRef }               from 'react'
 import { useState }                 from 'react'
 import { useRef }                   from 'react'
+import { useEffect }                from 'react'
 
 import { Condition }                from '@ui/condition'
 import { Row }                      from '@ui/layout'
@@ -19,6 +20,10 @@ import { InputProps }               from './input.interfaces'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
+
+const doNothing = () => {
+  // do nothing
+}
 
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles)
 
@@ -34,6 +39,18 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
     // eslint-disable-next-line
     ref = useRef(null)
   }
+
+  useEffect(() => {
+    const handler = () => setFocus(false)
+
+    if (ref && (ref as any).current) {
+      ;(ref as any).current.addEventListener('focusout', handler)
+
+      return () => (ref as any)?.current?.removeEventListener('focusout', handler)
+    }
+
+    return doNothing
+  }, [ref])
 
   return (
     <Row>
@@ -60,7 +77,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             disabled={disabled}
             value={value}
             onChange={changeValue}
-            onFocus={() => setFocus(!focus)}
+            onFocus={() => setFocus(true)}
           />
         </InputElement>
       </Column>

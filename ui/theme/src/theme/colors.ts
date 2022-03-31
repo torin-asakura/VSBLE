@@ -9,6 +9,7 @@ const colors = {
     accent: 'rgba(0, 0, 0, 1)',
     white: 'rgba(255, 255, 255, 1)',
     semiBlack: 'rgba(40,40,40,1)',
+    purple: 'rgba(133,98,206,1)',
   },
   button: {
     primary: {

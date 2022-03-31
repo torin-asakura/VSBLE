@@ -8,10 +8,6 @@ import { useIntl }           from 'react-intl'
 
 import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
-import { Expertise }         from '@site/store'
-import { Studio }            from '@site/store'
-import { Postproduction }    from '@site/store'
-import { Videography }       from '@site/store'
 import { Button }            from '@ui/button'
 import { Condition }         from '@ui/condition'
 import { FilterIcon }        from '@ui/icons'
@@ -19,6 +15,7 @@ import { Input }             from '@ui/input'
 import { Column }            from '@ui/layout'
 import { Layout }            from '@ui/layout'
 import { Row }               from '@ui/layout'
+import { Select }            from '@ui/select'
 import { Switch }            from '@ui/switch'
 import { Option }            from '@ui/switch'
 import { Text }              from '@ui/text'
@@ -37,10 +34,6 @@ const Filters: FC = () => {
   ])
   const location = useReactiveVar<Location>(locationVar)
   const followers = useReactiveVar<Followers>(followersVar)
-  const expertise = useReactiveVar<Expertise>(expertiseVar)
-  const studio = useReactiveVar<Studio>(studioVar)
-  const postproduction = useReactiveVar<Postproduction>(postproductionVar)
-  const videography = useReactiveVar<Videography>(videographyVar)
 
   const options = [
     {
@@ -77,18 +70,9 @@ const Filters: FC = () => {
 
   return (
     <Row justifyContent='center'>
-      <Layout width={['100%', '100%', 1440]}>
+      <Layout width={['100%', '100%', 1136]}>
         <Layout flexBasis={24} />
         <Column fill>
-          <Row justifyContent='center'>
-            <Text fontSize='giant' color='accent' fontWeight='bold'>
-              <FormattedMessage
-                id='filters.here_are_some_trending_creators'
-                defaultMessage='Here are some trending Creators'
-              />
-            </Text>
-          </Row>
-          <Layout flexBasis={40} />
           <Row>
             <Switch active={tags}>
               {options.map(({ value, mutuallyExclusive }) => (
@@ -122,12 +106,13 @@ const Filters: FC = () => {
                   onChange={locationVar}
                 />
               </Row>
-              <Layout flexBasis={16} />
+              <Layout flexShrink={0} flexBasis={16} />
               <Row alignItems='flex-end'>
                 <Input
                   label={formatMessage({ id: 'filters.followers', defaultMessage: 'Followers' })}
                   placeholder={formatMessage({ id: 'filters.min', defaultMessage: 'Min' })}
                   value={followers.min}
+                  type='number'
                   onChange={(value) => followersVar({ ...followers, min: Number(value) })}
                 />
                 <Layout flexBasis={12} />
@@ -139,11 +124,77 @@ const Filters: FC = () => {
                 <Layout flexBasis={12} />
                 <Input
                   placeholder={formatMessage({ id: 'filters.max', defaultMessage: 'Max' })}
+                  type='number'
                   value={followers.max}
                   onChange={(value) => followersVar({ ...followers, max: Number(value) })}
                 />
               </Row>
-              <Layout flexBasis={16} />
+              <Layout flexShrink={0} flexBasis={16} />
+              <Row>
+                <Select
+                  items={[
+                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                  ]}
+                  onChange={expertiseVar}
+                  label={formatMessage({ id: 'filters.expertise', defaultMessage: 'Expertise' })}
+                />
+              </Row>
+              <Layout flexShrink={0} flexBasis={16} />
+              <Row>
+                <Select
+                  items={[
+                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                  ]}
+                  onChange={studioVar}
+                  label={formatMessage({ id: 'filters.studio', defaultMessage: 'Studio' })}
+                />
+              </Row>
+            </Condition>
+          </Row>
+          <Layout flexBasis={24} />
+          <Row>
+            <Condition match={filters} smooth>
+              <Row>
+                <Select
+                  items={[
+                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                  ]}
+                  onChange={postproductionVar}
+                  label={formatMessage({
+                    id: 'filters.postproduction',
+                    defaultMessage: 'Postproduction',
+                  })}
+                />
+              </Row>
+              <Layout flexShrink={0} flexBasis={16} />
+              <Row>
+                <Select
+                  items={[
+                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                  ]}
+                  onChange={videographyVar}
+                  label={formatMessage({
+                    id: 'filters.videography',
+                    defaultMessage: 'Videography',
+                  })}
+                />
+              </Row>
+              <Layout flexShrink={0} flexBasis={16} />
+              <Row />
+              <Layout flexShrink={0} flexBasis={16} />
+              <Row justifyContent='flex-end' alignItems='flex-end'>
+                <Button>
+                  <FormattedMessage id='filters.apply' defaultMessage='Apply' />
+                </Button>
+              </Row>
             </Condition>
           </Row>
         </Column>
