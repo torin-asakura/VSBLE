@@ -1570,6 +1570,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shared/utils@workspace:0.0.1, @shared/utils@workspace:shared/utils":
+  version: 0.0.0-use.local
+  resolution: "@shared/utils@workspace:shared/utils"
+  languageName: unknown
+  linkType: soft
+
 "@sindresorhus/is@npm:^4.0.0":
   version: 4.6.0
   resolution: "@sindresorhus/is@npm:4.6.0"
@@ -1602,6 +1608,7 @@ __metadata:
     "@atls/react-user": ^0.1.44
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
+    "@shared/utils": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
     "@ui/button": "workspace:0.0.1"
@@ -1672,9 +1679,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@site/navigation-fragment@workspace:site/fragments/navigation"
   dependencies:
+    "@apollo/client": ^3.5.10
     "@atls/react-user": ^0.1.44
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
+    "@shared/utils": "workspace:0.0.1"
+    "@site/store": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
     "@ui/avatar": "workspace:0.0.1"
@@ -1692,6 +1702,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    "@apollo/client": "*"
     "@atls/react-user": "*"
     react: ^17.0.1
     react-intl: "*"
@@ -1729,6 +1740,7 @@ __metadata:
   resolution: "@site/store@workspace:site/store"
   dependencies:
     "@apollo/client": ^3.5.10
+    "@shared/utils": "workspace:0.0.1"
     react: ^17.0.2
   peerDependencies:
     "@apollo/client": "*"
@@ -2496,6 +2508,7 @@ __metadata:
     "@atls-ui-parts/input": 0.0.9
     "@emotion/css": ^11.7.1
     "@emotion/styled": ^11.3.0
+    "@shared/utils": "workspace:0.0.1"
     "@types/react": ^17.0.3
     "@types/styled-system": ^5.1.11
     "@ui/condition": "workspace:0.0.1"

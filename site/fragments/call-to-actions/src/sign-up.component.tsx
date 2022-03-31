@@ -7,12 +7,9 @@ import { FormattedMessage } from 'react-intl'
 import { Row }              from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Layout }           from '@ui/layout'
+import { doNothing }        from '@shared/utils'
 
 import { Tile }             from './tile'
-
-const doNothing = () => {
-  // do nothing
-}
 
 const SignUpCTA: FC = () => (
   <WithoutUser>

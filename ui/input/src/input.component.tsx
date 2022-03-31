@@ -14,6 +14,7 @@ import { Row }                      from '@ui/layout'
 import { Column }                   from '@ui/layout'
 import { Layout }                   from '@ui/layout'
 import { Text }                     from '@ui/text'
+import { doNothing }                from '@shared/utils'
 import { useHover }                 from '@ui/utils'
 
 import { InputProps }               from './input.interfaces'
@@ -21,14 +22,10 @@ import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
 
-const doNothing = () => {
-  // do nothing
-}
-
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles)
 
 export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { size, value, disabled, onChange, onChangeNative, label, ...props },
+  { size, value, disabled, onChange, onChangeNative, label, textAlign, ...props },
   ref
 ) => {
   const changeValue = useChangeValue(disabled, onChange, onChangeNative)
@@ -78,6 +75,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             value={value}
             onChange={changeValue}
             onFocus={() => setFocus(true)}
+            style={{ textAlign: textAlign as any }}
           />
         </InputElement>
       </Column>

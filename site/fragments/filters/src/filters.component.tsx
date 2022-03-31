@@ -8,6 +8,8 @@ import { useIntl }           from 'react-intl'
 
 import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
+import { Search }            from '@site/store'
+import { SearchValue }       from '@site/store'
 import { Button }            from '@ui/button'
 import { Condition }         from '@ui/condition'
 import { FilterIcon }        from '@ui/icons'
@@ -23,6 +25,8 @@ import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
 import { expertiseVar }      from '@site/store'
 import { studioVar }         from '@site/store'
+import { searchVar }         from '@site/store'
+import { searchValueVar }    from '@site/store'
 import { postproductionVar } from '@site/store'
 import { videographyVar }    from '@site/store'
 
@@ -34,6 +38,8 @@ const Filters: FC = () => {
   ])
   const location = useReactiveVar<Location>(locationVar)
   const followers = useReactiveVar<Followers>(followersVar)
+  const search = useReactiveVar<Search>(searchVar)
+  const searchValue = useReactiveVar<SearchValue>(searchValueVar)
 
   const options = [
     {
@@ -73,6 +79,19 @@ const Filters: FC = () => {
       <Layout width={['100%', '100%', 1136]}>
         <Layout flexBasis={24} />
         <Column fill>
+          <Row id='search'>
+            <Condition match={search} smooth>
+              <Input
+                size='giant'
+                variant='ghost'
+                value={searchValue}
+                onChange={searchValueVar}
+                placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
+                textAlign='center'
+              />
+            </Condition>
+          </Row>
+          <Layout flexBasis={56} />
           <Row>
             <Switch active={tags}>
               {options.map(({ value, mutuallyExclusive }) => (

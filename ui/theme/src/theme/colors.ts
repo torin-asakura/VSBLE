@@ -109,6 +109,26 @@ const colors = {
       },
       error: 'rgba(213,52,52,1)',
     },
+    ghost: {
+      default: {
+        background: 'transparent',
+        border: 'transparent',
+        placeholder: 'rgba(235,235,235,1)',
+        font: 'rgba(0,0,0,1)',
+      },
+      hover: {
+        background: 'transparent',
+        border: 'transparent',
+        placeholder: 'rgba(235,235,235,1)',
+        font: 'rgba(0,0,0,1)',
+      },
+      focus: {
+        background: 'transparent',
+        border: 'transparent',
+        placeholder: 'rgba(235,235,235,1)',
+        font: 'rgba(0,0,0,1)',
+      },
+    },
   },
 }
 

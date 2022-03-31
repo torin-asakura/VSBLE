@@ -21,6 +21,7 @@ import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Row }              from '@ui/layout'
 import { Logo }             from '@ui/logo'
+import { searchVar }        from '@site/store'
 
 import { Link }             from './link'
 
@@ -41,11 +42,13 @@ export const Navigation = () => {
             </Layout>
             <Layout flexGrow={1} />
             <Layout>
-              <Link
-                icon={(hover) => <LoupeIcon color={hover ? 'black' : 'gray'} />}
-                text={<FormattedMessage id='navigation.search' defaultMessage='Search' />}
-                path='#search'
-              />
+              <Button size='ghost' variant='ghost' onClick={() => searchVar(true)}>
+                <Link
+                  icon={(hover) => <LoupeIcon color={hover ? 'black' : 'gray'} />}
+                  text={<FormattedMessage id='navigation.search' defaultMessage='Search' />}
+                  path='#search'
+                />
+              </Button>
             </Layout>
             <Layout flexBasis={24} />
             <WithUser>

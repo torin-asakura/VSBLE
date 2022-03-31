@@ -16,6 +16,16 @@ const shapeNormalSizeStyles = createShapeStyles({
   paddingRight: 16,
 })
 
+const shapeGiantSizeStyles = createShapeStyles({
+  fontFamily: prop('theme.fonts.primary'),
+  fontWeight: prop('theme.fontWeights.bold'),
+  size: 80,
+  fontSize: prop('theme.fontSizes.colossal'),
+  rounding: prop('theme.radii.normal') as unknown as number,
+  paddingLeft: 0,
+  paddingRight: 0,
+})
+
 export const baseStyles = createBaseStyles()
 
 export const appearancePrimaryDefaultStyles = createAppearanceStyles({
@@ -42,8 +52,27 @@ export const appearancePrimaryDisabledStyles = createAppearanceStyles({
   borderColor: prop('theme.colors.input.primary.disabled.border'),
 })
 
+export const appearanceGhostDefaultStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.input.ghost.default.font'),
+  backgroundColor: prop('theme.colors.input.ghost.default.background'),
+  borderColor: prop('theme.colors.input.ghost.default.border'),
+})
+
+export const appearanceGhostHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.input.ghost.hover.font'),
+  backgroundColor: prop('theme.colors.input.ghost.hover.background'),
+  borderColor: prop('theme.colors.input.ghost.hover.border'),
+})
+
+export const appearanceGhostFocusStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.input.ghost.focus.font'),
+  backgroundColor: prop('theme.colors.input.ghost.focus.background'),
+  borderColor: prop('theme.colors.input.ghost.focus.border'),
+})
+
 export const shapeStyles = switchProp(prop('size', 'normal'), {
   normal: shapeNormalSizeStyles,
+  giant: shapeGiantSizeStyles,
 })
 export const appearanceStyles = switchProp(prop('variant', 'primary'), {
   primary: ifProp(
@@ -53,6 +82,15 @@ export const appearanceStyles = switchProp(prop('variant', 'primary'), {
       prop('focus', false),
       appearancePrimaryFocusStyles,
       ifProp(prop('hover', false), appearancePrimaryHoverStyles, appearancePrimaryDefaultStyles)
+    )
+  ),
+  ghost: ifProp(
+    prop('disabled', false),
+    appearanceGhostDefaultStyles,
+    ifProp(
+      prop('focus', false),
+      appearanceGhostFocusStyles,
+      ifProp(prop('hover', false), appearanceGhostHoverStyles, appearanceGhostDefaultStyles)
     )
   ),
 })

@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "site/**/*",
-    "ui/**/*"
+    "ui/**/*",
+    "shared/**/*"
   ],
   "devDependencies": {
     "@atls/code-service": "^0.0.12",

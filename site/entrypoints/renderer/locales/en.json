@@ -14,7 +14,6 @@
   "call_to_actions.showcase_your_work_and_win_clients": "Showcase your work and win clients",
   "call_to_actions.get_started": "Get started, It's Free",
   "call_to_actions.sign_up_for_free": "Sign Up For Free",
-  "filters.here_are_some_trending_creators": "Here are some trending Creators",
   "filters.all": "All",
   "filters.photographer": "Photographer",
   "filters.model": "Model",
@@ -34,5 +33,6 @@
   "filters.studio": "Studio",
   "filters.postproduction": "Postproduction",
   "filters.videography": "Videography",
-  "filters.apply": "Apply"
+  "filters.apply": "Apply",
+  "filters.search": "Search"
 }
