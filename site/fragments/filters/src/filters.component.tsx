@@ -92,7 +92,7 @@ const Filters: FC = () => {
             </Condition>
           </Row>
           <Layout flexBasis={56} />
-          <Row>
+          <Layout width='100%' flexDirection={['column', 'column', 'row']}>
             <Switch active={tags}>
               {options.map(({ value, mutuallyExclusive }) => (
                 <>
@@ -113,107 +113,111 @@ const Filters: FC = () => {
               <FilterIcon />
               <FormattedMessage id='filters.filter' defaultMessage='Filter' />
             </Button>
-          </Row>
+          </Layout>
           <Layout flexBasis={40} />
           <Row>
             <Condition match={filters} smooth>
-              <Row>
-                <Input
-                  label={formatMessage({ id: 'filters.location', defaultMessage: 'Location' })}
-                  placeholder={formatMessage({ id: 'filters.where', defaultMessage: 'Where?' })}
-                  value={location}
-                  onChange={locationVar}
-                />
-              </Row>
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row alignItems='flex-end'>
-                <Input
-                  label={formatMessage({ id: 'filters.followers', defaultMessage: 'Followers' })}
-                  placeholder={formatMessage({ id: 'filters.min', defaultMessage: 'Min' })}
-                  value={followers.min}
-                  type='number'
-                  onChange={(value) => followersVar({ ...followers, min: Number(value) })}
-                />
-                <Layout flexBasis={12} />
-                <Layout height={44} alignItems='center'>
-                  <Text fontSize='semiRegular' fontWeight='semiBold'>
-                    -
-                  </Text>
-                </Layout>
-                <Layout flexBasis={12} />
-                <Input
-                  placeholder={formatMessage({ id: 'filters.max', defaultMessage: 'Max' })}
-                  type='number'
-                  value={followers.max}
-                  onChange={(value) => followersVar({ ...followers, max: Number(value) })}
-                />
-              </Row>
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row>
-                <Select
-                  items={[
-                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
-                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
-                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
-                  ]}
-                  onChange={expertiseVar}
-                  label={formatMessage({ id: 'filters.expertise', defaultMessage: 'Expertise' })}
-                />
-              </Row>
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row>
-                <Select
-                  items={[
-                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
-                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
-                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
-                  ]}
-                  onChange={studioVar}
-                  label={formatMessage({ id: 'filters.studio', defaultMessage: 'Studio' })}
-                />
-              </Row>
+              <Layout width='100%' flexDirection={['column', 'column', 'row']}>
+                <Row>
+                  <Input
+                    label={formatMessage({ id: 'filters.location', defaultMessage: 'Location' })}
+                    placeholder={formatMessage({ id: 'filters.where', defaultMessage: 'Where?' })}
+                    value={location}
+                    onChange={locationVar}
+                  />
+                </Row>
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row alignItems='flex-end'>
+                  <Input
+                    label={formatMessage({ id: 'filters.followers', defaultMessage: 'Followers' })}
+                    placeholder={formatMessage({ id: 'filters.min', defaultMessage: 'Min' })}
+                    value={followers.min}
+                    type='number'
+                    onChange={(value) => followersVar({ ...followers, min: Number(value) })}
+                  />
+                  <Layout flexBasis={12} />
+                  <Layout height={44} alignItems='center'>
+                    <Text fontSize='semiRegular' fontWeight='semiBold'>
+                      -
+                    </Text>
+                  </Layout>
+                  <Layout flexBasis={12} />
+                  <Input
+                    placeholder={formatMessage({ id: 'filters.max', defaultMessage: 'Max' })}
+                    type='number'
+                    value={followers.max}
+                    onChange={(value) => followersVar({ ...followers, max: Number(value) })}
+                  />
+                </Row>
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row>
+                  <Select
+                    items={[
+                      formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                      formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                      formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                    ]}
+                    onChange={expertiseVar}
+                    label={formatMessage({ id: 'filters.expertise', defaultMessage: 'Expertise' })}
+                  />
+                </Row>
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row>
+                  <Select
+                    items={[
+                      formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                      formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                      formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                    ]}
+                    onChange={studioVar}
+                    label={formatMessage({ id: 'filters.studio', defaultMessage: 'Studio' })}
+                  />
+                </Row>
+              </Layout>
             </Condition>
           </Row>
           <Layout flexBasis={24} />
           <Row>
             <Condition match={filters} smooth>
-              <Row>
-                <Select
-                  items={[
-                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
-                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
-                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
-                  ]}
-                  onChange={postproductionVar}
-                  label={formatMessage({
-                    id: 'filters.postproduction',
-                    defaultMessage: 'Postproduction',
-                  })}
-                />
-              </Row>
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row>
-                <Select
-                  items={[
-                    formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
-                    formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
-                    formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
-                  ]}
-                  onChange={videographyVar}
-                  label={formatMessage({
-                    id: 'filters.videography',
-                    defaultMessage: 'Videography',
-                  })}
-                />
-              </Row>
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row />
-              <Layout flexShrink={0} flexBasis={16} />
-              <Row justifyContent='flex-end' alignItems='flex-end'>
-                <Button>
-                  <FormattedMessage id='filters.apply' defaultMessage='Apply' />
-                </Button>
-              </Row>
+              <Layout width='100%' flexDirection={['column', 'column', 'row']}>
+                <Row>
+                  <Select
+                    items={[
+                      formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                      formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                      formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                    ]}
+                    onChange={postproductionVar}
+                    label={formatMessage({
+                      id: 'filters.postproduction',
+                      defaultMessage: 'Postproduction',
+                    })}
+                  />
+                </Row>
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row>
+                  <Select
+                    items={[
+                      formatMessage({ id: 'filters.any', defaultMessage: 'Any' }),
+                      formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
+                      formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
+                    ]}
+                    onChange={videographyVar}
+                    label={formatMessage({
+                      id: 'filters.videography',
+                      defaultMessage: 'Videography',
+                    })}
+                  />
+                </Row>
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row />
+                <Layout flexShrink={0} flexBasis={16} />
+                <Row justifyContent='flex-end' alignItems='flex-end'>
+                  <Button>
+                    <FormattedMessage id='filters.apply' defaultMessage='Apply' />
+                  </Button>
+                </Row>
+              </Layout>
             </Condition>
           </Row>
         </Column>
