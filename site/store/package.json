@@ -1,0 +1,17 @@
+{
+  "name": "@site/store",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@shared/utils": "workspace:0.0.1"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.5.10",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@apollo/client": "*",
+    "react": "*"
+  }
+}
