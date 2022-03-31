@@ -1,15 +1,17 @@
-import { WithoutUser }      from '@atls/react-user'
+import { WithoutUser }               from '@atls/react-user'
 
-import React                from 'react'
-import { FC }               from 'react'
-import { FormattedMessage } from 'react-intl'
+import React                         from 'react'
+import { FC }                        from 'react'
+import { FormattedMessage }          from 'react-intl'
 
-import { Row }              from '@ui/layout'
-import { Column }           from '@ui/layout'
-import { Layout }           from '@ui/layout'
-import { doNothing }        from '@shared/utils'
+import { Row }                       from '@ui/layout'
+import { Column }                    from '@ui/layout'
+import { Layout }                    from '@ui/layout'
+import { doNothing }                 from '@shared/utils'
 
-import { Tile }             from './tile'
+import { Tile }                      from './tile'
+import { findSelectedCreatorsImage } from './images'
+import { showcaseYourWorkImage }     from './images'
 
 const SignUpCTA: FC = () => (
   <WithoutUser>
@@ -19,6 +21,7 @@ const SignUpCTA: FC = () => (
           <Layout flexBasis={24} />
           <Layout flexDirection={['column', 'column', 'row']}>
             <Tile
+              imageSrc={findSelectedCreatorsImage}
               actionName={
                 <FormattedMessage
                   id='call_to_actions.sign_up_as_a_brand'
@@ -34,6 +37,7 @@ const SignUpCTA: FC = () => (
               action={doNothing}
             />
             <Tile
+              imageSrc={showcaseYourWorkImage}
               actionName={
                 <FormattedMessage
                   id='call_to_actions.sign_up_as_a_creator'

@@ -1627,6 +1627,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@site/creators-fragment@workspace:0.0.1, @site/creators-fragment@workspace:site/fragments/creators":
+  version: 0.0.0-use.local
+  resolution: "@site/creators-fragment@workspace:site/fragments/creators"
+  dependencies:
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/image": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    react-responsive-masonry: ^2.1.4
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/filters-fragment@workspace:0.0.1, @site/filters-fragment@workspace:site/fragments/filters":
   version: 0.0.0-use.local
   resolution: "@site/filters-fragment@workspace:site/fragments/filters"
@@ -1662,6 +1686,7 @@ __metadata:
   resolution: "@site/index-page@workspace:site/pages/index-page"
   dependencies:
     "@site/call-to-actions-fragment": "workspace:0.0.1"
+    "@site/creators-fragment": "workspace:0.0.1"
     "@site/filters-fragment": "workspace:0.0.1"
     "@site/navigation-fragment": 0.0.1
     "@types/react": ^17.0.38
@@ -7564,7 +7589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:*, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -7759,6 +7784,16 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
+  languageName: node
+  linkType: hard
+
+"react-responsive-masonry@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "react-responsive-masonry@npm:2.1.4"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+    react-dom: ^16.8.0 || ^17.0.0
+  checksum: 0de893712ee400012b1fd8be5feeed7dc858a222345db6fa1411e6b7a07c1b79770c536771cddce8e0a93dbd3b9cc757d5c95d39e7813b6ebf05905befe2174c
   languageName: node
   linkType: hard
 
