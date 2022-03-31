@@ -5,6 +5,5 @@ module.exports = {
     workerThreads: true,
     esmExternals: 'loose',
     outputStandalone: true,
-  },
-  basePath: '/VSBLE'
+  }
 }
