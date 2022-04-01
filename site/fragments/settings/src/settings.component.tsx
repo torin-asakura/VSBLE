@@ -16,6 +16,7 @@ import { ConnectPaymentGateway } from './connect-payment-gateway'
 import { Marketplace }           from './marketplace'
 import { Notification }          from './notification'
 import { Password }              from './password'
+import { SalesStatements }       from './sales-statements'
 
 const Settings: FC = () => (
   <Row justifyContent='center'>
@@ -113,6 +114,8 @@ const Settings: FC = () => (
             <Marketplace />
             <Layout flexBasis={48} />
             <Notification />
+            <Layout flexBasis={48} />
+            <SalesStatements />
             <Layout flexBasis={48} />
           </Column>
           <Column flexGrow={1} flexShrink={0} />

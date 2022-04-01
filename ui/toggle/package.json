@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@atls-ui-parts/switch": "^0.0.4",
+    "@ui/utils": "workspace:0.0.1",
     "framer-motion": "4.1.7"
   },
   "devDependencies": {

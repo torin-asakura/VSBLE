@@ -243,7 +243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls-ui-parts/text@npm:0.0.6, @atls-ui-parts/text@npm:^0.0.6":
+"@atls-ui-parts/text@npm:0.0.6":
   version: 0.0.6
   resolution: "@atls-ui-parts/text@npm:0.0.6"
   dependencies:
@@ -252,6 +252,18 @@ __metadata:
     "@emotion/styled": ^11.1.5
     react: ^17.0.1
   checksum: c6f2b47fff82236c8fe3b376151b820be7b7138f43c41dd15a6d62598a4790ab7b57ddc530d8c70d42b0eb4ab6dddbc740f42cc0b9f5ac4bd8484bea67620f3b
+  languageName: node
+  linkType: hard
+
+"@atls-ui-parts/text@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@atls-ui-parts/text@npm:0.0.7"
+  dependencies:
+    styled-system: ^5.1.5
+  peerDependencies:
+    "@emotion/styled": ^11.1.5
+    react: ^17.0.1
+  checksum: f4253211a2437a765e96f170f26871d2c5868462952d12693e292dc15ed0f173428e84d66b092a3ace9bcbe02a2301b4131f076efa14c8ee1dc2dab22cffb381
   languageName: node
   linkType: hard
 
@@ -2814,7 +2826,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ui/text@workspace:ui/text"
   dependencies:
-    "@atls-ui-parts/text": ^0.0.6
+    "@atls-ui-parts/text": ^0.0.7
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
     "@types/styled-system": ^5
@@ -2855,6 +2867,7 @@ __metadata:
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
     "@types/styled-system": ^5.1.15
+    "@ui/utils": "workspace:0.0.1"
     framer-motion: 4.1.7
     react: ^17.0.2
     styled-system: ^5.1.5

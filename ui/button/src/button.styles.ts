@@ -7,6 +7,8 @@ import { prop }                   from 'styled-tools'
 import { switchProp }             from 'styled-tools'
 import { ifProp }                 from 'styled-tools'
 
+export const fillStyles = ifProp(prop('fill', false), { width: '100%' })
+
 const smallNormalSizeStyles = createShapeStyles({
   fontFamily: prop('theme.fonts.primary'),
   fontWeight: prop('theme.fontWeights.normal'),

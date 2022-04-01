@@ -85,6 +85,6 @@
   "settings.delete_account_permanently": "Delete Account Permanently",
   "settings.connected_to": "Connected to",
   "settings.disconnect": "Disconnect",
-  "settings.sales": "Sales",
+  "settings.sales": "sales",
   "settings.download_invoice": "Download invoice"
 }

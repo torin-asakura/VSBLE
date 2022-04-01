@@ -3,6 +3,7 @@ const colors = {
     black: 'rgba(0, 0, 0, 1)',
     gray: 'rgba(70, 70, 70, 1)',
     white: 'rgba(255, 255, 255, 1)',
+    beige: 'rgba(247,247,247,1)',
   },
   text: {
     primary: 'rgba(80, 80, 80, 1)',

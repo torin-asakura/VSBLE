@@ -1,21 +1,23 @@
-import styled                              from '@emotion/styled'
-import { HandleElement }                   from '@atls-ui-parts/switch'
-import { baseHandleStyles } from '@atls-ui-parts/switch'
-import { ThumbElement }                    from '@atls-ui-parts/switch'
-import { useSwitch }                       from '@atls-ui-parts/switch'
-import { baseThumbStyles }                 from '@atls-ui-parts/switch'
-import { ifDisabledThumbModifier }         from '@atls-ui-parts/switch'
-import { thumbMotionVariants }             from '@atls-ui-parts/switch'
+import styled                      from '@emotion/styled'
+import { HandleElement }           from '@atls-ui-parts/switch'
+import { ThumbElement }            from '@atls-ui-parts/switch'
+import { baseHandleStyles }        from '@atls-ui-parts/switch'
+import { useSwitch }               from '@atls-ui-parts/switch'
+import { baseThumbStyles }         from '@atls-ui-parts/switch'
+import { ifDisabledThumbModifier } from '@atls-ui-parts/switch'
+import { thumbMotionVariants }     from '@atls-ui-parts/switch'
 
-import React                               from 'react'
-import { useRef }                          from 'react'
+import React                       from 'react'
+import { useRef }                  from 'react'
 
-import { ToggleProps }                     from './toggle.interfaces'
-import { ToggleSize }                      from './toggle.interfaces'
-import { appearanceHandleStyles }          from './toggle.styles'
-import { appearanceThumbStyles }           from './toggle.styles'
-import { shapeThumbStyles }                from './toggle.styles'
-import { shapeHandleStyles }               from './toggle.styles'
+import { useHover }                from '@ui/utils'
+
+import { ToggleProps }             from './toggle.interfaces'
+import { ToggleSize }              from './toggle.interfaces'
+import { appearanceHandleStyles }  from './toggle.styles'
+import { appearanceThumbStyles }   from './toggle.styles'
+import { shapeThumbStyles }        from './toggle.styles'
+import { shapeHandleStyles }       from './toggle.styles'
 
 const Thumb = styled(ThumbElement)<{ size?: ToggleSize }>(
   baseThumbStyles,
@@ -29,9 +31,17 @@ const Element = styled(HandleElement)(baseHandleStyles, appearanceHandleStyles, 
 const Toggle = ({ disabled, checked: defaultValue, onChange, size }: ToggleProps) => {
   const node = useRef<HTMLButtonElement>(null)
   const [checked, setChecked] = useSwitch(node, defaultValue, disabled, onChange)
+  const [hover, hoverProps] = useHover()
 
   return (
-    <Element ref={node} onClick={setChecked} checked={checked} size={size}>
+    <Element
+      ref={node}
+      onClick={setChecked}
+      checked={checked}
+      size={size}
+      hover={hover}
+      {...hoverProps}
+    >
       <Thumb
         disabled={disabled}
         checked={checked}

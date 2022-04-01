@@ -53,11 +53,7 @@ export const appearanceHandleStyles = ifProp(
   ifProp(
     prop('disabled', false),
     appearanceDefaultDisabledHandleStyles,
-    ifProp(
-      ifProp('hover', false),
-      appearanceDefaultHoverHandleStyles,
-      appearanceDefaultHandleStyles
-    )
+    ifProp(prop('hover', false), appearanceDefaultHoverHandleStyles, appearanceDefaultHandleStyles)
   )
 )
 
