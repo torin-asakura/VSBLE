@@ -150,6 +150,27 @@ const colors = {
       background: 'rgba(117,87,181,1)',
     },
   },
+  toggle: {
+    thumb: 'rgba(255, 255, 255, 1)',
+    default: {
+      background: 'rgba(215,215,215,1)',
+      hover: {
+        background: 'rgba(195,195,195,1)',
+      },
+      disabled: {
+        background: 'rgba(235,235,235,1)',
+      },
+    },
+    checked: {
+      background: 'rgba(133,98,206,1)',
+      hover: {
+        background: 'rgba(117,87,181,1)',
+      },
+      disabled: {
+        background: 'rgba(195,179,229,1)',
+      },
+    },
+  },
 }
 
 export { colors }
