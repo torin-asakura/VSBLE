@@ -21,14 +21,19 @@ const colors = {
         border: 'rgba(0, 0, 0, 1)',
       },
       hover: {
-        background: 'rgba(255, 255, 255, 1)',
-        font: 'rgba(0, 0, 0, 1)',
-        border: 'rgba(0, 0, 0, 1)',
+        background: 'rgba(133,98,206,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(133,98,206,1)',
       },
       active: {
-        background: 'rgba(255, 255, 255, 1)',
-        font: 'rgba(30, 30, 30, 1)',
-        border: 'rgba(30, 30, 30, 1)',
+        background: 'rgba(117,87,181,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(117,87,181,1)',
+      },
+      disabled: {
+        background: 'rgba(195,195,195,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(195,195,195,1)',
       },
     },
     secondary: {
@@ -38,14 +43,19 @@ const colors = {
         border: 'rgba(0, 0, 0, 1)',
       },
       hover: {
-        background: 'rgba(0, 0, 0, 1)',
-        font: 'rgba(255, 255, 255, 1)',
-        border: 'rgba(0, 0, 0, 1)',
+        background: 'rgba(255, 255, 255, 1)',
+        font: 'rgba(133,98,206,1)',
+        border: 'rgba(133,98,206,1)',
       },
       active: {
-        background: 'rgba(0, 0, 0, 1)',
-        font: 'rgba(255, 255, 255, 1)',
-        border: 'rgba(0, 0, 0, 1)',
+        background: 'rgba(255, 255, 255, 1)',
+        font: 'rgba(117,87,181,1)',
+        border: 'rgba(117,87,181,1)',
+      },
+      disabled: {
+        background: 'rgba(255, 255, 255, 1)',
+        font: 'rgba(195,195,195,1)',
+        border: 'rgba(195,195,195,1)',
       },
     },
     tertiary: {
