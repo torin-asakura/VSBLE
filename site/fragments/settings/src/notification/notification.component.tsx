@@ -15,7 +15,7 @@ const Notification: FC = () => {
   const [imageRequests, setImageRequests] = useState<boolean>(false)
 
   return (
-    <Row>
+    <Row id='notification-settings'>
       <Column fill>
         <Row>
           <Text fontSize='semiGiant' lineHeight='semiLarge' color='text.accent' fontWeight='bold'>

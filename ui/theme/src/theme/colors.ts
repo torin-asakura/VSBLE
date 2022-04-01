@@ -82,6 +82,28 @@ const colors = {
         border: 'rgba(235,235,235,1)',
       },
     },
+    danger: {
+      default: {
+        background: 'rgba(213,52,52,1)',
+        font: 'rgba(255,255,255,1)',
+        border: 'rgba(213,52,52,1)',
+      },
+      hover: {
+        background: 'rgba(238,71,71,1)',
+        font: 'rgba(255,255,255,1)',
+        border: 'rgba(238,71,71,1)',
+      },
+      active: {
+        background: 'rgba(213,52,52,1)',
+        font: 'rgba(255,255,255,1)',
+        border: 'rgba(213,52,52,1)',
+      },
+      disabled: {
+        background: 'rgba(195,195,195,1)',
+        font: 'rgba(255,255,255,1)',
+        border: 'rgba(195,195,195,1)',
+      },
+    },
   },
   input: {
     primary: {

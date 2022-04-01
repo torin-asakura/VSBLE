@@ -17,7 +17,7 @@ const SalesStatements: FC = () => {
   const { salesStatements } = useMockedSalesStatements()
 
   return (
-    <Row>
+    <Row id='sales-statements'>
       <Column fill>
         <Row>
           <Text color='text.accent' fontSize='semiGiant' fontWeight='bold' lineHeight='semiLarge'>

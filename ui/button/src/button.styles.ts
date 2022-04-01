@@ -113,6 +113,24 @@ const appearanceGhostStyles = createAppearanceStyles({
   fontColor: 'transparent',
 })
 
+const appearanceDangerDefaultStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.danger.default.font'),
+  backgroundColor: prop('theme.colors.button.danger.default.background'),
+  borderColor: prop('theme.colors.button.danger.default.border'),
+})
+
+const appearanceDangerHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.danger.hover.font'),
+  backgroundColor: prop('theme.colors.button.danger.hover.background'),
+  borderColor: prop('theme.colors.button.danger.hover.border'),
+})
+
+const appearanceDangerActiveStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.danger.active.font'),
+  backgroundColor: prop('theme.colors.button.danger.active.background'),
+  borderColor: prop('theme.colors.button.danger.active.border'),
+})
+
 export const baseStyles = createBaseStyles()
 export const contentStyles = createContentStyles()
 
@@ -142,6 +160,11 @@ export const variantStyles = switchProp(prop('variant', 'primary'), {
     prop('active', false),
     appearanceQuaternaryActiveStyles,
     ifProp(prop('hover', false), appearanceQuaternaryHoverStyles, appearanceQuaternaryStyles)
+  ),
+  danger: ifProp(
+    prop('active', false),
+    appearanceDangerActiveStyles,
+    ifProp(prop('hover', false), appearanceDangerHoverStyles, appearanceDangerDefaultStyles)
   ),
   ghost: appearanceGhostStyles,
 })

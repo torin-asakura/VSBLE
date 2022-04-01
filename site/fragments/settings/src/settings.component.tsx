@@ -13,6 +13,7 @@ import { Hover }                 from '@ui/utils'
 
 import { BasicInformation }      from './basic-information'
 import { ConnectPaymentGateway } from './connect-payment-gateway'
+import { DeleteAccount }         from './delete-account'
 import { Marketplace }           from './marketplace'
 import { Notification }          from './notification'
 import { Password }              from './password'
@@ -116,6 +117,8 @@ const Settings: FC = () => (
             <Notification />
             <Layout flexBasis={48} />
             <SalesStatements />
+            <Layout flexBasis={48} />
+            <DeleteAccount />
             <Layout flexBasis={48} />
           </Column>
           <Column flexGrow={1} flexShrink={0} />

@@ -27,7 +27,7 @@ const Marketplace: FC = () => {
   const [company, setCompany] = useState<string>('')
 
   return (
-    <Row>
+    <Row id='marketplace'>
       <Column fill>
         <Row>
           <Text fontSize='semiGiant' color='text.accent' lineHeight='semiLarge' fontWeight='bold'>
