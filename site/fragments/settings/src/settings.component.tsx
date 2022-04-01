@@ -13,6 +13,7 @@ import { Hover }                 from '@ui/utils'
 
 import { BasicInformation }      from './basic-information'
 import { ConnectPaymentGateway } from './connect-payment-gateway'
+import { Marketplace }           from './marketplace'
 import { Password }              from './password'
 
 const Settings: FC = () => (
@@ -107,6 +108,8 @@ const Settings: FC = () => (
             <Password />
             <Layout flexBasis={48} />
             <ConnectPaymentGateway />
+            <Layout flexBasis={48} />
+            <Marketplace />
             <Layout flexBasis={48} />
           </Column>
           <Column flexGrow={1} flexShrink={0} />
