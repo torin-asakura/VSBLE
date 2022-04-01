@@ -68,25 +68,30 @@ const SaleStatement: FC<SaleStatementProps> = ({ statements, year }) => {
                   <Row>
                     <Layout flexBasis={44} />
                     <Layout>
-                      <Text fontWeight='semiBold' fontSize='semiRegular'>
+                      <Text
+                        fontWeight='semiBold'
+                        fontSize={['small', 'small', 'semiRegular']}
+                        whiteSpace='nowrap'
+                      >
                         {item.date}
                       </Text>
                     </Layout>
-                    <Layout flexGrow={1} />
+                    <Layout flexBasis={[20, 20, 0]} flexGrow={[0, 0, 1]} />
                     <Layout>
                       <Currency
                         fontWeight='semiBold'
-                        fontSize='semiRegular'
+                        fontSize={['small', 'small', 'semiRegular']}
+                        whiteSpace='nowrap'
                         currency='EUR'
                         keepZeros
                         currencySignPlacement='prefix'
                         amount={item.amount}
                       />
                     </Layout>
-                    <Layout flexBasis={56} flexShrink={0} />
+                    <Layout flexBasis={[20, 20, 56]} flexShrink={[1, 1, 0]} />
                     <Layout>
                       <NextLink path='/profile/settings'>
-                        <Text color='text.purple' fontSize='semiRegular'>
+                        <Text color='text.purple' fontSize={['small', 'small', 'semiRegular']}>
                           <FormattedMessage
                             id='settings.download_invoice'
                             defaultMessage='Download Invoice'

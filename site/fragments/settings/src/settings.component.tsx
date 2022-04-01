@@ -31,7 +31,13 @@ const Settings: FC = () => (
         </Row>
         <Layout flexBasis={40} />
         <Row>
-          <Box flexDirection='column' position='sticky' height={184} top={160}>
+          <Box
+            flexDirection='column'
+            position='sticky'
+            height={184}
+            top={160}
+            display={['none', 'none', 'flex']}
+          >
             <Repeater
               items={[
                 {

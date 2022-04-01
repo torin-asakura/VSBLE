@@ -23,7 +23,7 @@ export const ButtonElement = styled('button')(
   fillStyles
 )
 
-export const Button: FC<ButtonProps> = forwardRef(({ children, onClick, ...props }, ref) => {
+export const Button: FC<ButtonProps> = forwardRef(({ children, ...props }, ref) => {
   const [hover, hoverProps] = useHover()
   const [pressed, setPressed] = useState<boolean>(false)
 

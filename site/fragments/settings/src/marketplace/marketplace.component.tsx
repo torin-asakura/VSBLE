@@ -14,12 +14,15 @@ import { Select }           from '@ui/select'
 import { Text }             from '@ui/text'
 import { Repeater }         from '@ui/utils'
 
+import { useMockedUser }    from '../data'
+
 const Marketplace: FC = () => {
   const { formatMessage } = useIntl()
+  const { user } = useMockedUser()
 
   const [firstName, setFirstName] = useState<string>('')
   const [surname, setSurname] = useState<string>('')
-  const [, setCountry] = useState<string>('')
+  const [country, setCountry] = useState<string>(user.country)
   const [streetLine1, setStreetLine1] = useState<string>('')
   const [streetLine2, setStreetLine2] = useState<string>('')
   const [zip, setZip] = useState<string>('')
@@ -87,7 +90,9 @@ const Marketplace: FC = () => {
           <Select
             label={formatMessage({ id: 'settings.country', defaultMessage: 'Country' })}
             items={['One', 'Two']}
+            value={country}
             onChange={setCountry}
+            disabled
           />
         </Row>
         <Layout flexBasis={16} />
