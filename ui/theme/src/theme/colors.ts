@@ -6,6 +6,7 @@ const colors = {
   },
   text: {
     primary: 'rgba(80, 80, 80, 1)',
+    lightGray: 'rgba(128,128,128,1)',
     accent: 'rgba(0, 0, 0, 1)',
     white: 'rgba(255, 255, 255, 1)',
     semiBlack: 'rgba(40,40,40,1)',
@@ -128,6 +129,24 @@ const colors = {
         placeholder: 'rgba(235,235,235,1)',
         font: 'rgba(0,0,0,1)',
       },
+    },
+  },
+  checkbox: {
+    default: {
+      background: 'rgba(247,247,247,1)',
+    },
+    hover: {
+      background: 'rgba(241,237,247,1)',
+    },
+    disabled: {
+      background: 'rgba(235,235,235,1)',
+    },
+    checked: {
+      background: 'rgba(133,98,206,1)',
+      checkmark: 'rgba(255, 255, 255, 1)',
+    },
+    checkedHover: {
+      background: 'rgba(117,87,181,1)',
     },
   },
 }

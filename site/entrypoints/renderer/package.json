@@ -20,6 +20,7 @@
     "@atls/react-user": "^0.1.44",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@site/profile-settings-page": "workspace:0.0.1",
     "@ui/theme": "workspace:0.0.1",
     "graphql": "^16.3.0",
     "next": "^12.1.0",
