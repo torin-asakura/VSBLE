@@ -18,13 +18,13 @@ const BasicInformation: FC = () => {
   const { user } = useMockedUser()
   const { formatMessage } = useIntl()
 
-  const [email, setEmail] = useState<string>('')
+  const [email, setEmail] = useState<string>(user.email)
   const [phone, setPhone] = useState<string>('')
   const [username, setUsername] = useState<string>('')
   const [receiveNewsletter, setReceiveNewsletter] = useState<boolean>(user.receivesNewsletter)
 
   return (
-    <Row>
+    <Row id='basic-information'>
       <Column fill>
         <Row>
           <Text fontSize='semiGiant' fontWeight='bold' lineHeight='semiLarge' color='text.accent'>
@@ -42,7 +42,13 @@ const BasicInformation: FC = () => {
         </Row>
         <Layout flexBasis={24} />
         <Row>
-          <Input label='E-mail' placeholder={user.email} value={email} onChange={setEmail} />
+          <Input
+            label='E-mail'
+            placeholder={user.email}
+            value={email}
+            onChange={setEmail}
+            disabled
+          />
         </Row>
         <Layout flexBasis={16} />
         <Row>

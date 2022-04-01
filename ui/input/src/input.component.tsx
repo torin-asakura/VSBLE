@@ -21,8 +21,11 @@ import { InputProps }               from './input.interfaces'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
+import { labelAppearanceStyles }    from './input.styles'
+import { labelShapeStyles }         from './input.styles'
 
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles)
+export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 
 export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   { size, value, disabled, onChange, onChangeNative, label, textAlign, ...props },
@@ -53,15 +56,14 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
     <Row>
       <Column fill>
         <Condition match={label !== ''}>
-          <Text color='text.semiBlack' fontWeight='semiBold' fontSize='semiRegular'>
-            {label}
-          </Text>
+          <Label disabled={disabled}>{label}</Label>
           <Layout flexShrink={0} flexBasis={8} />
         </Condition>
         <InputElement
           {...props}
           size={size}
           focus={focus}
+          disabled={disabled}
           onClick={() => {
             ;(ref as any).current.focus()
           }}
