@@ -5,6 +5,7 @@ export const lineHeights = {
   extra: 1.3,
   default: 1.5,
   medium: 1.6,
+  semiLarge: 1.75,
   large: 2,
   big: 3,
   sizeable: 3.8,

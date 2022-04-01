@@ -108,7 +108,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls-ui-parts/conditional-render@npm:0.0.1":
+"@atls-ui-parts/checkbox@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@atls-ui-parts/checkbox@npm:0.0.3"
+  dependencies:
+    "@atls-ui-parts/styles": 0.0.1
+  peerDependencies:
+    "@emotion/styled": ^11.1.5
+    react: ^17.0.1
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  checksum: 11d503b26b18ad12dcf31d196ee31aba6cc35994e5b36466c5fea059b221b1948ccdc9a44149ff7e7bba4afbc9fdc60070c2e63c72eae860b3925bb314439b0d
+  languageName: node
+  linkType: hard
+
+"@atls-ui-parts/conditional-render@npm:0.0.1, @atls-ui-parts/conditional-render@npm:^0.0.1":
   version: 0.0.1
   resolution: "@atls-ui-parts/conditional-render@npm:0.0.1"
   peerDependencies:
@@ -123,6 +137,16 @@ __metadata:
   peerDependencies:
     react: ^17.0.1
   checksum: d29bca36a6456e2aecec28a49f50fd606d9b325fbc0d86ecb7b4bff2a156e8336f6eb6a012181bc59cf1b985ae1becb16f2aa06e62d3b79eb22c8660156d1c0a
+  languageName: node
+  linkType: hard
+
+"@atls-ui-parts/hidden-input@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@atls-ui-parts/hidden-input@npm:0.0.3"
+  peerDependencies:
+    "@emotion/styled": ^11.1.5
+    react: ^17.0.1
+  checksum: 3051ae022d7e37836fc8f24cf3b847f4d182a85b6ef9fe7a318e065ef521fafdc92c987128d86c80b1ab28655a262aca115c7f12e49b3de757170423bf360e5b
   languageName: node
   linkType: hard
 
@@ -205,7 +229,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls-ui-parts/text@npm:0.0.6, @atls-ui-parts/text@npm:^0.0.6":
+"@atls-ui-parts/switch@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@atls-ui-parts/switch@npm:0.0.4"
+  peerDependencies:
+    "@emotion/react": ^11.4.0
+    "@emotion/styled": ^11.3.0
+    framer-motion: ^4.1.17
+    react: ^17.0.2
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  checksum: 951b0992bc9d237132e157e0bab3b7726b7690a02809151134d5544cc8a51bb6bd667ebbddc5f4faf36d1139601513f04cff11359ba15263053becdc082b6447
+  languageName: node
+  linkType: hard
+
+"@atls-ui-parts/text@npm:0.0.6":
   version: 0.0.6
   resolution: "@atls-ui-parts/text@npm:0.0.6"
   dependencies:
@@ -214,6 +252,18 @@ __metadata:
     "@emotion/styled": ^11.1.5
     react: ^17.0.1
   checksum: c6f2b47fff82236c8fe3b376151b820be7b7138f43c41dd15a6d62598a4790ab7b57ddc530d8c70d42b0eb4ab6dddbc740f42cc0b9f5ac4bd8484bea67620f3b
+  languageName: node
+  linkType: hard
+
+"@atls-ui-parts/text@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@atls-ui-parts/text@npm:0.0.7"
+  dependencies:
+    styled-system: ^5.1.5
+  peerDependencies:
+    "@emotion/styled": ^11.1.5
+    react: ^17.0.1
+  checksum: f4253211a2437a765e96f170f26871d2c5868462952d12693e292dc15ed0f173428e84d66b092a3ace9bcbe02a2301b4131f076efa14c8ee1dc2dab22cffb381
   languageName: node
   linkType: hard
 
@@ -1765,6 +1815,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@site/profile-settings-page@workspace:0.0.1, @site/profile-settings-page@workspace:site/pages/profile-settings-page":
+  version: 0.0.0-use.local
+  resolution: "@site/profile-settings-page@workspace:site/pages/profile-settings-page"
+  dependencies:
+    "@site/navigation-fragment": 0.0.1
+    "@site/settings-fragment": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/layout": "workspace:0.0.1"
+  peerDependencies:
+    "@apollo/client": "*"
+    "@atls/react-user": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/renderer-entrypoint@workspace:site/entrypoints/renderer":
   version: 0.0.0-use.local
   resolution: "@site/renderer-entrypoint@workspace:site/entrypoints/renderer"
@@ -1777,6 +1844,7 @@ __metadata:
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
     "@site/index-page": "workspace:0.0.1"
+    "@site/profile-settings-page": "workspace:0.0.1"
     "@types/express": ^4.17.13
     "@types/node": ^17.0.0
     "@types/react": ^17.0.37
@@ -1789,6 +1857,42 @@ __metadata:
     react-dom: ^17.0.2
     react-intl: ^5.24.8
     typescript: ^4.5.4
+  languageName: unknown
+  linkType: soft
+
+"@site/settings-fragment@workspace:0.0.1, @site/settings-fragment@workspace:site/fragments/settings":
+  version: 0.0.0-use.local
+  resolution: "@site/settings-fragment@workspace:site/fragments/settings"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@atls/react-user": ^0.1.44
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@shared/utils": "workspace:0.0.1"
+    "@site/store": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/avatar": "workspace:0.0.1"
+    "@ui/button": "workspace:0.0.1"
+    "@ui/checkbox": "workspace:0.0.1"
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/input": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/select": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/toggle": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    "@atls/react-user": "*"
+    react: ^17.0.1
+    react-intl: "*"
   languageName: unknown
   linkType: soft
 
@@ -2482,6 +2586,34 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@ui/checkbox@workspace:0.0.1, @ui/checkbox@workspace:ui/checkbox":
+  version: 0.0.0-use.local
+  resolution: "@ui/checkbox@workspace:ui/checkbox"
+  dependencies:
+    "@atls-ui-parts/checkbox": ^0.0.3
+    "@atls-ui-parts/conditional-render": ^0.0.1
+    "@atls-ui-parts/hidden-input": ^0.0.3
+    "@emotion/react": ^11.4.1
+    "@emotion/styled": ^11.3.0
+    "@shared/utils": "workspace:0.0.1"
+    "@types/styled-system": ^5
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/theme": "workspace:^"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    react: "*"
+    react-dom: "*"
+    styled-system: "*"
+  languageName: unknown
+  linkType: soft
+
 "@ui/condition@workspace:0.0.1, @ui/condition@workspace:ui/condition":
   version: 0.0.0-use.local
   resolution: "@ui/condition@workspace:ui/condition"
@@ -2568,7 +2700,9 @@ __metadata:
     "@shared/utils": "workspace:0.0.1"
     "@types/react": ^17.0.3
     "@types/styled-system": ^5.1.11
+    "@ui/button": "workspace:0.0.1"
     "@ui/condition": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
     "@ui/layout": "workspace:0.0.1"
     "@ui/text": "workspace:0.0.1"
     "@ui/utils": "workspace:0.0.1"
@@ -2692,7 +2826,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ui/text@workspace:ui/text"
   dependencies:
-    "@atls-ui-parts/text": ^0.0.6
+    "@atls-ui-parts/text": ^0.0.7
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
     "@types/styled-system": ^5
@@ -2709,7 +2843,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ui/theme@workspace:0.0.1, @ui/theme@workspace:ui/theme":
+"@ui/theme@workspace:0.0.1, @ui/theme@workspace:^, @ui/theme@workspace:ui/theme":
   version: 0.0.0-use.local
   resolution: "@ui/theme@workspace:ui/theme"
   dependencies:
@@ -2718,6 +2852,26 @@ __metadata:
     "@emotion/styled": ^11.3.0
     "@types/styled-system": ^5.1.10
     react: ^17.0.2
+  peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
+"@ui/toggle@workspace:0.0.1, @ui/toggle@workspace:ui/toggle":
+  version: 0.0.0-use.local
+  resolution: "@ui/toggle@workspace:ui/toggle"
+  dependencies:
+    "@atls-ui-parts/switch": ^0.0.4
+    "@emotion/react": ^11.4.1
+    "@emotion/styled": ^11.3.0
+    "@types/styled-system": ^5.1.15
+    "@ui/utils": "workspace:0.0.1"
+    framer-motion: 4.1.7
+    react: ^17.0.2
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
   peerDependencies:
     "@emotion/react": "*"
     "@emotion/styled": "*"

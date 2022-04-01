@@ -2,6 +2,7 @@ import { createBaseStyles }       from '@atls-ui-parts/input'
 import { createShapeStyles }      from '@atls-ui-parts/input'
 import { createAppearanceStyles } from '@atls-ui-parts/input'
 
+import { styleFn }                from 'styled-system'
 import { prop }                   from 'styled-tools'
 import { switchProp }             from 'styled-tools'
 import { ifProp }                 from 'styled-tools'
@@ -68,6 +69,17 @@ export const appearanceGhostFocusStyles = createAppearanceStyles({
   fontColor: prop('theme.colors.input.ghost.focus.font'),
   backgroundColor: prop('theme.colors.input.ghost.focus.background'),
   borderColor: prop('theme.colors.input.ghost.focus.border'),
+})
+
+export const labelAppearanceStyles: styleFn = ifProp(
+  prop('disabled', false),
+  ({ theme }) => ({ color: theme.colors.input.primary.disabled.font }),
+  ({ theme }) => ({ color: theme.colors.text.accent })
+)
+
+export const labelShapeStyles: styleFn = ({ theme }) => ({
+  fontWeight: theme.fontWeights.semiBold,
+  fontSize: theme.fontSizes.semiRegular,
 })
 
 export const shapeStyles = switchProp(prop('size', 'normal'), {

@@ -16,7 +16,7 @@ import { Menu }           from './menu'
 import { MenuItem }       from './menu-item'
 import { SelectProps }    from './select.interface'
 
-const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder }) => {
+const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder, disabled }) => {
   const {
     isOpen,
     buttonProps,
@@ -34,12 +34,21 @@ const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder })
     <Row>
       <Column fill>
         <Condition match={label !== ''}>
-          <Text color='text.semiBlack' fontWeight='semiBold' fontSize='semiRegular'>
+          <Text
+            color={disabled ? 'input.primary.disabled.font' : 'text.semiBlack'}
+            fontWeight='semiBold'
+            fontSize='semiRegular'
+          >
             {label}
           </Text>
           <Layout flexShrink={0} flexBasis={8} />
         </Condition>
-        <Button variant='quaternary' isSelected={!!selectedItem} {...buttonProps}>
+        <Button
+          variant='quaternary'
+          isSelected={!!selectedItem}
+          disabled={disabled}
+          {...buttonProps}
+        >
           <Row>
             {value || selectedItem || placeholder}
             <Layout flexGrow={1} />

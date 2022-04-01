@@ -6,4 +6,5 @@ export interface SelectProps extends Omit<InputHTMLAttributes<any>, 'onChange'> 
   value?: string
   onChange: (item: string) => void
   placeholder?: string
+  disabled?: boolean
 }
