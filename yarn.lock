@@ -2672,7 +2672,9 @@ __metadata:
     "@shared/utils": "workspace:0.0.1"
     "@types/react": ^17.0.3
     "@types/styled-system": ^5.1.11
+    "@ui/button": "workspace:0.0.1"
     "@ui/condition": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
     "@ui/layout": "workspace:0.0.1"
     "@ui/text": "workspace:0.0.1"
     "@ui/utils": "workspace:0.0.1"

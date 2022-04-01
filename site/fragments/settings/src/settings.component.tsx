@@ -11,6 +11,7 @@ import { Repeater }         from '@ui/utils'
 import { Hover }            from '@ui/utils'
 
 import { BasicInformation } from './basic-information'
+import { Password }         from './password'
 
 const Settings: FC = () => (
   <Row justifyContent='center'>
@@ -100,6 +101,8 @@ const Settings: FC = () => (
           <Layout flexBasis={165} />
           <Column flexGrow={1} maxWidth={560}>
             <BasicInformation />
+            <Layout flexBasis={48} />
+            <Password />
           </Column>
           <Column flexGrow={1} flexShrink={0} />
         </Row>

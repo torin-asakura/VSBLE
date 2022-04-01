@@ -18,6 +18,7 @@ import { doNothing }                from '@shared/utils'
 import { useHover }                 from '@ui/utils'
 
 import { InputProps }               from './input.interfaces'
+import { ShowPasswordAttachment }   from './show-password-attachment'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
@@ -28,11 +29,12 @@ export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles
 export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 
 export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { size, value, disabled, onChange, onChangeNative, label, textAlign, ...props },
+  { size, value, disabled, onChange, onChangeNative, label, textAlign, type, ...props },
   ref
 ) => {
   const changeValue = useChangeValue(disabled, onChange, onChangeNative)
   const [focus, setFocus] = useState<boolean>(false)
+  const [hidden, setHidden] = useState<boolean>(true)
   const [hover, hoverProps] = useHover()
 
   if (!ref) {
@@ -76,9 +78,11 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             disabled={disabled}
             value={value}
             onChange={changeValue}
+            type={!hidden ? 'text' : type}
             onFocus={() => setFocus(true)}
             style={{ textAlign: textAlign as any }}
           />
+          <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
         </InputElement>
       </Column>
     </Row>
