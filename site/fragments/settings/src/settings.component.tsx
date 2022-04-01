@@ -1,17 +1,19 @@
-import React                from 'react'
-import { FC }               from 'react'
-import { FormattedMessage } from 'react-intl'
+import React                     from 'react'
+import { FC }                    from 'react'
+import { FormattedMessage }      from 'react-intl'
 
-import { Layout }           from '@ui/layout'
-import { Column }           from '@ui/layout'
-import { Row }              from '@ui/layout'
-import { NextLink }         from '@ui/link'
-import { Text }             from '@ui/text'
-import { Repeater }         from '@ui/utils'
-import { Hover }            from '@ui/utils'
+import { Box }                   from '@ui/layout'
+import { Layout }                from '@ui/layout'
+import { Column }                from '@ui/layout'
+import { Row }                   from '@ui/layout'
+import { NextLink }              from '@ui/link'
+import { Text }                  from '@ui/text'
+import { Repeater }              from '@ui/utils'
+import { Hover }                 from '@ui/utils'
 
-import { BasicInformation } from './basic-information'
-import { Password }         from './password'
+import { BasicInformation }      from './basic-information'
+import { ConnectPaymentGateway } from './connect-payment-gateway'
+import { Password }              from './password'
 
 const Settings: FC = () => (
   <Row justifyContent='center'>
@@ -25,7 +27,7 @@ const Settings: FC = () => (
         </Row>
         <Layout flexBasis={40} />
         <Row>
-          <Column>
+          <Box flexDirection='column' position='sticky' height={184} top={160}>
             <Repeater
               items={[
                 {
@@ -97,12 +99,15 @@ const Settings: FC = () => (
                 </>
               )}
             />
-          </Column>
+          </Box>
           <Layout flexBasis={165} />
           <Column flexGrow={1} maxWidth={560}>
             <BasicInformation />
             <Layout flexBasis={48} />
             <Password />
+            <Layout flexBasis={48} />
+            <ConnectPaymentGateway />
+            <Layout flexBasis={48} />
           </Column>
           <Column flexGrow={1} flexShrink={0} />
         </Row>
