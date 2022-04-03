@@ -110,7 +110,7 @@ const Settings: FC = () => (
               )}
             />
           </Box>
-          <Layout flexBasis={165} />
+          <Layout flexBasis={[0, 0, 165]} />
           <Column flexGrow={1} maxWidth={560}>
             <BasicInformation />
             <Layout flexBasis={48} />

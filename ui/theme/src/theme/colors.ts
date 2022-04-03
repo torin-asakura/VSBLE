@@ -124,6 +124,28 @@ const colors = {
         border: 'rgba(195,195,195,1)',
       },
     },
+    ghost: {
+      default: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      hover: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      pressed: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      disabled: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+    },
   },
   input: {
     primary: {
