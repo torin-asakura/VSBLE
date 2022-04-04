@@ -13,8 +13,8 @@ import { TileProps }  from './tile.interface'
 
 const Tile: FC<TileProps> = ({ actionName, action, content, imageSrc }) => (
   <Box position='relative' width={['100%', '100%', 568]} height={700}>
-    <Column justifyContent='flex-end' fill>
-      <Row>
+    <Column justifyContent='flex-end' alignItems='center' fill>
+      <Layout maxWidth={489}>
         <Text
           fontSize='giant'
           color='text.white'
@@ -24,7 +24,7 @@ const Tile: FC<TileProps> = ({ actionName, action, content, imageSrc }) => (
         >
           {content}
         </Text>
-      </Row>
+      </Layout>
       <Layout flexBasis={24} />
       <Row justifyContent='center'>
         <Button onClick={action}>{actionName}</Button>

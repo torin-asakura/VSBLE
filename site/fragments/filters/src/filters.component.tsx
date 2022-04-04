@@ -10,6 +10,10 @@ import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
 import { Search }            from '@site/store'
 import { SearchValue }       from '@site/store'
+import { Expertise }         from '@site/store'
+import { Videography }       from '@site/store'
+import { Studio }            from '@site/store'
+import { Postproduction }    from '@site/store'
 import { Button }            from '@ui/button'
 import { Condition }         from '@ui/condition'
 import { FilterIcon }        from '@ui/icons'
@@ -40,6 +44,10 @@ const Filters: FC = () => {
   const followers = useReactiveVar<Followers>(followersVar)
   const search = useReactiveVar<Search>(searchVar)
   const searchValue = useReactiveVar<SearchValue>(searchValueVar)
+  const videography = useReactiveVar<Videography>(videographyVar)
+  const expertise = useReactiveVar<Expertise>(expertiseVar)
+  const studio = useReactiveVar<Studio>(studioVar)
+  const postproduction = useReactiveVar<Postproduction>(postproductionVar)
 
   const options = [
     {
@@ -91,7 +99,9 @@ const Filters: FC = () => {
               />
             </Condition>
           </Row>
-          <Layout flexBasis={56} />
+          <Condition match={search}>
+            <Layout flexBasis={56} />
+          </Condition>
           <Layout width='100%' flexDirection={['column', 'column', 'row']}>
             <Switch active={tags}>
               {options.map(({ value, mutuallyExclusive }) => (
@@ -157,6 +167,7 @@ const Filters: FC = () => {
                       formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
                       formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
                     ]}
+                    value={expertise}
                     onChange={expertiseVar}
                     label={formatMessage({ id: 'filters.expertise', defaultMessage: 'Expertise' })}
                   />
@@ -169,6 +180,7 @@ const Filters: FC = () => {
                       formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
                       formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
                     ]}
+                    value={studio}
                     onChange={studioVar}
                     label={formatMessage({ id: 'filters.studio', defaultMessage: 'Studio' })}
                   />
@@ -176,7 +188,9 @@ const Filters: FC = () => {
               </Layout>
             </Condition>
           </Row>
-          <Layout flexBasis={24} />
+          <Condition match={filters}>
+            <Layout flexBasis={24} />
+          </Condition>
           <Row>
             <Condition match={filters} smooth>
               <Layout width='100%' flexDirection={['column', 'column', 'row']}>
@@ -187,6 +201,7 @@ const Filters: FC = () => {
                       formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
                       formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
                     ]}
+                    value={postproduction}
                     onChange={postproductionVar}
                     label={formatMessage({
                       id: 'filters.postproduction',
@@ -202,6 +217,7 @@ const Filters: FC = () => {
                       formatMessage({ id: 'filters.professional', defaultMessage: 'Professional' }),
                       formatMessage({ id: 'filters.up_and_coming', defaultMessage: 'Up & Coming' }),
                     ]}
+                    value={videography}
                     onChange={videographyVar}
                     label={formatMessage({
                       id: 'filters.videography',
