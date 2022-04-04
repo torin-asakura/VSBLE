@@ -82,6 +82,13 @@ export const labelShapeStyles: styleFn = ({ theme }) => ({
   fontSize: theme.fontSizes.semiRegular,
 })
 
+export const textareaStyles = ifProp(prop('textarea', false), {
+  paddingLeft: 16,
+  paddingRight: 16,
+  paddingTop: 12,
+  paddingBottom: 12,
+})
+
 export const shapeStyles = switchProp(prop('size', 'normal'), {
   normal: shapeNormalSizeStyles,
   giant: shapeGiantSizeStyles,

@@ -7,4 +7,7 @@ export interface SelectProps extends Omit<InputHTMLAttributes<any>, 'onChange'> 
   onChange: (item: string) => void
   placeholder?: string
   disabled?: boolean
+  multiselect?: boolean
+  multiselectDivider?: string
+  requestAddition?: boolean
 }

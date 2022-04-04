@@ -9,4 +9,7 @@ export interface InputProps extends BaseInputProps {
   size?: InputSize
   label?: string
   textAlign?: string
+  hint?: string
+  maxLength?: number
+  textarea?: boolean
 }

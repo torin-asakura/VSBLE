@@ -12,6 +12,7 @@ import { useHover }                  from '@ui/utils'
 import { CheckboxProps }             from './checkbox.interfaces'
 import { containerBaseStyles }       from './checkbox.styles'
 import { containerPositionStyles }   from './checkbox.styles'
+import { containerFillStyles }       from './checkbox.styles'
 import { boxBaseStyles }             from './checkbox.styles'
 import { boxAppearanceStyles }       from './checkbox.styles'
 import { boxShapeStyles }            from './checkbox.styles'
@@ -23,7 +24,11 @@ import { checkmarkAppearanceStyles } from './checkbox.styles'
 import { checkmarkCheckStyles }      from './checkbox.styles'
 import { checkmarkShapeStyles }      from './checkbox.styles'
 
-const Container = styled.div(containerBaseStyles, containerPositionStyles)
+const Container = styled.div<{ labelPosition?: string; fill?: boolean }>(
+  containerBaseStyles,
+  containerPositionStyles,
+  containerFillStyles
+)
 const Box = styled.div(boxBaseStyles, boxAppearanceStyles, boxShapeStyles)
 const Label = styled(ConditionalRender())(
   labelShapeStyles,
@@ -41,11 +46,12 @@ export const Checkbox: FC<CheckboxProps> = ({
   children,
   checked,
   onCheck = (newState) => doNothing(),
+  ...props
 }) => {
   const [hover, hoverProps] = useHover()
 
   return (
-    <Container labelPosition='end' onClick={() => onCheck(!checked)} {...hoverProps}>
+    <Container labelPosition='end' onClick={() => onCheck(!checked)} {...hoverProps} {...props}>
       <HiddenInput
         type='checkbox'
         checked={checked}

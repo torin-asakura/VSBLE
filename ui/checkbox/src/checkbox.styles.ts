@@ -53,6 +53,7 @@ export const boxAppearanceStyles = ifProp(
 
 export const containerBaseStyles = createContainerBaseStyles()
 export const containerPositionStyles = createContainerPositionStyles()
+export const containerFillStyles = ifProp(prop('fill', false), { width: '100%' })
 
 export const labelShapeStyles = createLabelShapeStyles({
   fontFamily: theme.fonts.primary,

@@ -2,15 +2,12 @@ import React                     from 'react'
 import { FC }                    from 'react'
 import { FormattedMessage }      from 'react-intl'
 
-import { Box }                   from '@ui/layout'
 import { Layout }                from '@ui/layout'
 import { Column }                from '@ui/layout'
 import { Row }                   from '@ui/layout'
-import { NextLink }              from '@ui/link'
 import { Text }                  from '@ui/text'
-import { Repeater }              from '@ui/utils'
-import { Hover }                 from '@ui/utils'
 
+import { Anchors }               from './anchors'
 import { BasicInformation }      from './basic-information'
 import { ConnectPaymentGateway } from './connect-payment-gateway'
 import { DeleteAccount }         from './delete-account'
@@ -31,85 +28,56 @@ const Settings: FC = () => (
         </Row>
         <Layout flexBasis={40} />
         <Row>
-          <Box
-            flexDirection='column'
-            position='sticky'
-            height={184}
-            top={160}
-            display={['none', 'none', 'flex']}
-          >
-            <Repeater
-              items={[
-                {
-                  path: '#basic-information',
-                  content: (
-                    <FormattedMessage
-                      id='settings.basic_information'
-                      defaultMessage='Basic Information'
-                    />
-                  ),
-                },
-                {
-                  path: '#password',
-                  content: <FormattedMessage id='settings.password' defaultMessage='Password' />,
-                },
-                {
-                  path: '#connect-payment-gateway',
-                  content: (
-                    <FormattedMessage
-                      id='settings.connect_payment_gateway'
-                      defaultMessage='Connect Payment Gateway'
-                    />
-                  ),
-                },
-                {
-                  path: '#marketplace',
-                  content: (
-                    <FormattedMessage id='settings.marketplace' defaultMessage='Marketplace' />
-                  ),
-                },
-                {
-                  path: '#notification-settings',
-                  content: (
-                    <FormattedMessage
-                      id='settings.notification_settings'
-                      defaultMessage='Notification Settings'
-                    />
-                  ),
-                },
-                {
-                  path: '#sales-statements',
-                  content: (
-                    <FormattedMessage
-                      id='settings.sales_statements'
-                      defaultMessage='Sales Statements'
-                    />
-                  ),
-                },
-              ]}
-              onIteration={(item) => (
-                <>
-                  <Row>
-                    <Hover>
-                      {(hover, hoverProps) => (
-                        <NextLink path={item.path} {...hoverProps}>
-                          <Text
-                            fontSize='increased'
-                            lineHeight='semiLarge'
-                            fontWeight='bold'
-                            color={hover ? 'text.accent' : 'text.lightGray'}
-                          >
-                            {item.content}
-                          </Text>
-                        </NextLink>
-                      )}
-                    </Hover>
-                  </Row>
-                  <Layout flexBasis={8} />
-                </>
-              )}
-            />
-          </Box>
+          <Anchors
+            anchors={[
+              {
+                path: '#basic-information',
+                content: (
+                  <FormattedMessage
+                    id='settings.basic_information'
+                    defaultMessage='Basic Information'
+                  />
+                ),
+              },
+              {
+                path: '#password',
+                content: <FormattedMessage id='settings.password' defaultMessage='Password' />,
+              },
+              {
+                path: '#connect-payment-gateway',
+                content: (
+                  <FormattedMessage
+                    id='settings.connect_payment_gateway'
+                    defaultMessage='Connect Payment Gateway'
+                  />
+                ),
+              },
+              {
+                path: '#marketplace',
+                content: (
+                  <FormattedMessage id='settings.marketplace' defaultMessage='Marketplace' />
+                ),
+              },
+              {
+                path: '#notification-settings',
+                content: (
+                  <FormattedMessage
+                    id='settings.notification_settings'
+                    defaultMessage='Notification Settings'
+                  />
+                ),
+              },
+              {
+                path: '#sales-statements',
+                content: (
+                  <FormattedMessage
+                    id='settings.sales_statements'
+                    defaultMessage='Sales Statements'
+                  />
+                ),
+              },
+            ]}
+          />
           <Layout flexBasis={[0, 0, 165]} />
           <Column flexGrow={1} maxWidth={560}>
             <BasicInformation />
