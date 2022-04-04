@@ -25,7 +25,7 @@ const colors = {
         font: 'rgba(255, 255, 255, 1)',
         border: 'rgba(133,98,206,1)',
       },
-      active: {
+      pressed: {
         background: 'rgba(117,87,181,1)',
         font: 'rgba(255, 255, 255, 1)',
         border: 'rgba(117,87,181,1)',
@@ -47,7 +47,7 @@ const colors = {
         font: 'rgba(133,98,206,1)',
         border: 'rgba(133,98,206,1)',
       },
-      active: {
+      pressed: {
         background: 'rgba(255, 255, 255, 1)',
         font: 'rgba(117,87,181,1)',
         border: 'rgba(117,87,181,1)',
@@ -69,10 +69,15 @@ const colors = {
         font: 'rgba(0, 0, 0, 1)',
         border: 'rgba(0, 0, 0, 1)',
       },
-      active: {
+      pressed: {
         background: 'rgba(0, 0, 0, 1)',
         font: 'rgba(255, 255, 255, 1)',
         border: 'rgba(0, 0, 0, 1)',
+      },
+      disabled: {
+        background: 'rgba(255, 255, 255, 1)',
+        font: 'rgba(195,195,195,1)',
+        border: 'rgba(195,195,195,1)',
       },
     },
     quaternary: {
@@ -86,10 +91,15 @@ const colors = {
         font: 'rgba(0, 0, 0, 1)',
         border: 'rgba(235,235,235,1)',
       },
-      active: {
+      pressed: {
         background: 'rgba(255,255,255,1)',
         font: 'rgba(0, 0, 0, 1)',
         border: 'rgba(235,235,235,1)',
+      },
+      disabled: {
+        background: 'rgba(255, 255, 255, 1)',
+        font: 'rgba(195,195,195,1)',
+        border: 'rgba(195,195,195,1)',
       },
     },
     danger: {
@@ -103,7 +113,7 @@ const colors = {
         font: 'rgba(255,255,255,1)',
         border: 'rgba(238,71,71,1)',
       },
-      active: {
+      pressed: {
         background: 'rgba(213,52,52,1)',
         font: 'rgba(255,255,255,1)',
         border: 'rgba(213,52,52,1)',
@@ -112,6 +122,28 @@ const colors = {
         background: 'rgba(195,195,195,1)',
         font: 'rgba(255,255,255,1)',
         border: 'rgba(195,195,195,1)',
+      },
+    },
+    ghost: {
+      default: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      hover: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      pressed: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
+      },
+      disabled: {
+        background: 'transparent',
+        font: 'rgba(0,0,0,1)',
+        border: 'transparent',
       },
     },
   },
