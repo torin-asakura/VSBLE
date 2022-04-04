@@ -12,8 +12,18 @@ const locations = [
   'Novosibirsk, Russia',
   'Chicago, USA',
 ]
+const followers = [100, 200, 300, 400, 500, 600, 700, 800]
 const description = 'Conceptual & Advertising | Food & Still Life'
-const role = 'Photographer'
+const roles = [
+  'Photographer',
+  'Model',
+  'MakeUp Artist',
+  'Stylist',
+  'Illustrator',
+  'Photographer',
+  'Model',
+  'MakeUp Artist',
+]
 const images = [...Object.values(imageSrcs)]
 
 const useMockedCreators = () => ({
@@ -21,7 +31,8 @@ const useMockedCreators = () => ({
     firstName: firstNames[index],
     secondName: secondNames[index],
     location: locations[index],
-    role,
+    role: roles[index],
+    followers: followers[index],
     description,
     image: images[index],
   })),

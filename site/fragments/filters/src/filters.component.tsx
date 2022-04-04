@@ -6,6 +6,7 @@ import { FormattedMessage }  from 'react-intl'
 import { useState }          from 'react'
 import { useIntl }           from 'react-intl'
 
+import { Role }              from '@site/store'
 import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
 import { Search }            from '@site/store'
@@ -25,6 +26,7 @@ import { Select }            from '@ui/select'
 import { Switch }            from '@ui/switch'
 import { Option }            from '@ui/switch'
 import { Text }              from '@ui/text'
+import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
 import { expertiseVar }      from '@site/store'
@@ -37,9 +39,8 @@ import { videographyVar }    from '@site/store'
 const Filters: FC = () => {
   const { formatMessage } = useIntl()
   const [filters, setFilters] = useState<boolean>(false)
-  const [tags, setTags] = useState<Array<string>>([
-    formatMessage({ id: 'filters.all', defaultMessage: 'All' }),
-  ])
+
+  const role = useReactiveVar<Role>(roleVar)
   const location = useReactiveVar<Location>(locationVar)
   const followers = useReactiveVar<Followers>(followersVar)
   const search = useReactiveVar<Search>(searchVar)
@@ -103,13 +104,13 @@ const Filters: FC = () => {
             <Layout flexBasis={56} />
           </Condition>
           <Layout width='100%' flexDirection={['column', 'column', 'row']}>
-            <Switch active={tags}>
+            <Switch active={role}>
               {options.map(({ value, mutuallyExclusive }) => (
                 <>
                   <Option
                     mutuallyExclusive={mutuallyExclusive}
                     value={value}
-                    onSelect={setTags}
+                    onSelect={roleVar}
                     onUpdate={(active, push) => {
                       if (mutuallyExclusive && active.length === options.length - 1) push()
                     }}

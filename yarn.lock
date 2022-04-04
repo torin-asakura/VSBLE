@@ -1709,8 +1709,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@site/creators-fragment@workspace:site/fragments/creators"
   dependencies:
+    "@apollo/client": ^3.5.10
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
+    "@site/store": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
     "@ui/condition": "workspace:0.0.1"
@@ -1724,6 +1726,7 @@ __metadata:
     styled-system: ^5.1.5
     styled-tools: ^1.7.2
   peerDependencies:
+    "@apollo/client": "*"
     react: ^17.0.1
     react-intl: "*"
   languageName: unknown

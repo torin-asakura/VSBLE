@@ -1,5 +1,6 @@
 import { Optional } from '@shared/utils'
 
+export type Role = Array<string>
 export type Location = Optional<string>
 export interface Followers {
   min: Optional<number>
