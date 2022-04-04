@@ -82,7 +82,7 @@ export const labelShapeStyles: styleFn = ({ theme }) => ({
   fontSize: theme.fontSizes.semiRegular,
 })
 
-export const textareaStyles = ifProp(prop('textarea', false), {
+export const textareaStyles: styleFn = ifProp(prop('textarea', false), {
   paddingLeft: 16,
   paddingRight: 16,
   paddingTop: 12,
