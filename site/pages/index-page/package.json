@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.tsx",
+  "dependencies": {
+    "@site/here-are-some-fragment": "workspace:0.0.1"
+  },
   "devDependencies": {
     "@site/call-to-actions-fragment": "workspace:0.0.1",
     "@site/creators-fragment": "workspace:0.0.1",
@@ -11,7 +14,8 @@
     "@site/navigation-fragment": "0.0.1",
     "@types/react": "^17.0.38",
     "@types/styled-system": "^5.1.15",
-    "@ui/layout": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1",
+    "react-intl": "^5.24.8"
   },
   "peerDependencies": {
     "@apollo/client": "*",

@@ -19,7 +19,7 @@ const ParentContainer = styled(Box)(
 
 const Container: FC<any> = ({ children, ...props }) => (
   <ParentContainer {...props}>
-    <Box borderRadius='full' overflow='hidden'>
+    <Box position='relative' borderRadius='full' overflow='hidden'>
       {children}
     </Box>
   </ParentContainer>

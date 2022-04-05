@@ -1,22 +1,38 @@
-import { Condition }      from '@ui/condition/src'
-import { Text }           from '@ui/text/src'
-import { useSelect }      from '@atls-ui-parts/select'
+import { useSelect }                       from '@atls-ui-parts/select'
 
-import React              from 'react'
-import { FC }             from 'react'
+import React                               from 'react'
+import { FC }                              from 'react'
+import { FormattedMessage }                from 'react-intl'
+import { useMultipleSelection }            from 'downshift'
+import { useSelect as useDownshiftSelect } from 'downshift'
 
-import { Button }         from '@ui/button'
-import { ArrowDownIcon }  from '@ui/icons'
-import { Layout }         from '@ui/layout'
-import { Row }            from '@ui/layout'
-import { Column }         from '@ui/layout'
+import { Button }                          from '@ui/button'
+import { Condition }                       from '@ui/condition'
+import { ArrowDownIcon }                   from '@ui/icons'
+import { Layout }                          from '@ui/layout'
+import { Row }                             from '@ui/layout'
+import { Column }                          from '@ui/layout'
+import { Text }                            from '@ui/text'
 
-import { ArrowContainer } from './arrow-container'
-import { Menu }           from './menu'
-import { MenuItem }       from './menu-item'
-import { SelectProps }    from './select.interface'
+import { ArrowContainer }                  from './arrow-container'
+import { Menu }                            from './menu'
+import { MenuItem }                        from './menu-item'
+import { MultiselectMenuItem }             from './multiselect-menu-item'
+import { SelectProps }                     from './select.interface'
 
-const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder, disabled }) => {
+const Select: FC<SelectProps> = ({
+  items,
+  multiselect,
+  multiselectDivider,
+  requestAddition,
+  label,
+  value,
+  onChange,
+  placeholder,
+  disabled,
+}) => {
+  const { addSelectedItem, removeSelectedItem, selectedItems } = useMultipleSelection()
+
   const {
     isOpen,
     buttonProps,
@@ -28,6 +44,24 @@ const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder, d
   } = useSelect({
     items,
     onChange,
+    stateReducer: (state, actionAndChanges) => {
+      const { changes, type } = actionAndChanges
+      if (multiselect && type === useDownshiftSelect.stateChangeTypes.ItemClick) {
+        return {
+          ...changes,
+          isOpen: true,
+        }
+      }
+
+      return changes
+    },
+    onStateChange: ({ type, selectedItem: selected }) => {
+      if (multiselect && type === useDownshiftSelect.stateChangeTypes.ItemClick) {
+        if (selected) {
+          addSelectedItem(selected)
+        }
+      }
+    },
   })
 
   return (
@@ -50,7 +84,15 @@ const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder, d
           {...buttonProps}
         >
           <Row>
-            {value || selectedItem || placeholder}
+            <Text
+              fontSize='semiRegular'
+              color={value || selectedItems?.length > 0 ? 'text.accent' : 'text.lightGray'}
+            >
+              {value ||
+                selectedItems?.join(multiselectDivider || ', ') ||
+                selectedItem ||
+                placeholder}
+            </Text>
             <Layout flexGrow={1} />
             <ArrowContainer isOpen={isOpen}>
               <ArrowDownIcon color={isOpen ? 'black' : 'gray'} />
@@ -58,13 +100,46 @@ const Select: FC<SelectProps> = ({ items, label, value, onChange, placeholder, d
           </Row>
         </Button>
         {renderMenu(
-          <Menu {...menuProps}>
-            {items.map((item, index) => (
-              <MenuItem {...getMenuItemProps(item, index)} highlighted={index === highlightedIndex}>
-                {item}
-              </MenuItem>
-            ))}
-          </Menu>
+          <>
+            <Condition match={!multiselect}>
+              <Menu {...menuProps}>
+                {items.map((item, index) => (
+                  <MenuItem
+                    {...getMenuItemProps(item, index)}
+                    highlighted={index === highlightedIndex}
+                  >
+                    {item}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Condition>
+            <Condition match={!!multiselect}>
+              <Menu {...menuProps}>
+                {items.map((item, index) => (
+                  <MultiselectMenuItem
+                    selectedItems={selectedItems}
+                    addSelectedItem={addSelectedItem}
+                    removeSelectedItem={removeSelectedItem}
+                  >
+                    {item}
+                  </MultiselectMenuItem>
+                ))}
+                <Condition match={!!requestAddition}>
+                  <Layout flexBasis={16} />
+                  <Row>
+                    <Layout flexBasis={16} flexShrink={0} />
+                    <Button variant='secondary' size='small'>
+                      <FormattedMessage
+                        id='select.request_addition'
+                        defaultMessage='Request Addition'
+                      />
+                    </Button>
+                  </Row>
+                  <Layout flexBasis={16} />
+                </Condition>
+              </Menu>
+            </Condition>
+          </>
         )}
       </Column>
     </Row>

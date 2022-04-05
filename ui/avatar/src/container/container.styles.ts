@@ -12,6 +12,6 @@ export const shapeContainerStyles: styleFn = ({ theme }) => ({
   padding: 3,
 })
 
-export const appearanceContainerStyles: styleFn = ({ theme, hover }) => ({
-  borderColor: hover ? theme.colors.background.black : theme.colors.background.white,
+export const appearanceContainerStyles: styleFn = ({ theme, hover, showBorder }) => ({
+  borderColor: hover || showBorder ? theme.colors.background.black : theme.colors.background.white,
 })

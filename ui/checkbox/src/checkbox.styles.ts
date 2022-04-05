@@ -10,6 +10,7 @@ import { createLabelAppearanceStyles }   from '@atls-ui-parts/checkbox'
 import { createLabelShapeStyles }        from '@atls-ui-parts/checkbox'
 import { createLabelPositionStyles }     from '@atls-ui-parts/checkbox'
 
+import { styleFn }                       from 'styled-system'
 import { prop }                          from 'styled-tools'
 import { ifProp }                        from 'styled-tools'
 
@@ -53,6 +54,7 @@ export const boxAppearanceStyles = ifProp(
 
 export const containerBaseStyles = createContainerBaseStyles()
 export const containerPositionStyles = createContainerPositionStyles()
+export const containerFillStyles: styleFn = ifProp(prop('fill', false), { width: '100%' })
 
 export const labelShapeStyles = createLabelShapeStyles({
   fontFamily: theme.fonts.primary,

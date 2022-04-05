@@ -1,15 +1,16 @@
-import React          from 'react'
-import { FC }         from 'react'
+import React               from 'react'
+import { FC }              from 'react'
 
-import { Button }     from '@ui/button'
-import { ImageBlock } from '@ui/image'
-import { Layout }     from '@ui/layout'
-import { useHover }   from '@ui/utils'
+import { Button }          from '@ui/button'
+import { ImageBlock }      from '@ui/image'
+import { Layout }          from '@ui/layout'
+import { useHover }        from '@ui/utils'
 
-import { Arrow }      from './arrow'
-import { Container }  from './container'
-import { Menu }       from './menu'
-import { usePopover } from './hooks'
+import { Arrow }           from './arrow'
+import { Container }       from './container'
+import { Menu }            from './menu'
+import { usePopover }      from './hooks'
+import { mockAvatarImage } from './images'
 
 const Avatar: FC = () => {
   const [hover, hoverProps] = useHover()
@@ -19,7 +20,7 @@ const Avatar: FC = () => {
     <>
       <Button size='ghost' variant='ghost' {...hoverProps} {...triggerProps}>
         <Container hover={hover}>
-          <ImageBlock width='100%' height='100%' src='https://source.unsplash.com/random' />
+          <ImageBlock width='100%' height='100%' src={mockAvatarImage} />
         </Container>
         <Layout>
           <Arrow active={isOpen} hover={hover} />
