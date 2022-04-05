@@ -20,6 +20,7 @@ import { Box }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Row }              from '@ui/layout'
+import { NextLink }         from '@ui/link'
 import { Logo }             from '@ui/logo'
 import { searchVar }        from '@site/store'
 
@@ -110,27 +111,35 @@ export const Navigation = () => {
             <WithoutUser>
               <Layout>
                 <Layout display={['none', 'none', 'flex']}>
-                  <Button variant='secondary'>
-                    <FormattedMessage id='navigation.log_in' defaultMessage='Log In' />
-                  </Button>
+                  <NextLink path='/profile/settings'>
+                    <Button variant='secondary'>
+                      <FormattedMessage id='navigation.log_in' defaultMessage='Log In' />
+                    </Button>
+                  </NextLink>
                 </Layout>
                 <Layout display={['flex', 'flex', 'none']}>
-                  <Button variant='secondary' size='small'>
-                    <FormattedMessage id='navigation.log_in' defaultMessage='Log In' />
-                  </Button>
+                  <NextLink path='/profile/settings'>
+                    <Button variant='secondary' size='small'>
+                      <FormattedMessage id='navigation.log_in' defaultMessage='Log In' />
+                    </Button>
+                  </NextLink>
                 </Layout>
               </Layout>
               <Layout flexBasis={8} />
               <Layout>
                 <Layout display={['none', 'none', 'flex']}>
-                  <Button>
-                    <FormattedMessage id='navigation.sign_up' defaultMessage='Sign Up' />
-                  </Button>
+                  <NextLink path='/profile/public-info'>
+                    <Button>
+                      <FormattedMessage id='navigation.sign_up' defaultMessage='Sign Up' />
+                    </Button>
+                  </NextLink>
                 </Layout>
                 <Layout display={['flex', 'flex', 'none']}>
-                  <Button size='small'>
-                    <FormattedMessage id='navigation.sign_up' defaultMessage='Sign Up' />
-                  </Button>
+                  <NextLink path='/profile/public-info'>
+                    <Button size='small'>
+                      <FormattedMessage id='navigation.sign_up' defaultMessage='Sign Up' />
+                    </Button>
+                  </NextLink>
                 </Layout>
               </Layout>
             </WithoutUser>

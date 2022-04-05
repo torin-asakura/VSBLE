@@ -51,7 +51,7 @@ const AboutMe: FC = () => {
         <Layout flexBasis={16} />
         <Row>
           <Select
-            items={[]}
+            items={['Photographer', 'Artbuyer']}
             value={role}
             onChange={setRole}
             label={formatMessage({ id: 'public_info.role', defaultMessage: 'Role' })}
@@ -78,7 +78,7 @@ const AboutMe: FC = () => {
         <Row>
           <Layout width={['100%', '100%', 276]}>
             <Select
-              items={[]}
+              items={['USA', 'Russia']}
               label={formatMessage({ id: 'public_info.home_base', defaultMessage: 'Home Base' })}
               placeholder={formatMessage({
                 id: 'public_info.select_country',
