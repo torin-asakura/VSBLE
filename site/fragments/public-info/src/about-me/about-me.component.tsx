@@ -121,7 +121,7 @@ const AboutMe: FC = () => {
           <Input
             hint={formatMessage({
               id: 'public_info.brief_description_for_your_profile',
-              defaultMessage: 'Brief description for your profile. URLs are hyperlinked.',
+              defaultMessage: 'Brief description for your profiles-page. URLs are hyperlinked.',
             })}
             label={formatMessage({
               id: 'public_info.description_about_me',

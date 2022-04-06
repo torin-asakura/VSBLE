@@ -27,7 +27,7 @@ const Menu: FC = () => {
     artbuyer: [
       {
         name: 'account',
-        path: '/profile',
+        path: '/profiles-page',
       },
       {
         name: 'pricing',
@@ -35,17 +35,17 @@ const Menu: FC = () => {
       },
       {
         name: 'settings',
-        path: '/profile/settings',
+        path: '/profiles-page/settings',
       },
     ],
     photographer: [
       {
         name: 'account',
-        path: '/profile',
+        path: '/profiles-page',
       },
       {
         name: 'public info',
-        path: '/profile/public-info',
+        path: '/profiles-page/public-info',
       },
       {
         name: 'pricing',
@@ -53,7 +53,7 @@ const Menu: FC = () => {
       },
       {
         name: 'settings',
-        path: '/profile/settings',
+        path: '/profiles-page/settings',
       },
     ],
   }
