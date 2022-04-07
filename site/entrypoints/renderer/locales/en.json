@@ -126,5 +126,12 @@
   "public_info.select_additional_services": "Select Additional Services",
   "public_info.additional_skills": "Additional Skills",
   "public_info.select_additional_skills": "Select Additional Skills",
-  "public_info.update_skills": "Update Skills"
+  "public_info.update_skills": "Update Skills",
+  "creator_page.name_surname": "Annija Abzalone",
+  "creator_page.residence": "Cēsis, Cēsu pilsēta, Latvia",
+  "creator_page.job_hobby": "Conceptual & Advertising | Food & Still Life",
+  "creator_page.edit_profile": "Edit Profile",
+  "creator_page.description": "Creative individual with high quality standarts and great passion for showing things in beautiful way. Provide outstanding service and support. Tend to look on things from  many perspectives, to revial all benefits.",
+  "creator_page.tile_title": "Skill Level",
+  "creator_page.tile_description": "Professional"
 }
