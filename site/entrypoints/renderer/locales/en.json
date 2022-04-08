@@ -133,5 +133,9 @@
   "creator_page.edit_profile": "Edit Profile",
   "creator_page.description": "Creative individual with high quality standarts and great passion for showing things in beautiful way. Provide outstanding service and support. Tend to look on things from  many perspectives, to revial all benefits.",
   "creator_page.tile_title": "Skill Level",
-  "creator_page.tile_description": "Professional"
+  "creator_page.tile_description": "Professional",
+  "creator_page.tab_sedcard": "Sedcard",
+  "creator_page.tab_archive": "Archive",
+  "creator_page.tab_nft": "NFT",
+  "creator_page.prompt": "You can choose images for Sedcard from Archive"
 }

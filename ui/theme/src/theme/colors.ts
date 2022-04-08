@@ -10,6 +10,7 @@ const colors = {
   text: {
     primary: 'rgba(80, 80, 80, 1)',
     lightGray: 'rgba(128,128,128,1)',
+    gray: 'rgba(153, 153, 153, 1)',
     accent: 'rgba(0, 0, 0, 1)',
     white: 'rgba(255, 255, 255, 1)',
     semiBlack: 'rgba(40,40,40,1)',
