@@ -28,3 +28,6 @@ node_modules
 
 # Dist folder
 dist/
+
+# Icons src folder
+ui/icons/src/

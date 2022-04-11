@@ -139,5 +139,10 @@
   "creator_page.tab_nft": "NFT",
   "creator_page.prompt": "You can choose images for Sedcard from Archive",
   "creator_page.make_cover": "Make Cover",
-  "creator_page.nft_message": "There's nothing here yet"
+  "creator_page.nft_message": "There's nothing here yet",
+  "creator_page.nft_title": "Display your NFTs on your profile",
+  "creator_page.nft_description": "Connect your wallet with your VSBLE.match account, then add your NFTs to your profile.",
+  "creator_page.nft_first_step_link": "Add your wallet",
+  "creator_page.nft_first_step": "to your VSBLE.match Account",
+  "creator_page.nft_second_step": "Display your NFTs on your profile"
 }

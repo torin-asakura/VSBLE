@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({ imageSrc }) => {
           position='relative'
           {...hoverProps}
         >
-          <Condition match={hover} smooth>
+          <Condition match={hover}>
             <Box
               width='100%'
               position='absolute'

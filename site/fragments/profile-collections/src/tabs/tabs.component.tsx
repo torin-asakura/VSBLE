@@ -25,129 +25,126 @@ const Tabs: FC = () => {
   const nft = useReactiveVar<boolean>(nftVar)
 
   return (
-    <Row>
-      <Column fill>
-        <Row justifyContent='center'>
-          <Layout width={382} justifyContent='space-between'>
-            <Layout>
+    <Row justifyContent='center'>
+      <Layout width={['95%', '100%', '100%']}>
+        <Column fill>
+          <Row justifyContent='center'>
+            <Layout width={382} justifyContent='space-between'>
               <Layout>
-                <Column>
-                  <Button
-                    size='ghost'
-                    variant='ghost'
-                    onClick={() => {
-                      sedcardVar(true)
-                      archiveVar(false)
-                      nftVar(false)
-                    }}
+                <Layout>
+                  <Column>
+                    <Button
+                      size='ghost'
+                      variant='ghost'
+                      onClick={() => {
+                        sedcardVar(true)
+                        archiveVar(false)
+                        nftVar(false)
+                      }}
+                    >
+                      <Row>
+                        <Text fontSize='semiGiant' color={sedcard ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
+                          <FormattedMessage id='creator-page.tab_sedcard' defaultMessage='Sedcard'/>
+                        </Text>
+                      </Row>
+                    </Button>
+                    <Layout flexBasis={8}/>
+                    <Condition match={sedcard}>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                    </Condition>
+                  </Column>
+                </Layout>
+                <Layout>
+                  <Text
+                    fontSize='small'
+                    color={sedcard ? 'text.lightGray' : 'text.semiGray'}
+                    fontWeight='normal'
+                    lineHeight='extra'
+                    verticalAlign='top'
+                    paddingLeft='8px'
                   >
-                    <Row>
-                      <Text fontSize='semiGiant' color={sedcard ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                        <FormattedMessage id='creator-page.tab_sedcard' defaultMessage='Sedcard'/>
-                      </Text>
-                    </Row>
-                  </Button>
-                  <Layout flexBasis={8}/>
-                  <Condition match={sedcard}>
-                    <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
-                  </Condition>
-                </Column>
+                    {cards.length}
+                  </Text>
+                </Layout>
               </Layout>
               <Layout>
-                <Text
-                  fontSize='small'
-                  color={sedcard ? 'text.lightGray' : 'text.semiGray'}
-                  fontWeight='normal'
-                  lineHeight='extra'
-                  verticalAlign='top'
-                >
-                  {cards.length}
-                </Text>
+                <Layout>
+                  <Column>
+                    <Button
+                      size='ghost'
+                      variant='ghost'
+                      onClick={() => {
+                        sedcardVar(false)
+                        archiveVar(true)
+                        nftVar(false)
+                      }}
+                    >
+                      <Row>
+                        <Text fontSize='semiGiant' color={archive ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
+                          <FormattedMessage id='creator-page.tab_archive' defaultMessage='Archive'/>
+                        </Text>
+                      </Row>
+                    </Button>
+                    <Layout flexBasis={8}/>
+                    <Condition match={archive}>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                    </Condition>
+                  </Column>
+                </Layout>
+                <Layout>
+                  <Text
+                    fontSize='small'
+                    color={archive ? 'text.lightGray' : 'text.semiGray'}
+                    fontWeight='normal'
+                    lineHeight='extra'
+                    verticalAlign='top'
+                    paddingLeft='8px'
+                  >
+                    {cards.length}
+                  </Text>
+                </Layout>
+              </Layout>
+              <Layout>
+                <Layout>
+                  <Column>
+                    <Button
+                      size='ghost'
+                      variant='ghost'
+                      onClick={() => {
+                        sedcardVar(false)
+                        archiveVar(false)
+                        nftVar(true)
+                      }}
+                    >
+                      <Row>
+                        <Text fontSize='semiGiant' color={nft ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
+                          <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT'/>
+                        </Text>
+                      </Row>
+                    </Button>
+                    <Layout flexBasis={8}/>
+                    <Condition match={nft}>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                    </Condition>
+                  </Column>
+                </Layout>
+                <Layout>
+                  <Text
+                    fontSize='small'
+                    color={nft ? 'text.lightGray' : 'text.semiGray'}
+                    fontWeight='normal'
+                    lineHeight='extra'
+                    verticalAlign='top'
+                    paddingLeft='8px'
+                  >
+                    0
+                  </Text>
+                </Layout>
               </Layout>
             </Layout>
-            <Layout>
-              <Layout>
-                <Column>
-                  <Button
-                    size='ghost'
-                    variant='ghost'
-                    onClick={() => {
-                      sedcardVar(false)
-                      archiveVar(true)
-                      nftVar(false)
-                    }}
-                  >
-                    <Row>
-                      <Text fontSize='semiGiant' color={archive ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                        <FormattedMessage id='creator-page.tab_archive' defaultMessage='Archive'/>
-                      </Text>
-                    </Row>
-                  </Button>
-                  <Layout flexBasis={8}/>
-                  <Condition match={archive}>
-                    <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
-                  </Condition>
-                </Column>
-              </Layout>
-              <Layout>
-                <Text
-                  fontSize='small'
-                  color={archive ? 'text.lightGray' : 'text.semiGray'}
-                  fontWeight='normal'
-                  lineHeight='extra'
-                  verticalAlign='top'
-                >
-                  {cards.length}
-                </Text>
-              </Layout>
-            </Layout>
-            <Layout>
-              <Layout>
-                <Column>
-                  <Button
-                    size='ghost'
-                    variant='ghost'
-                    onClick={() => {
-                      sedcardVar(false)
-                      archiveVar(false)
-                      nftVar(true)
-                    }}
-                  >
-                    <Row>
-                      <Text fontSize='semiGiant' color={nft ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                        <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT'/>
-                      </Text>
-                    </Row>
-                  </Button>
-                  <Layout flexBasis={8}/>
-                  <Condition match={nft}>
-                    <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
-                  </Condition>
-                </Column>
-              </Layout>
-              <Layout>
-                <Text
-                  fontSize='small'
-                  color={nft ? 'text.lightGray' : 'text.semiGray'}
-                  fontWeight='normal'
-                  lineHeight='extra'
-                  verticalAlign='top'
-                >
-                  0
-                </Text>
-              </Layout>
-            </Layout>
-          </Layout>
-        </Row>
-        <Condition match={sedcard}>
-        <Layout flexBasis={24}/>
-          <Layout justifyContent='center'>
-            <Text fontSize='default' color='text.accent' fontWeight='normal' lineHeight='extra' textAlign='center'>
-              <FormattedMessage id='creator_page.prompt' defaultMessage='You can choose images for Sedcard from Archive'/>
-            </Text>
-          </Layout>
-        </Condition>
-      </Column>
+          </Row>
+        </Column>
+      </Layout>
     </Row>
   )
 }

@@ -15,6 +15,7 @@ const Archive: FC = () => {
   return (
     <Row justifyContent='center'>
       <Layout width={['100%', '100%', 1136]}>
+        <Layout flexBasis={[24, 24, 0]}/>
         <Column fill>
           <Cards columnsCountBreakPoints={{ 300: 1, 560: 2, 900: 3, 1136: 4 }} columnsCount={4} gutter={16}>
             {cards.map(({ image }) => (
@@ -22,6 +23,7 @@ const Archive: FC = () => {
             ))}
           </Cards>
         </Column>
+        <Layout flexBasis={[24, 24, 0]}/>
       </Layout>
     </Row>
   );
