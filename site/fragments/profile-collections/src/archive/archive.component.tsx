@@ -1,15 +1,15 @@
-import React              from 'react'
-import { FC }             from 'react'
+import React            from 'react'
+import { FC }           from 'react'
 
-import { Row }            from '@ui/layout'
-import { Column }         from '@ui/layout'
-import { Layout }         from '@ui/layout'
-import { Cards }          from '@ui/cards'
+import { Row }          from '@ui/layout'
+import { Column }       from '@ui/layout'
+import { Layout }       from '@ui/layout'
+import { Cards }        from '@ui/cards'
 
-import { useMockedCards } from '../data'
-import { Card }           from '../card'
+import { Card }         from '../card'
+import {useMockedCards} from '../data'
 
-const Sedcard: FC = () => {
+const Archive: FC = () => {
   const { cards } = useMockedCards()
 
   return (
@@ -27,4 +27,4 @@ const Sedcard: FC = () => {
   );
 };
 
-export { Sedcard }
+export { Archive }

@@ -6,9 +6,14 @@ import { ResponsiveMasonry } from 'react-responsive-masonry'
 import { Row }               from '@ui/layout'
 import { Column }            from '@ui/layout'
 
-import { MasonryProps }      from './cards.interfaces'
+import { CardsProps }        from './cards.interfaces'
 
-const Cards: FC<MasonryProps> = ({children, columnsCountBreakPoints, columnsCount, gutter}) => (
+const Cards: FC<CardsProps> = ({
+  children,
+  columnsCountBreakPoints,
+  columnsCount,
+  gutter
+}) => (
   <Row>
     <Column fill>
       <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>

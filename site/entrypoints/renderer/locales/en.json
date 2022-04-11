@@ -137,5 +137,7 @@
   "creator_page.tab_sedcard": "Sedcard",
   "creator_page.tab_archive": "Archive",
   "creator_page.tab_nft": "NFT",
-  "creator_page.prompt": "You can choose images for Sedcard from Archive"
+  "creator_page.prompt": "You can choose images for Sedcard from Archive",
+  "creator_page.make_cover": "Make Cover",
+  "creator_page.nft_message": "There's nothing here yet"
 }
