@@ -1715,6 +1715,7 @@ __metadata:
     "@site/store": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
+    "@ui/cards": "workspace:0.0.1"
     "@ui/condition": "workspace:0.0.1"
     "@ui/image": "workspace:0.0.1"
     "@ui/layout": "workspace:0.0.1"
@@ -1837,7 +1838,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@site/navigation-fragment@0.0.1, @site/navigation-fragment@workspace:site/fragments/navigation":
+"@site/navigation-fragment@0.0.1, @site/navigation-fragment@workspace:0.0.1, @site/navigation-fragment@workspace:site/fragments/navigation":
   version: 0.0.0-use.local
   resolution: "@site/navigation-fragment@workspace:site/fragments/navigation"
   dependencies:
@@ -1871,11 +1872,88 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@site/profile-collections-fragment@workspace:0.0.1, @site/profile-collections-fragment@workspace:site/fragments/profile-collections":
+  version: 0.0.0-use.local
+  resolution: "@site/profile-collections-fragment@workspace:site/fragments/profile-collections"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@site/store": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/button": "workspace:0.0.1"
+    "@ui/cards": "workspace:0.0.1"
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/divider": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/image": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
+"@site/profile-info-fragment@workspace:0.0.1, @site/profile-info-fragment@workspace:site/fragments/profile-info":
+  version: 0.0.0-use.local
+  resolution: "@site/profile-info-fragment@workspace:site/fragments/profile-info"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/avatar": "workspace:0.0.1"
+    "@ui/button": "workspace:0.0.1"
+    "@ui/condition": "workspace:0.0.1"
+    "@ui/divider": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
+"@site/profile-page@workspace:0.0.1, @site/profile-page@workspace:site/pages/profile-page":
+  version: 0.0.0-use.local
+  resolution: "@site/profile-page@workspace:site/pages/profile-page"
+  dependencies:
+    "@site/navigation-fragment": "workspace:0.0.1"
+    "@site/profile-collections-fragment": "workspace:0.0.1"
+    "@site/profile-info-fragment": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/layout": "workspace:0.0.1"
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/profile-public-info-page@workspace:0.0.1, @site/profile-public-info-page@workspace:site/pages/profile-public-info-page":
   version: 0.0.0-use.local
   resolution: "@site/profile-public-info-page@workspace:site/pages/profile-public-info-page"
   dependencies:
-    "@site/navigation-fragment": 0.0.1
+    "@site/navigation-fragment": "workspace:0.0.1"
     "@site/public-info-fragment": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
@@ -1951,6 +2029,7 @@ __metadata:
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
     "@site/index-page": "workspace:0.0.1"
+    "@site/profile-page": "workspace:0.0.1"
     "@site/profile-public-info-page": "workspace:0.0.1"
     "@site/profile-settings-page": "workspace:0.0.1"
     "@types/express": ^4.17.13
@@ -2721,6 +2800,22 @@ __metadata:
     react: "*"
     react-dom: "*"
     styled-system: "*"
+  languageName: unknown
+  linkType: soft
+
+"@ui/cards@workspace:0.0.1, @ui/cards@workspace:ui/cards":
+  version: 0.0.0-use.local
+  resolution: "@ui/cards@workspace:ui/cards"
+  dependencies:
+    "@ui/layout": "workspace:0.0.1"
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-responsive-masonry: ^2.1.4
+  peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    react: "*"
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 

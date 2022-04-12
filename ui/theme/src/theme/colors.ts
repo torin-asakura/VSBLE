@@ -5,10 +5,13 @@ const colors = {
     gray: 'rgba(70, 70, 70, 1)',
     white: 'rgba(255, 255, 255, 1)',
     beige: 'rgba(247,247,247,1)',
+    purple: 'rgba(133,98,206,1)',
   },
   text: {
     primary: 'rgba(80, 80, 80, 1)',
     lightGray: 'rgba(128,128,128,1)',
+    semiGray: 'rgba(195, 195, 195, 1)',
+    gray: 'rgba(153, 153, 153, 1)',
     accent: 'rgba(0, 0, 0, 1)',
     white: 'rgba(255, 255, 255, 1)',
     semiBlack: 'rgba(40,40,40,1)',
@@ -145,6 +148,28 @@ const colors = {
         background: 'transparent',
         font: 'rgba(0,0,0,1)',
         border: 'transparent',
+      },
+    },
+    purple: {
+      default: {
+        background: 'rgba(133, 98, 206, 1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(133, 98, 206, 1)',
+      },
+      hover: {
+        background: 'rgba(133,98,206,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(133,98,206,1)',
+      },
+      pressed: {
+        background: 'rgba(117,87,181,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(133,98,206,1)',
+      },
+      disabled: {
+        background: 'rgba(195,195,195,1)',
+        font: 'rgba(255, 255, 255, 1)',
+        border: 'rgba(195,195,195,1)',
       },
     },
   },

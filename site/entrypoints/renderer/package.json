@@ -10,7 +10,8 @@
     "build": "yarn next build src --no-lint && yarn next export src && cp -r src/out/ dist/ && rm -rf src/out",
     "dev": "yarn next dev src",
     "prepack": "run build",
-    "start": "http-server dist"
+    "start": "http-server dist",
+    "postinstall": "yarn workspace @ui/icons build"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -20,6 +21,7 @@
     "@atls/react-user": "^0.1.44",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@site/profile-page": "workspace:0.0.1",
     "@site/profile-public-info-page": "workspace:0.0.1",
     "@site/profile-settings-page": "workspace:0.0.1",
     "@ui/theme": "workspace:0.0.1",

@@ -148,6 +148,30 @@ const appearanceGhostDisabledStyles = createAppearanceStyles({
   borderColor: prop('theme.colors.button.ghost.disabled.border'),
 })
 
+const appearancePurpleDefaultStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.purple.default.font'),
+  backgroundColor: prop('theme.colors.button.purple.default.background'),
+  borderColor: prop('theme.colors.button.purple.default.border'),
+})
+
+const appearancePurpleHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.purple.hover.font'),
+  backgroundColor: prop('theme.colors.button.purple.hover.background'),
+  borderColor: prop('theme.colors.button.purple.hover.border'),
+})
+
+const appearancePurplePressedStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.purple.pressed.font'),
+  backgroundColor: prop('theme.colors.button.purple.pressed.background'),
+  borderColor: prop('theme.colors.button.purple.pressed.border'),
+})
+
+const appearancePurpleDisabledStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.purple.disabled.font'),
+  backgroundColor: prop('theme.colors.button.purple.disabled.background'),
+  borderColor: prop('theme.colors.button.purple.disabled.border'),
+})
+
 const appearanceStyles = switchProp(prop('variant', 'primary'), {
   primary: ifProp(
     prop('disabled', false),
@@ -205,6 +229,15 @@ const appearanceStyles = switchProp(prop('variant', 'primary'), {
       prop('pressed', false),
       appearanceGhostPressedStyles,
       ifProp(prop('hover', false), appearanceGhostHoverStyles, appearanceGhostDefaultStyles)
+    )
+  ),
+  purple: ifProp(
+    prop('disabled', false),
+    appearancePurpleDisabledStyles,
+    ifProp(
+      prop('pressed', false),
+      appearancePurplePressedStyles,
+      ifProp(prop('hover', false), appearancePurpleHoverStyles, appearancePurpleDefaultStyles)
     )
   ),
 })

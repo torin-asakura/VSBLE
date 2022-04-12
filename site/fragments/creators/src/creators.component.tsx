@@ -1,9 +1,7 @@
 import { useReactiveVar }    from '@apollo/client'
 
 import React                 from 'react'
-import Masonry               from 'react-responsive-masonry'
 import { FC }                from 'react'
-import { ResponsiveMasonry } from 'react-responsive-masonry'
 
 import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
@@ -12,6 +10,7 @@ import { Role }              from '@site/store'
 import { Row }               from '@ui/layout'
 import { Column }            from '@ui/layout'
 import { Layout }            from '@ui/layout'
+import { Cards }             from '@ui/cards'
 import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
@@ -45,27 +44,25 @@ const Creators: FC = () => {
       <Layout width={['100%', '100%', 1212]}>
         <Layout flexBasis={24} />
         <Column fill>
-          <ResponsiveMasonry columnsCountBreakPoints={{ 300: 1, 560: 2, 900: 3, 1136: 4 }}>
-            <Masonry columnsCount={4} gutter={16}>
-              {filteredCreators.map(({
-                firstName,
-                secondName,
-                role,
-                location,
-                description,
-                image,
-              }) => (
-                <Card
-                  firstName={firstName}
-                  secondName={secondName}
-                  role={role}
-                  location={location}
-                  description={description}
-                  imageSrc={image}
-                />
-              ))}
-            </Masonry>
-          </ResponsiveMasonry>
+          <Cards columnsCountBreakPoints={{ 300: 1, 560: 2, 900: 3, 1136: 4 }} columnsCount={4} gutter={16}>
+            {filteredCreators.map(({
+              firstName,
+              secondName,
+              role,
+              location,
+              description,
+              image,
+            }) => (
+              <Card
+                firstName={firstName}
+                secondName={secondName}
+                role={role}
+                location={location}
+                description={description}
+                imageSrc={image}
+              />
+            ))}
+          </Cards>
         </Column>
         <Layout flexBasis={24} />
       </Layout>
