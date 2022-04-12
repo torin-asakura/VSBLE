@@ -1733,6 +1733,48 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@site/file-info-fragment@workspace:0.0.1, @site/file-info-fragment@workspace:site/fragments/file-info":
+  version: 0.0.0-use.local
+  resolution: "@site/file-info-fragment@workspace:site/fragments/file-info"
+  dependencies:
+    "@apollo/client": ^3.5.10
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/button": "workspace:0.0.1"
+    "@ui/icons": "workspace:0.0.1"
+    "@ui/image": "workspace:0.0.1"
+    "@ui/layout": "workspace:0.0.1"
+    "@ui/link": "workspace:0.0.1"
+    "@ui/text": "workspace:0.0.1"
+    "@ui/utils": "workspace:0.0.1"
+    react: ^17.0.2
+    react-intl: ^5.24.8
+    styled-system: ^5.1.5
+    styled-tools: ^1.7.2
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
+"@site/file-page@workspace:0.0.1, @site/file-page@workspace:site/pages/file-page":
+  version: 0.0.0-use.local
+  resolution: "@site/file-page@workspace:site/pages/file-page"
+  dependencies:
+    "@site/file-info-fragment": "workspace:0.0.1"
+    "@types/react": ^17.0.38
+    "@types/styled-system": ^5.1.15
+    "@ui/layout": "workspace:0.0.1"
+  peerDependencies:
+    "@apollo/client": "*"
+    react: ^17.0.1
+    react-intl: "*"
+  languageName: unknown
+  linkType: soft
+
 "@site/filters-fragment@workspace:0.0.1, @site/filters-fragment@workspace:site/fragments/filters":
   version: 0.0.0-use.local
   resolution: "@site/filters-fragment@workspace:site/fragments/filters"
@@ -2028,6 +2070,7 @@ __metadata:
     "@atls/react-user": ^0.1.44
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
+    "@site/file-page": "workspace:0.0.1"
     "@site/index-page": "workspace:0.0.1"
     "@site/profile-page": "workspace:0.0.1"
     "@site/profile-public-info-page": "workspace:0.0.1"
