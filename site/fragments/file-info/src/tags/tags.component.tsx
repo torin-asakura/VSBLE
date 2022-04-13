@@ -1,11 +1,10 @@
 import React             from 'react'
 import { FC }            from 'react'
 
-import { Box }           from '@ui/layout'
 import { Row }           from '@ui/layout'
 import { Layout }        from '@ui/layout'
 import { Column }        from '@ui/layout'
-import { Text }          from '@ui/text'
+import { Button }        from '@ui/button'
 
 import { useMockedTags } from '../data'
 
@@ -16,13 +15,13 @@ const Tags: FC = () => {
     <Column fill>
       <Row justifyContent='center' flexWrap='wrap'>
         {tags.map((tag) =>
-          <Box border='thinGray' borderRadius='normal' padding='4px 8px' margin='2px'>
-            <Layout>
-              <Text fontSize='semiRegular' color='text.lightGray' fontWeight='normal' lineHeight='default'>
-                {tag.title}
-              </Text>
-            </Layout>
-          </Box>
+          <>
+            <Layout flexBasis={2}/>
+            <Button variant='lightGray' size='verySmall'>
+              {tag.title}
+            </Button>
+            <Layout flexBasis={2}/>
+          </>
         )}
       </Row>
     </Column>

@@ -35,6 +35,16 @@ const shapeGhostStyles = createShapeStyles({
   paddingRight: 0,
 })
 
+const shapeVerySmallStyles = createShapeStyles({
+  fontFamily: prop('theme.fonts.primary'),
+  fontWeight: prop('theme.fontWeights.normal'),
+  size: 32,
+  fontSize: prop('theme.fontSizes.semiRegular'),
+  rounding: prop('theme.radii.normal') as unknown as number,
+  paddingLeft: 8,
+  paddingRight: 8,
+})
+
 export const baseStyles = createBaseStyles()
 export const contentStyles = createContentStyles()
 
@@ -42,4 +52,5 @@ export const shapeStyles = switchProp(prop('size', 'normal'), {
   small: smallNormalSizeStyles,
   normal: shapeNormalSizeStyles,
   ghost: shapeGhostStyles,
+  verySmall: shapeVerySmallStyles,
 })

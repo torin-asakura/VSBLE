@@ -30,7 +30,6 @@ const Slider: FC = ({ children }) => (
         <Box
           width={['100%', '100%', 928]}
           height={['100%', '100%', 648]}
-          backgroundColor='background.beige'
           justifyContent='center'
         >
           <Column justifyContent='center'>

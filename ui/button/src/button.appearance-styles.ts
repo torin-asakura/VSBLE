@@ -1,8 +1,7 @@
 import { createAppearanceStyles } from '@atls-ui-parts/button'
-
-import { ifProp }                 from 'styled-tools'
-import { switchProp }             from 'styled-tools'
-import { prop }                   from 'styled-tools'
+import { ifProp } from 'styled-tools'
+import { switchProp } from 'styled-tools'
+import { prop } from 'styled-tools'
 
 const appearancePrimaryDefaultStyles = createAppearanceStyles({
   fontColor: prop('theme.colors.button.primary.default.font'),
@@ -172,6 +171,30 @@ const appearancePurpleDisabledStyles = createAppearanceStyles({
   borderColor: prop('theme.colors.button.purple.disabled.border'),
 })
 
+const appearanceLightGrayDefaultStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.lightGray.default.font'),
+  backgroundColor: prop('theme.colors.button.lightGray.default.background'),
+  borderColor: prop('theme.colors.button.lightGray.default.border'),
+})
+
+const appearanceLightGrayHoverStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.lightGray.hover.font'),
+  backgroundColor: prop('theme.colors.button.lightGray.hover.background'),
+  borderColor: prop('theme.colors.button.lightGray.hover.border'),
+})
+
+const appearanceLightGrayPressedStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.lightGray.pressed.font'),
+  backgroundColor: prop('theme.colors.button.lightGray.pressed.background'),
+  borderColor: prop('theme.colors.button.lightGray.pressed.border'),
+})
+
+const appearanceLightGrayDisabledStyles = createAppearanceStyles({
+  fontColor: prop('theme.colors.button.lightGray.disabled.font'),
+  backgroundColor: prop('theme.colors.button.lightGray.disabled.background'),
+  borderColor: prop('theme.colors.button.lightGray.disabled.border'),
+})
+
 const appearanceStyles = switchProp(prop('variant', 'primary'), {
   primary: ifProp(
     prop('disabled', false),
@@ -238,6 +261,15 @@ const appearanceStyles = switchProp(prop('variant', 'primary'), {
       prop('pressed', false),
       appearancePurplePressedStyles,
       ifProp(prop('hover', false), appearancePurpleHoverStyles, appearancePurpleDefaultStyles)
+    )
+  ),
+  lightGray: ifProp(
+    prop('disabled', false),
+    appearanceLightGrayDisabledStyles,
+    ifProp(
+      prop('pressed', false),
+      appearanceLightGrayPressedStyles,
+      ifProp(prop('hover', false), appearanceLightGrayHoverStyles, appearanceLightGrayDefaultStyles)
     )
   ),
 })

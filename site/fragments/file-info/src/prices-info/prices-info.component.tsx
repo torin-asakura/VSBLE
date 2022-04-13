@@ -25,7 +25,7 @@ const PricesInfo: FC = () => {
         <Column fill>
           <Row alignItems='center'>
             <Box width={24} height={24}>
-            <Radio/>
+              <Radio/>
             </Box>
             <Layout flexBasis={8}/>
             <Layout>
