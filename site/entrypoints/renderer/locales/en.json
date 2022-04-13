@@ -151,5 +151,8 @@
   "file_page.send_your_job_request": "Send your Job Request",
   "file_page.show_all_this_author": "Show All by This Author",
   "file_page.download_comp": "Download Comp",
-  "file_page.file_dimensions": "File dimensions: Original file upon request 1800 px × 1200 px / 15.24 × 10.16 cm@300dpi ID: #18328 Release(s) on file: Possible"
+  "file_page.file_dimensions": "File dimensions: Original file upon request 1800 px × 1200 px / 15.24 × 10.16 cm@300dpi ID: #18328 Release(s) on file: Possible",
+  "file_page.photo_orientation": "Orientation: Landscape",
+  "file_page.add_to_cart": "Add to Cart",
+  "file_page.question": "Your project requires specific usage that is not reflected in the pricing above?"
 }

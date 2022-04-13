@@ -9,6 +9,7 @@ import { Layout }             from '@ui/layout'
 import { Column }             from '@ui/layout'
 import { Text }               from '@ui/text'
 import { Button }             from '@ui/button'
+import { Condition }          from '@ui/condition'
 import { ImageBlock }         from '@ui/image'
 import { DownloadIcon }       from '@ui/icons'
 import { Repeater }           from '@ui/utils'
@@ -16,10 +17,13 @@ import { Repeater }           from '@ui/utils'
 import { useMockedFileInfo }  from '../data'
 import { Slider }             from '../slider'
 import { Tags }               from '../tags'
+import { PricesInfo }         from '../prices-info'
 
 const FileDetails: FC = () => {
   const { formatMessage } = useIntl()
   const { images } = useMockedFileInfo()
+
+  const paidPhoto = true
 
   return (
     <Box width='100%' justifyContent='center'>
@@ -29,25 +33,43 @@ const FileDetails: FC = () => {
           <Column width={['100%', '100%', 320]} height='auto'>
             <Row justifyContent='flex-start'>
               <Box width={['100%', '100%', 320]} backgroundColor='background.beige' borderRadius='normal' padding='8px 16px'>
-                <Column>
-                  <Repeater
-                    items={formatMessage({
-                      id: 'file_page.camera_info',
-                      defaultMessage:
-                        'Camera: Canon EOS 5D Mark III \n Aperture: f/10.0 \n ISO: 250 \n Orientation: Landscape',
-                    }).split('\n')}
-                    onIteration={(item) => (
-                      <Row>
-                        <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
-                          {item}
-                        </Text>
-                      </Row>
-                    )}
-                  />
-                </Column>
+                <Condition match={!paidPhoto}>
+                  <Column>
+                    <Repeater
+                      items={formatMessage({
+                        id: 'file_page.camera_info',
+                        defaultMessage: 'Camera: Canon EOS 5D Mark III \n Aperture: f/10.0 \n ISO: 250 \n Orientation: Landscape',
+                      }).split('\n')}
+                      onIteration={(item) => (
+                        <Row>
+                          <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
+                            {item}
+                          </Text>
+                        </Row>
+                      )}
+                    />
+                  </Column>
+                </Condition>
+                <Condition match={paidPhoto}>
+                  <Column>
+                    <Row>
+                      <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
+                        <FormattedMessage id='file_page.photo_orientation' defaultMessage='Orientation: Landscape'/>
+                      </Text>
+                    </Row>
+                  </Column>
+                </Condition>
               </Box>
             </Row>
-            <Layout flexShrink={0} flexBasis={44}/>
+            <Condition match={!paidPhoto}>
+              <Layout flexShrink={0} flexBasis={44}/>
+            </Condition>
+            <Condition match={paidPhoto}>
+              <Layout flexShrink={0} flexBasis={24}/>
+            </Condition>
+            <Condition match={paidPhoto}>
+              <PricesInfo/>
+            </Condition>
             <Layout>
               <Box width={['100%', '100%', 320]}>
                 <Column fill>
@@ -70,7 +92,12 @@ const FileDetails: FC = () => {
                 </Column>
               </Box>
             </Layout>
-            <Layout flexShrink={0} flexBasis={[24, 24, 220]}/>
+            <Condition match={!paidPhoto}>
+              <Layout flexShrink={0} flexBasis={[24, 24, 220]}/>
+            </Condition>
+            <Condition match={paidPhoto}>
+              <Layout flexShrink={0} flexBasis={[24, 24, 40]}/>
+            </Condition>
             <Layout>
               <Box width={320}>
                 <Column>
