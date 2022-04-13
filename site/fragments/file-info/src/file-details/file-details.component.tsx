@@ -1,6 +1,7 @@
 import React                  from 'react'
 import { FC }                 from 'react'
 import { FormattedMessage }   from 'react-intl'
+import { useIntl }            from 'react-intl'
 
 import { Box }                from '@ui/layout'
 import { Row }                from '@ui/layout'
@@ -10,52 +11,45 @@ import { Text }               from '@ui/text'
 import { Button }             from '@ui/button'
 import { ImageBlock }         from '@ui/image'
 import { DownloadIcon }       from '@ui/icons'
-import { ArrowLeftLongIcon }  from '@ui/icons'
-import { ArrowRightLongIcon } from '@ui/icons'
+import { Repeater }           from '@ui/utils'
+
 import { useMockedFileInfo }  from '../data'
+import { Slider }             from '../slider'
+import { Tags }               from '../tags'
 
 const FileDetails: FC = () => {
+  const { formatMessage } = useIntl()
   const { images } = useMockedFileInfo()
 
   return (
     <Box width='100%' justifyContent='center'>
-      <Layout flexShrink={0} flexBasis={30}/>
+      <Layout flexShrink={0} flexBasis={24}/>
       <Layout width={['100%', '100%', 1440]}>
         <Row flexWrap={['wrap', 'wrap', 'nowrap']}>
-          <Column width={['100%', '100%', 320]}>
-            <Row justifyContent='center'>
-              <Box width={['100%', '100%', 320]} backgroundColor='background.beige' borderRadius='normal'
-                   padding='8px 16px'>
+          <Column width={['100%', '100%', 320]} height='auto'>
+            <Row justifyContent='flex-start'>
+              <Box width={['100%', '100%', 320]} backgroundColor='background.beige' borderRadius='normal' padding='8px 16px'>
                 <Column>
-                  <Row>
-                    <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='extra'>
-                      <FormattedMessage id='file_page.camera_info' defaultMessage='Camera: Canon EOS 5D Mark III'/>
-                    </Text>
-                  </Row>
-                  <Layout flexShrink={0} flexBasis={4}/>
-                  <Row>
-                    <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='extra'>
-                      <FormattedMessage id='file_page.aperture_info' defaultMessage='Aperture: f/10.0'/>
-                    </Text>
-                  </Row>
-                  <Layout flexShrink={0} flexBasis={4}/>
-                  <Row>
-                    <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='extra'>
-                      <FormattedMessage id='file_page.iso_info' defaultMessage='ISO: 250'/>
-                    </Text>
-                  </Row>
-                  <Layout flexBasis={4}/>
-                  <Row>
-                    <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='extra'>
-                      <FormattedMessage id='file_page.orientation_info' defaultMessage='Orientation: Landscape'/>
-                    </Text>
-                  </Row>
+                  <Repeater
+                    items={formatMessage({
+                      id: 'file_page.camera_info',
+                      defaultMessage:
+                        'Camera: Canon EOS 5D Mark III \n Aperture: f/10.0 \n ISO: 250 \n Orientation: Landscape',
+                    }).split('\n')}
+                    onIteration={(item) => (
+                      <Row>
+                        <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
+                          {item}
+                        </Text>
+                      </Row>
+                    )}
+                  />
                 </Column>
               </Box>
             </Row>
             <Layout flexShrink={0} flexBasis={44}/>
-            <Column>
-              <Box width={['100%', '100%', 320]} height={208}>
+            <Layout>
+              <Box width={['100%', '100%', 320]}>
                 <Column fill>
                   <Button>
                     <FormattedMessage id='file_page.ask_for_image_price' defaultMessage='Ask for Image Price'/>
@@ -75,77 +69,47 @@ const FileDetails: FC = () => {
                   </Button>
                 </Column>
               </Box>
-            </Column>
+            </Layout>
             <Layout flexShrink={0} flexBasis={[24, 24, 220]}/>
-            <Column>
-              <Box maxWidth={320}>
-                <Row>
-                  <Text fontSize='semiRegular' color='text.lightGray' fontWeight='normal' lineHeight='default'>
-                    <FormattedMessage
-                      id='file_page.file_dimensions'
-                      defaultMessage='File dimensions: Original file upon request 1800 px × 1200 px / 15.24 × 10.16 cm@300dpi ID: #18328 Release(s) on file: Possible'
-                    />
-                  </Text>
-                </Row>
+            <Layout>
+              <Box width={320}>
+                <Column>
+                  <Repeater
+                    items={formatMessage({
+                      id: 'file_page.file_dimensions',
+                      defaultMessage:
+                        'File dimensions: Original file upon request \n 1800 px × 1200 px / 15.24 × 10.16 cm@300dpi \n ID: #18328 \n Release(s) on file: Possible',
+                    }).split('\n')}
+                    onIteration={(item) => (
+                      <Row>
+                        <Text fontSize='semiRegular' color='text.lightGray' fontWeight='normal' lineHeight='default'>
+                          {item}
+                        </Text>
+                      </Row>
+                    )}
+                  />
+                </Column>
               </Box>
+            </Layout>
+            <Layout flexShrink={0} flexBasis={[44, 44, 0]}/>
+          </Column>
+          <Layout flexShrink={0} flexBasis={[0, 0, 48]}/>
+          <Row justifyContent='center'>
+            <Column>
+              <Slider>
+                {images.map(({image}) => (
+                  <ImageBlock src={image} width='100%' height='100%'/>
+                ))}
+              </Slider>
+              <Layout flexShrink={0} flexBasis={22}/>
+              <Layout>
+                <Tags/>
+              </Layout>
             </Column>
-          </Column>
-          <Layout flexShrink={0} flexBasis={[0, 48, 48]}/>
-          <Column fill>
-            <Box width='100%'>
-              <Row justifyContent='flex-start' alignItems='center'>
-                <Box
-                  width={40}
-                  height={40}
-                  backgroundColor='background.beige'
-                  justifyContent='center'
-                  alignItems='center'
-                  borderRadius='full'
-                  // @ts-ignore
-                  cursor='pointer'
-                >
-                  <ArrowLeftLongIcon/>
-                </Box>
-              </Row>
-              <Layout flexShrink={0} flexBasis={8}/>
-              <Row justifyContent='center'>
-                <Box width={['100%', '100%', 928]} height={[200, 200, 648]} backgroundColor='background.beige'
-                     justifyContent='center'>
-                  <Column fill>
-                    <Box
-                      width='100%'
-                      // @ts-ignore
-                      cursor='pointer'
-                      position='relative'
-                      backgroundColor='background.gray'
-                    >
-                      {images.map(({ image }) => (
-                        <ImageBlock src={image} width='100%' height='100%'/>
-                      ))}
-                    </Box>
-                    <Layout flexShrink={0} flexBasis={22}/>
-                  </Column>
-                </Box>
-              </Row>
-              <Row justifyContent='flex-end' alignItems='center'>
-                <Box
-                  width={40}
-                  height={40}
-                  backgroundColor='background.beige'
-                  justifyContent='center'
-                  alignItems='center'
-                  borderRadius='full'
-                  // @ts-ignore
-                  cursor='pointer'
-                >
-                  <ArrowRightLongIcon/>
-                </Box>
-              </Row>
-            </Box>
-          </Column>
+          </Row>
         </Row>
       </Layout>
-      <Layout flexShrink={0} flexBasis={30}/>
+      <Layout flexShrink={0} flexBasis={24}/>
     </Box>
   )
 }

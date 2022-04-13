@@ -15,6 +15,7 @@ const FileInfo: FC = () => (
       <Header/>
       <Layout flexBasis={22}/>
       <FileDetails/>
+      <Layout flexBasis={22}/>
     </Column>
   </Row>
 )

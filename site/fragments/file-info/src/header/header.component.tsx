@@ -18,7 +18,7 @@ const Header: FC = () => {
 
   return (
     <Box width='100%' height={44} justifyContent='center'>
-      <Layout flexShrink={0} flexBasis={30}/>
+      <Layout flexShrink={0} flexBasis={24}/>
       <Layout width={['100%', '100%', 1440]}>
         <Column fill>
           <Layout flexBasis={24}/>
