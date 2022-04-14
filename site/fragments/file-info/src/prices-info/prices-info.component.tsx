@@ -2,6 +2,9 @@ import React                from 'react'
 import { FC }               from 'react'
 import { FormattedMessage } from 'react-intl'
 import { useIntl }          from 'react-intl'
+import { Arrow }            from 'react-laag'
+
+import { styleFn }          from 'styled-system'
 
 import { Box }              from '@ui/layout'
 import { Row }              from '@ui/layout'
@@ -14,6 +17,23 @@ import { InformationIcon }  from '@ui/icons'
 import { Radio }            from '@ui/radio'
 
 import { useMockedPrices }  from '../data/mocks/prices'
+
+const Container: styleFn = () => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minWidth: 30,
+  minHeight: 32,
+  padding: '6px 8px',
+  margin: 0,
+  color: '#fff',
+  wordWrap: 'break-word',
+  backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  borderRadius: '2px',
+  boxShadow:
+    '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+  zIndex: 1000,
+})
 
 const PricesInfo: FC = () => {
   const { formatMessage } = useIntl()
@@ -38,7 +58,21 @@ const PricesInfo: FC = () => {
             </Layout>
             <Layout flexBasis={5}/>
             <Layout>
-              <Tooltip text='text' anchor='BOTTOM_CENTER' trigger='hover' animate showArrow>
+              <Tooltip
+                anchor='BOTTOM_CENTER'
+                trigger='hover'
+                container={
+                  <Layout>
+                    <Arrow
+                      backgroundColor='rgba(0, 0, 0, 0.75)'
+                      angle={30}
+                      size={8}/>
+                    <Container>
+                      <Text>text</Text>
+                    </Container>
+                  </Layout>
+              }
+              >
                 <Layout>
                   <InformationIcon width='1.5rem' height='1.5rem'/>
                 </Layout>
