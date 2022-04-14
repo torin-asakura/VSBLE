@@ -3,6 +3,7 @@ const colors = {
     black: 'rgba(0, 0, 0, 1)',
     transparentBlack: 'rgba(0, 0, 0, 0.7)',
     gray: 'rgba(70, 70, 70, 1)',
+    lightGray: 'rgba(153, 153, 153, 1)',
     white: 'rgba(255, 255, 255, 1)',
     beige: 'rgba(247,247,247,1)',
     purple: 'rgba(133,98,206,1)',
