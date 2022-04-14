@@ -38,7 +38,7 @@ const shapeGhostStyles = createShapeStyles({
 const shapeVerySmallStyles = createShapeStyles({
   fontFamily: prop('theme.fonts.primary'),
   fontWeight: prop('theme.fontWeights.normal'),
-  size: 32,
+  size: 28,
   fontSize: prop('theme.fontSizes.semiRegular'),
   rounding: prop('theme.radii.normal') as unknown as number,
   paddingLeft: 8,
