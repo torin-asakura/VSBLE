@@ -24,7 +24,7 @@ const PricesInfo: FC = () => {
         <Column fill>
           <Row alignItems='center'>
             <Box width={24} height={24}>
-              <Radio/>
+              <Radio value={1} name='license' defaultChecked/>
             </Box>
             <Layout flexBasis={8}/>
             <Layout>
@@ -53,7 +53,7 @@ const PricesInfo: FC = () => {
           <Layout flexShrink={0} flexBasis={16}/>
           <Row alignItems='center'>
             <Box width={24} height={24}>
-              <Radio/>
+              <Radio value={2} name='license'/>
             </Box>
             <Layout flexBasis={8}/>
             <Layout>
@@ -82,7 +82,7 @@ const PricesInfo: FC = () => {
           <Layout flexShrink={0} flexBasis={16}/>
           <Row alignItems='center'>
             <Box width={24} height={24}>
-              <Radio/>
+              <Radio value={3} name='license'/>
             </Box>
             <Layout flexBasis={8}/>
             <Layout>
