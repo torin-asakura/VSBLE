@@ -154,5 +154,10 @@
   "file_page.file_dimensions": "File dimensions: Original file upon request 1800 px × 1200 px / 15.24 × 10.16 cm@300dpi ID: #18328 Release(s) on file: Possible",
   "file_page.photo_orientation": "Orientation: Landscape",
   "file_page.add_to_cart": "Add to Cart",
-  "file_page.question": "Your project requires specific usage that is not reflected in the pricing above?"
+  "file_page.question": "Your project requires specific usage that is not reflected in the pricing above?",
+  "file.page.license": "Online License",
+  "file_page.info_license": "Unlimited, worldwide commercial usage for online media.",
+  "file_page.VAT": "VAT",
+  "file_page.info_VAT": "Value-added tax will be calculated at checkout based on your country and account type.",
+
 }

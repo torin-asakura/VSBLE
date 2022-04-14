@@ -2,9 +2,6 @@ import React                from 'react'
 import { FC }               from 'react'
 import { FormattedMessage } from 'react-intl'
 import { useIntl }          from 'react-intl'
-import { Arrow }            from 'react-laag'
-
-import { styleFn }          from 'styled-system'
 
 import { Box }              from '@ui/layout'
 import { Row }              from '@ui/layout'
@@ -12,28 +9,10 @@ import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Text }             from '@ui/text'
 import { Button }           from '@ui/button'
-import { Tooltip }          from '@ui/tooltip'
-import { InformationIcon }  from '@ui/icons'
 import { Radio }            from '@ui/radio'
 
 import { useMockedPrices }  from '../data/mocks/prices'
-
-const Container: styleFn = () => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  minWidth: 30,
-  minHeight: 32,
-  padding: '6px 8px',
-  margin: 0,
-  color: '#fff',
-  wordWrap: 'break-word',
-  backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  borderRadius: '2px',
-  boxShadow:
-    '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
-  zIndex: 1000,
-})
+import { Prompt }           from './prompt'
 
 const PricesInfo: FC = () => {
   const { formatMessage } = useIntl()
@@ -58,25 +37,11 @@ const PricesInfo: FC = () => {
             </Layout>
             <Layout flexBasis={5}/>
             <Layout>
-              <Tooltip
-                anchor='BOTTOM_CENTER'
-                trigger='hover'
-                container={
-                  <Layout>
-                    <Arrow
-                      backgroundColor='rgba(0, 0, 0, 0.75)'
-                      angle={30}
-                      size={8}/>
-                    <Container>
-                      <Text>text</Text>
-                    </Container>
-                  </Layout>
-              }
-              >
-                <Layout>
-                  <InformationIcon width='1.5rem' height='1.5rem'/>
-                </Layout>
-              </Tooltip>
+              <Prompt
+                license='Online License'
+                info='Unlimited, worldwide commercial usage for online media.'
+                vatInfo='Value-added tax will be calculated at checkout based on your country and account type.'
+              />
             </Layout>
             <Layout flexGrow={1}/>
             <Layout>
@@ -101,11 +66,11 @@ const PricesInfo: FC = () => {
             </Layout>
             <Layout flexBasis={5}/>
             <Layout>
-              <Tooltip text='text' anchor='BOTTOM_CENTER' trigger='hover' showArrow animate>
-                <Layout>
-                  <InformationIcon width='1.5rem' height='1.5rem'/>
-                </Layout>
-              </Tooltip>
+              <Prompt
+                license='Editorial License'
+                info='Unlimited, worldwide commercial usage for online and print media.'
+                vatInfo='Value-added tax will be calculated at checkout based on your country and account type.'
+              />
             </Layout>
             <Layout flexGrow={1}/>
             <Layout>
@@ -130,11 +95,11 @@ const PricesInfo: FC = () => {
             </Layout>
             <Layout flexBasis={5}/>
             <Layout>
-              <Tooltip text='text' anchor='BOTTOM_CENTER' trigger='hover' animate showArrow>
-                <Layout>
-                  <InformationIcon width='1.5rem' height='1.5rem'/>
-                </Layout>
-              </Tooltip>
+              <Prompt
+                license='Extended License'
+                info='Unlimited, worldwide commercial usage for online and print media.'
+                vatInfo='Value-added tax will be calculated at checkout based on your country and account type.'
+              />
             </Layout>
             <Layout flexGrow={1}/>
             <Layout>
