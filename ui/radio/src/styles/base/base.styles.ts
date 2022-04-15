@@ -1,4 +1,4 @@
-import {}          from '..'
+import {}                         from '..'
 
 import { styleFn } from 'styled-system'
 
@@ -20,7 +20,8 @@ const createBaseStyles = (): styleFn => () => ({
   'input::before': {
     content: '""',
     display: 'inline-block',
-    backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiM4NTYyQ0UiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==")',
+    backgroundImage:
+      'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTIiIGZpbGw9IiM4NTYyQ0UiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==")',
     width: '24px',
     height: '24px',
     backgroundRepeat: 'no-repeat',
@@ -28,7 +29,7 @@ const createBaseStyles = (): styleFn => () => ({
   },
   'input:checked': {
     opacity: 1,
-  }
+  },
 })
 
 export { createBaseStyles }

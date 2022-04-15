@@ -2,29 +2,29 @@ import { Tags } from './tags.interface'
 
 const tagsMock: Tags[] = [
   {
-    title: 'photographer'
+    title: 'photographer',
   },
   {
-    title: 'food'
+    title: 'food',
   },
   {
-    title: 'bread'
+    title: 'bread',
   },
   {
-    title: 'happy'
+    title: 'happy',
   },
   {
-    title: 'cook'
+    title: 'cook',
   },
   {
-    title: 'lifestyle'
+    title: 'lifestyle',
   },
   {
-    title: 'eating'
+    title: 'eating',
   },
   {
-    title: 'dinner'
-  }
+    title: 'dinner',
+  },
 ]
 
 export { tagsMock }

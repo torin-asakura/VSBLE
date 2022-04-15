@@ -4,6 +4,7 @@ import { useTheme }  from '@emotion/react'
 import React         from 'react'
 
 import { IconProps } from '../icons.interfaces'
+
 export const InformationIcon = (props: IconProps) => {
   const theme: any = useTheme()
   return (
@@ -17,7 +18,7 @@ export const InformationIcon = (props: IconProps) => {
     >
       <path
         d='M12 13V15'
-        stroke={theme.colors.background[props.color] || props.color || 'black'}
+        stroke='#999999'
         strokeWidth={2}
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -28,7 +29,7 @@ export const InformationIcon = (props: IconProps) => {
       />
       <path
         d='M12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25Z'
-        stroke={theme.colors.background[props.color] || props.color || 'black'}
+        stroke='#999999'
         strokeWidth={1.5}
         strokeLinecap='round'
         strokeLinejoin='round'

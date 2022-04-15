@@ -3,20 +3,20 @@ import { Tile } from './tile.interface'
 const tilesMock: Tile[] = [
   {
     title: 'Skill Level',
-    description: 'Professional'
+    description: 'Professional',
   },
   {
     title: 'Assets',
-    description: 'Own Studio'
+    description: 'Own Studio',
   },
   {
     title: 'Additional',
-    description: 'Retouch, Will travel'
+    description: 'Retouch, Will travel',
   },
   {
     title: 'Additional Skills',
-    description: 'English Language'
-  }
+    description: 'English Language',
+  },
 ]
 
 export { tilesMock }

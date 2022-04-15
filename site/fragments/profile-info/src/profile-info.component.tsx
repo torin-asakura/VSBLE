@@ -1,12 +1,12 @@
-import React                from 'react'
-import { FC }               from 'react'
+import React           from 'react'
+import { FC }          from 'react'
 
-import { Row }              from '@ui/layout'
-import { Layout }           from '@ui/layout'
-import { Column }           from '@ui/layout'
+import { Row }         from '@ui/layout'
+import { Layout }      from '@ui/layout'
+import { Column }      from '@ui/layout'
 
-import { UserDetails }      from './user-details'
-import { UserInfo }         from './user-info'
+import { UserDetails } from './user-details'
+import { UserInfo }    from './user-info'
 
 const ProfileInfo: FC = () => (
   <Row justifyContent='center'>

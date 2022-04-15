@@ -194,7 +194,7 @@ const colors = {
         font: 'rgba(255, 255, 255, 1)',
         border: 'rgba(195, 195, 195, 1)',
       },
-    }
+    },
   },
   input: {
     primary: {

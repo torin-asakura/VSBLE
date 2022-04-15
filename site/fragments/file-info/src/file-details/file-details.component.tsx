@@ -1,23 +1,23 @@
-import React                  from 'react'
-import { FC }                 from 'react'
-import { FormattedMessage }   from 'react-intl'
-import { useIntl }            from 'react-intl'
+import React                 from 'react'
+import { FC }                from 'react'
+import { FormattedMessage }  from 'react-intl'
+import { useIntl }           from 'react-intl'
 
-import { Box }                from '@ui/layout'
-import { Row }                from '@ui/layout'
-import { Layout }             from '@ui/layout'
-import { Column }             from '@ui/layout'
-import { Text }               from '@ui/text'
-import { Button }             from '@ui/button'
-import { Condition }          from '@ui/condition'
-import { ImageBlock }         from '@ui/image'
-import { DownloadIcon }       from '@ui/icons'
-import { Repeater }           from '@ui/utils'
+import { Button }            from '@ui/button'
+import { Condition }         from '@ui/condition'
+import { DownloadIcon }      from '@ui/icons'
+import { ImageBlock }        from '@ui/image'
+import { Box }               from '@ui/layout'
+import { Row }               from '@ui/layout'
+import { Layout }            from '@ui/layout'
+import { Column }            from '@ui/layout'
+import { Text }              from '@ui/text'
+import { Repeater }          from '@ui/utils'
 
-import { useMockedFileInfo }  from '../data'
-import { Slider }             from '../slider'
-import { Tags }               from '../tags'
-import { PricesInfo }         from '../prices-info'
+import { PricesInfo }        from '../prices-info'
+import { Slider }            from '../slider'
+import { Tags }              from '../tags'
+import { useMockedFileInfo } from '../data'
 
 const FileDetails: FC = () => {
   const { formatMessage } = useIntl()
@@ -27,22 +27,33 @@ const FileDetails: FC = () => {
 
   return (
     <Box width='100%' justifyContent='center'>
-      <Layout flexShrink={0} flexBasis={24}/>
+      <Layout flexShrink={0} flexBasis={24} />
       <Layout width={['100%', '100%', 1440]}>
         <Row flexWrap={['wrap', 'wrap', 'nowrap']}>
           <Column width={['100%', '100%', 320]} height='auto'>
             <Row justifyContent='flex-start'>
-              <Box width={['100%', '100%', 320]} backgroundColor='background.beige' borderRadius='normal' padding='8px 16px'>
+              <Box
+                width={['100%', '100%', 320]}
+                backgroundColor='background.beige'
+                borderRadius='normal'
+                padding='8px 16px'
+              >
                 <Condition match={!paidPhoto}>
                   <Column>
                     <Repeater
                       items={formatMessage({
                         id: 'file_page.camera_info',
-                        defaultMessage: 'Camera: Canon EOS 5D Mark III \n Aperture: f/10.0 \n ISO: 250 \n Orientation: Landscape',
+                        defaultMessage:
+                          'Camera: Canon EOS 5D Mark III \n Aperture: f/10.0 \n ISO: 250 \n Orientation: Landscape',
                       }).split('\n')}
                       onIteration={(item) => (
                         <Row>
-                          <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
+                          <Text
+                            fontSize='semiRegular'
+                            color='text.accent'
+                            fontWeight='normal'
+                            lineHeight='default'
+                          >
                             {item}
                           </Text>
                         </Row>
@@ -53,8 +64,16 @@ const FileDetails: FC = () => {
                 <Condition match={paidPhoto}>
                   <Column>
                     <Row>
-                      <Text fontSize='semiRegular' color='text.accent' fontWeight='normal' lineHeight='default'>
-                        <FormattedMessage id='file_page.photo_orientation' defaultMessage='Orientation: Landscape'/>
+                      <Text
+                        fontSize='semiRegular'
+                        color='text.accent'
+                        fontWeight='normal'
+                        lineHeight='default'
+                      >
+                        <FormattedMessage
+                          id='file_page.photo_orientation'
+                          defaultMessage='Orientation: Landscape'
+                        />
                       </Text>
                     </Row>
                   </Column>
@@ -62,41 +81,50 @@ const FileDetails: FC = () => {
               </Box>
             </Row>
             <Condition match={!paidPhoto}>
-              <Layout flexShrink={0} flexBasis={44}/>
+              <Layout flexShrink={0} flexBasis={44} />
             </Condition>
             <Condition match={paidPhoto}>
-              <Layout flexShrink={0} flexBasis={24}/>
+              <Layout flexShrink={0} flexBasis={24} />
             </Condition>
             <Condition match={paidPhoto}>
-              <PricesInfo/>
+              <PricesInfo />
             </Condition>
             <Layout>
               <Box width={['100%', '100%', 320]}>
                 <Column fill>
                   <Button>
-                    <FormattedMessage id='file_page.ask_for_image_price' defaultMessage='Ask for Image Price'/>
+                    <FormattedMessage
+                      id='file_page.ask_for_image_price'
+                      defaultMessage='Ask for Image Price'
+                    />
                   </Button>
-                  <Layout flexShrink={0} flexBasis={8}/>
+                  <Layout flexShrink={0} flexBasis={8} />
                   <Button>
-                    <FormattedMessage id='file_page.send_your_job_request' defaultMessage='Send your Job Request'/>
+                    <FormattedMessage
+                      id='file_page.send_your_job_request'
+                      defaultMessage='Send your Job Request'
+                    />
                   </Button>
-                  <Layout flexShrink={0} flexBasis={16}/>
+                  <Layout flexShrink={0} flexBasis={16} />
                   <Button variant='secondary'>
-                    <FormattedMessage id='file_page.show_all_this_author' defaultMessage='Show All by This Author'/>
+                    <FormattedMessage
+                      id='file_page.show_all_this_author'
+                      defaultMessage='Show All by This Author'
+                    />
                   </Button>
-                  <Layout flexShrink={0} flexBasis={8}/>
+                  <Layout flexShrink={0} flexBasis={8} />
                   <Button variant='secondary'>
-                    <DownloadIcon/>
-                    <FormattedMessage id='file_page.download_comp' defaultMessage='Download Comp'/>
+                    <DownloadIcon />
+                    <FormattedMessage id='file_page.download_comp' defaultMessage='Download Comp' />
                   </Button>
                 </Column>
               </Box>
             </Layout>
             <Condition match={!paidPhoto}>
-              <Layout flexShrink={0} flexBasis={[24, 24, 220]}/>
+              <Layout flexShrink={0} flexBasis={[24, 24, 220]} />
             </Condition>
             <Condition match={paidPhoto}>
-              <Layout flexShrink={0} flexBasis={[24, 24, 40]}/>
+              <Layout flexShrink={0} flexBasis={[24, 24, 40]} />
             </Condition>
             <Layout>
               <Box width={320}>
@@ -109,7 +137,12 @@ const FileDetails: FC = () => {
                     }).split('\n')}
                     onIteration={(item) => (
                       <Row>
-                        <Text fontSize='semiRegular' color='text.lightGray' fontWeight='normal' lineHeight='default'>
+                        <Text
+                          fontSize='semiRegular'
+                          color='text.lightGray'
+                          fontWeight='normal'
+                          lineHeight='default'
+                        >
                           {item}
                         </Text>
                       </Row>
@@ -118,25 +151,25 @@ const FileDetails: FC = () => {
                 </Column>
               </Box>
             </Layout>
-            <Layout flexShrink={0} flexBasis={[44, 44, 0]}/>
+            <Layout flexShrink={0} flexBasis={[44, 44, 0]} />
           </Column>
-          <Layout flexShrink={0} flexBasis={[0, 0, 48]}/>
+          <Layout flexShrink={0} flexBasis={[0, 0, 48]} />
           <Row justifyContent='center'>
             <Column>
               <Slider>
-                {images.map(({image}) => (
-                  <ImageBlock src={image} width='100%' height='100%'/>
+                {images.map(({ image }) => (
+                  <ImageBlock src={image} width='100%' height='100%' />
                 ))}
               </Slider>
-              <Layout flexShrink={0} flexBasis={22}/>
+              <Layout flexShrink={0} flexBasis={22} />
               <Layout>
-                <Tags/>
+                <Tags />
               </Layout>
             </Column>
           </Row>
         </Row>
       </Layout>
-      <Layout flexShrink={0} flexBasis={24}/>
+      <Layout flexShrink={0} flexBasis={24} />
     </Box>
   )
 }

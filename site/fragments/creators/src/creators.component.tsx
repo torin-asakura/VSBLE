@@ -7,10 +7,10 @@ import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
 import { SearchValue }       from '@site/store'
 import { Role }              from '@site/store'
+import { Cards }             from '@ui/cards'
 import { Row }               from '@ui/layout'
 import { Column }            from '@ui/layout'
 import { Layout }            from '@ui/layout'
-import { Cards }             from '@ui/cards'
 import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
@@ -44,7 +44,11 @@ const Creators: FC = () => {
       <Layout width={['100%', '100%', 1212]}>
         <Layout flexBasis={24} />
         <Column fill>
-          <Cards columnsCountBreakPoints={{ 300: 1, 560: 2, 900: 3, 1136: 4 }} columnsCount={4} gutter={16}>
+          <Cards
+            columnsCountBreakPoints={{ 300: 1, 560: 2, 900: 3, 1136: 4 }}
+            columnsCount={4}
+            gutter={16}
+          >
             {filteredCreators.map(({
               firstName,
               secondName,

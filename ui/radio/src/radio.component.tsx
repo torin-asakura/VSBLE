@@ -1,20 +1,22 @@
 import styled               from '@emotion/styled'
 
 import React                from 'react'
-import { FC }               from 'react'
+import { forwardRef }       from 'react'
 
 import { Box }              from '@ui/layout'
 
-import { RadioProps }       from './radio.interface'
 import { baseStyles }       from './radio.styles'
 import { shapeStyles }      from './radio.styles'
 import { appearanceStyles } from './radio.styles'
 
 const Container = styled(Box)(baseStyles, shapeStyles, appearanceStyles)
 
-const Radio: FC<RadioProps> = ({ ...props }) => (
+const RadioWithoutRef = ({ children, ...props }, ref) => (
   <Container>
-    <input type='radio' {...props} />
+    <input type='radio' ref={ref} {...props} />
   </Container>
 )
+
+const Radio = forwardRef(RadioWithoutRef)
+
 export { Radio }

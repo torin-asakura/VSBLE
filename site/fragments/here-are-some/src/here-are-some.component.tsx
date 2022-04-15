@@ -17,7 +17,7 @@ const HereAreSome: FC<HereAreSomeProps> = ({ role }) => (
         defaultMessage='Here are some trending '
       />
       <Layout display={['none', 'none', 'flex']}>
-        <Space/>
+        <Space />
       </Layout>
       {role}
     </Text>

@@ -1,20 +1,20 @@
-import React                from 'react'
-import { FC }               from 'react'
-import { Arrow }            from 'react-laag'
-import { useIntl }          from 'react-intl'
+import styled              from '@emotion/styled'
 
-import styled               from '@emotion/styled'
+import React               from 'react'
+import { FC }              from 'react'
+import { Arrow }           from 'react-laag'
+import { useIntl }         from 'react-intl'
 
-import { Column }           from '@ui/layout'
-import {Layout}             from '@ui/layout'
-import { Row }              from '@ui/layout'
-import { Box }              from '@ui/layout'
-import { Text }             from '@ui/text'
-import { InformationIcon }  from '@ui/icons'
-import { useHover }         from '@ui/utils'
+import { InformationIcon } from '@ui/icons'
+import { Column }          from '@ui/layout'
+import { Layout }          from '@ui/layout'
+import { Row }             from '@ui/layout'
+import { Box }             from '@ui/layout'
+import { Text }            from '@ui/text'
+import { useHover }        from '@ui/utils'
 
-import { PromptProps }      from './prompt.interface'
-import { useTooltip }       from './use-tooltip.hook'
+import { PromptProps }     from './prompt.interface'
+import { useTooltip }      from './use-tooltip.hook'
 
 const Container = styled.div({
   display: 'flex',
@@ -29,7 +29,7 @@ const Container = styled.div({
 
 const ArrowContainer = styled.div({
   transform: 'rotate(180deg)',
-  marginRight: '15px'
+  marginRight: '15px',
 })
 
 const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
@@ -38,51 +38,52 @@ const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
   const { layerProps, triggerProps, render } = useTooltip()
 
   return (
-    <Box
-      // @ts-ignore
-      cursor='pointer'
-      {...hoverProps}
-      {...triggerProps}
-    >
+    <Box style={{ cursor: 'pointer' }} {...hoverProps} {...triggerProps}>
       {render(
         <Column height='auto' {...layerProps}>
           <Column justifyContent='center' alignItems='center'>
             <ArrowContainer>
-            <Arrow
-              backgroundColor='rgba(60, 60, 60, 1)'
-              angle={35}
-              size={15}
-            />
-              </ArrowContainer>
+              <Arrow backgroundColor='rgba(60, 60, 60, 1)' angle={35} size={15} />
+            </ArrowContainer>
           </Column>
           <Container>
             <Column>
               <Row>
-                <Text color='text.white' fontSize='semiRegular' fontWeight='semiBold' lineHeight='default'>
-                  {formatMessage({id: 'file_page.license', defaultMessage: `${license}`})}
+                <Text
+                  color='text.white'
+                  fontSize='semiRegular'
+                  fontWeight='semiBold'
+                  lineHeight='default'
+                >
+                  {formatMessage({ id: 'file_page.license', defaultMessage: `${license}` })}
                 </Text>
               </Row>
-              <Layout flexBasis={8}/>
+              <Layout flexBasis={8} />
               <Row>
                 <Text color='text.white' fontSize='semiRegular' lineHeight='default'>
                   {formatMessage({
                     id: 'file_page.info_license',
-                    defaultMessage: `${info}`
+                    defaultMessage: `${info}`,
                   })}
                 </Text>
               </Row>
-              <Layout flexBasis={24}/>
+              <Layout flexBasis={24} />
               <Row>
-                <Text color='text.white' fontSize='semiRegular' fontWeight='semiBold' lineHeight='default'>
-                  {formatMessage({id: 'file_page.VAT', defaultMessage: `VAT`})}
+                <Text
+                  color='text.white'
+                  fontSize='semiRegular'
+                  fontWeight='semiBold'
+                  lineHeight='default'
+                >
+                  {formatMessage({ id: 'file_page.VAT', defaultMessage: `VAT` })}
                 </Text>
               </Row>
-              <Layout flexBasis={8}/>
+              <Layout flexBasis={8} />
               <Row>
                 <Text color='text.white' fontSize='semiRegular' lineHeight='default'>
                   {formatMessage({
                     id: 'file_page.info_VAT',
-                    defaultMessage: `${vatInfo}`
+                    defaultMessage: `${vatInfo}`,
                   })}
                 </Text>
               </Row>
@@ -91,7 +92,7 @@ const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
         </Column>
       )}
       <Layout>
-        <InformationIcon color={hover ? 'black' : 'lightGray'} width='1.5rem' height='1.5rem'/>
+        <InformationIcon color={hover ? 'black' : 'lightGray'} width='1.5rem' height='1.5rem' />
       </Layout>
     </Box>
   )
