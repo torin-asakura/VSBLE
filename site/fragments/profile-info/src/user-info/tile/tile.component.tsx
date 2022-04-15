@@ -11,7 +11,12 @@ import { Text }             from '@ui/text'
 import { TileProps }        from './tile.interface'
 
 const Tile: FC<TileProps> = ({ title, description }) => (
-  <Box width={['100%', '100%', 560]} height={68} backgroundColor='background.beige' borderRadius='normal'>
+  <Box
+    width={['100%', '100%', 560]}
+    height={68}
+    backgroundColor='background.beige'
+    borderRadius='normal'
+  >
     <Layout flexBasis={16} />
     <Column>
       <Layout flexBasis={8} />

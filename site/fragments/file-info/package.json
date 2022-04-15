@@ -1,0 +1,38 @@
+{
+  "name": "@site/file-info-fragment",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@ui/button": "workspace:0.0.1",
+    "@ui/condition": "workspace:0.0.1",
+    "@ui/icons": "workspace:0.0.1",
+    "@ui/image": "workspace:0.0.1",
+    "@ui/layout": "workspace:0.0.1",
+    "@ui/link": "workspace:0.0.1",
+    "@ui/radio": "workspace:0.0.1",
+    "@ui/text": "workspace:0.0.1",
+    "@ui/tooltip": "workspace:0.0.1",
+    "@ui/utils": "workspace:0.0.1"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.5.10",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17",
+    "@types/styled-system": "^5.1.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intl": "^5.24.8",
+    "react-laag": "2.0.3",
+    "styled-system": "^5.1.5",
+    "styled-tools": "^1.7.2"
+  },
+  "peerDependencies": {
+    "@apollo/client": "*",
+    "react": "^17.0.1",
+    "react-dom": "*",
+    "react-intl": "*"
+  }
+}

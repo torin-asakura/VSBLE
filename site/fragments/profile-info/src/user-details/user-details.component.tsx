@@ -2,15 +2,10 @@ import React                     from 'react'
 import { FC }                    from 'react'
 import { FormattedMessage }      from 'react-intl'
 
-import { Row }                   from '@ui/layout'
-import { Column }                from '@ui/layout'
-import { Layout }                from '@ui/layout'
-import { Divider }               from '@ui/divider'
-import { Button }                from '@ui/button'
-import { Text }                  from '@ui/text'
-import { Link }                  from '@ui/link'
 import { AvatarStandalone }      from '@ui/avatar'
+import { Button }                from '@ui/button'
 import { Condition }             from '@ui/condition'
+import { Divider }               from '@ui/divider'
 import { FacebookIcon }          from '@ui/icons'
 import { FacebookInvertedIcon }  from '@ui/icons'
 import { InstagramIcon }         from '@ui/icons'
@@ -21,6 +16,11 @@ import { VimeoIcon }             from '@ui/icons'
 import { VimeoInvertedIcon }     from '@ui/icons'
 import { LinkedinIcon }          from '@ui/icons'
 import { LinkedinInvertedIcon }  from '@ui/icons'
+import { Row }                   from '@ui/layout'
+import { Column }                from '@ui/layout'
+import { Layout }                from '@ui/layout'
+import { Link }                  from '@ui/link'
+import { Text }                  from '@ui/text'
 
 import { Social }                from '../social'
 import { useMockedUser }         from '../data'
@@ -36,20 +36,32 @@ const UserDetails: FC = () => {
         </Row>
         <Layout flexBasis={16} />
         <Row justifyContent='center'>
-          <Text fontSize='colossal' color='text.accent' fontWeight='bold' lineHeight='extra' textAlign='center'>
+          <Text
+            fontSize='colossal'
+            color='text.accent'
+            fontWeight='bold'
+            lineHeight='extra'
+            textAlign='center'
+          >
             <FormattedMessage id='creator_page.name_surname' defaultMessage='Annija Abzalone' />
           </Text>
         </Row>
         <Layout flexBasis={4} />
         <Row justifyContent='center'>
           <Text fontSize='default' color='text.accent' fontWeight='normal' lineHeight='default'>
-            <FormattedMessage id='creator_page.residence' defaultMessage='Cēsis, Cēsu pilsēta, Latvia' />
+            <FormattedMessage
+              id='creator_page.residence'
+              defaultMessage='Cēsis, Cēsu pilsēta, Latvia'
+            />
           </Text>
         </Row>
         <Layout flexBasis={15} />
         <Row justifyContent='center'>
           <Text fontSize='default' color='text.accent' fontWeight='normal' lineHeight='default'>
-            <FormattedMessage id='creator_page.job_hobby' defaultMessage='Conceptual & Advertising | Food & Still Life' />
+            <FormattedMessage
+              id='creator_page.job_hobby'
+              defaultMessage='Conceptual & Advertising | Food & Still Life'
+            />
           </Text>
         </Row>
         <Layout flexBasis={8} />
@@ -76,7 +88,7 @@ const UserDetails: FC = () => {
                 </>
               )}
               url='/'
-           />
+            />
           </Layout>
           <Layout flexBasis={8} />
           <Layout>
@@ -153,15 +165,24 @@ const UserDetails: FC = () => {
         <Row justifyContent='center'>
           <Layout maxWidth={752}>
             <Layout flexBasis={[90, 0, 0]} />
-            <Text fontSize='default' color='text.accent' fontWeight='normal' lineHeight='extra' textAlign='center'>
-              <FormattedMessage id='creator_page.description' defaultMessage='Creative individual with high quality standarts and great passion for showing things in beautiful way. Provide outstanding service and support. Tend to look on things from  many perspectives, to revial all benefits.' />
+            <Text
+              fontSize='default'
+              color='text.accent'
+              fontWeight='normal'
+              lineHeight='extra'
+              textAlign='center'
+            >
+              <FormattedMessage
+                id='creator_page.description'
+                defaultMessage='Creative individual with high quality standarts and great passion for showing things in beautiful way. Provide outstanding service and support. Tend to look on things from  many perspectives, to revial all benefits.'
+              />
             </Text>
             <Layout flexBasis={[90, 0, 0]} />
           </Layout>
         </Row>
       </Column>
     </Row>
- )
+  )
 }
 
 export { UserDetails }

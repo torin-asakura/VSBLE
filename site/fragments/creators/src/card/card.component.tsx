@@ -9,6 +9,7 @@ import { Row }        from '@ui/layout'
 import { Box }        from '@ui/layout'
 import { Column }     from '@ui/layout'
 import { Layout }     from '@ui/layout'
+import { NextLink }   from '@ui/link'
 import { Text }       from '@ui/text'
 import { Space }      from '@ui/text'
 import { useHover }   from '@ui/utils'
@@ -29,16 +30,20 @@ const Card: FC<CardProps> = ({ firstName, secondName, location, role, descriptio
   return (
     <Box width={['100%', '100%', 272]} justifyContent={['center', 'center', 'flex-start']}>
       <Column fill>
-        <Box
-          width='100%'
-          // @ts-ignore
-          cursor='pointer'
-          border={hover ? 'thinBlack' : 'thinWhite'}
-          style={{ transition: '.3s' }}
-          {...hoverProps}
-        >
-          <Image src={imageSrc} width='100%' height='100%' hover={hover} />
-        </Box>
+        <Layout>
+          <NextLink path='/profile'>
+            <Box
+              width='100%'
+              // @ts-ignore
+              cursor='pointer'
+              border={hover ? 'thinBlack' : 'thinWhite'}
+              style={{ transition: '.3s' }}
+              {...hoverProps}
+            >
+              <Image src={imageSrc} width='100%' height='100%' hover={hover} />
+            </Box>
+          </NextLink>
+        </Layout>
         <Layout flexShrink={0} flexBasis={16} />
         <Row justifyContent='center'>
           <Text

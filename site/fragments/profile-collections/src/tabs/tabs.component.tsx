@@ -4,13 +4,13 @@ import React                from 'react'
 import { FC }               from 'react'
 import { FormattedMessage } from 'react-intl'
 
+import { Button }           from '@ui/button'
+import { Condition }        from '@ui/condition'
+import { Divider }          from '@ui/divider'
 import { Row }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
-import { Divider }          from '@ui/divider'
 import { Text }             from '@ui/text'
-import { Button }           from '@ui/button'
-import { Condition }        from '@ui/condition'
 import { sedcardVar }       from '@site/store'
 import { archiveVar }       from '@site/store'
 import { nftVar }           from '@site/store'
@@ -43,14 +43,22 @@ const Tabs: FC = () => {
                       }}
                     >
                       <Row>
-                        <Text fontSize='semiGiant' color={sedcard ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                          <FormattedMessage id='creator-page.tab_sedcard' defaultMessage='Sedcard'/>
+                        <Text
+                          fontSize='semiGiant'
+                          color={sedcard ? 'text.accent' : 'text.gray'}
+                          fontWeight='bold'
+                          lineHeight='extra'
+                        >
+                          <FormattedMessage
+                            id='creator-page.tab_sedcard'
+                            defaultMessage='Sedcard'
+                          />
                         </Text>
                       </Row>
                     </Button>
-                    <Layout flexBasis={8}/>
+                    <Layout flexBasis={8} />
                     <Condition match={sedcard}>
-                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black' />
                     </Condition>
                   </Column>
                 </Layout>
@@ -80,14 +88,22 @@ const Tabs: FC = () => {
                       }}
                     >
                       <Row>
-                        <Text fontSize='semiGiant' color={archive ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                          <FormattedMessage id='creator-page.tab_archive' defaultMessage='Archive'/>
+                        <Text
+                          fontSize='semiGiant'
+                          color={archive ? 'text.accent' : 'text.gray'}
+                          fontWeight='bold'
+                          lineHeight='extra'
+                        >
+                          <FormattedMessage
+                            id='creator-page.tab_archive'
+                            defaultMessage='Archive'
+                          />
                         </Text>
                       </Row>
                     </Button>
-                    <Layout flexBasis={8}/>
+                    <Layout flexBasis={8} />
                     <Condition match={archive}>
-                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black' />
                     </Condition>
                   </Column>
                 </Layout>
@@ -117,14 +133,19 @@ const Tabs: FC = () => {
                       }}
                     >
                       <Row>
-                        <Text fontSize='semiGiant' color={nft ? 'text.accent' : 'text.gray'} fontWeight='bold' lineHeight='extra'>
-                          <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT'/>
+                        <Text
+                          fontSize='semiGiant'
+                          color={nft ? 'text.accent' : 'text.gray'}
+                          fontWeight='bold'
+                          lineHeight='extra'
+                        >
+                          <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT' />
                         </Text>
                       </Row>
                     </Button>
-                    <Layout flexBasis={8}/>
+                    <Layout flexBasis={8} />
                     <Condition match={nft}>
-                      <Divider weight={4} borderRadius={4} backgroundColor='background.black'/>
+                      <Divider weight={4} borderRadius={4} backgroundColor='background.black' />
                     </Condition>
                   </Column>
                 </Layout>
