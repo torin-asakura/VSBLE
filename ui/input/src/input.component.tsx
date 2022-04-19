@@ -26,8 +26,10 @@ import { appearanceStyles }         from './input.styles'
 import { labelAppearanceStyles }    from './input.styles'
 import { labelShapeStyles }         from './input.styles'
 import { textareaStyles }           from './input.styles'
+import { placeholderStyles }        from './placeholder-attachment'
 
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles)
+export const InputPlaceholder = styled(Row)(placeholderStyles)
 export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 
 export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (

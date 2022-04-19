@@ -21,7 +21,7 @@ import { useMockedCards }   from '../data'
 const Tabs: FC = () => {
   const [sedcardHover, setSedcardHover] = useHover()
   const [archiveHover, setArchiveHover] = useHover()
-  const [nftHover, setNftHover] = useHover()
+  const [nftHover, setNFTHover] = useHover()
 
   const { cards } = useMockedCards()
 
@@ -152,7 +152,7 @@ const Tabs: FC = () => {
                           fontWeight='bold'
                           lineHeight='extra'
                           style={{color: nftHover ? 'black' : ''}}
-                          {...setNftHover}
+                          {...setNFTHover}
                         >
                           <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT' />
                         </Text>
@@ -173,7 +173,7 @@ const Tabs: FC = () => {
                     verticalAlign='top'
                     paddingLeft='8px'
                     style={{color: nftHover ? 'gray' : ''}}
-                    {...setNftHover}
+                    {...setNFTHover}
                   >
                     0
                   </Text>
