@@ -1,3 +1,6 @@
+import styled                from '@emotion/styled'
+import { styleFn }           from 'styled-system'
+
 import { useReactiveVar }    from '@apollo/client'
 
 import React                 from 'react'
@@ -35,6 +38,14 @@ import { searchVar }         from '@site/store'
 import { searchValueVar }    from '@site/store'
 import { postproductionVar } from '@site/store'
 import { videographyVar }    from '@site/store'
+
+const placeholderStyle = (): styleFn => () => ({
+  'input::placeholder': {
+    color: 'rgba(235,235,235,1)'
+  },
+})
+
+const InputElement = styled(Row)(placeholderStyle)
 
 const Filters: FC = () => {
   const { formatMessage } = useIntl()
@@ -90,14 +101,16 @@ const Filters: FC = () => {
         <Column fill>
           <Row id='search'>
             <Condition match={search} smooth>
-              <Input
-                size='giant'
-                variant='ghost'
-                value={searchValue}
-                onChange={searchValueVar}
-                placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
-                textAlign='center'
-              />
+              <InputElement>
+                <Input
+                  size='giant'
+                  variant='ghost'
+                  value={searchValue}
+                  onChange={searchValueVar}
+                  placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
+                  textAlign='center'
+                />
+              </InputElement>
             </Condition>
           </Row>
           <Condition match={search}>
