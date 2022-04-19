@@ -16,14 +16,14 @@ const Slider: FC = ({ children }) => {
   const [arrowRightHover, setArrowRightHover] = useHover()
 
   const [active, setActive] = useState<number>(0)
-
+console.log(active)
   const handleLeftArrow = () => {
     if (Array.isArray(children)) {
       if (active === 0) {
         setActive(children.length - 1)
       }
 
-      setActive(active - 1)
+      setActive(Math.max(active - 1, 0))
     }
   }
 
@@ -33,7 +33,7 @@ const Slider: FC = ({ children }) => {
         setActive(0)
       }
 
-      setActive(active + 1)
+      setActive(Math.min(active + 1, children.length - 1))
     }
   }
 
