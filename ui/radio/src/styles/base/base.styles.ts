@@ -30,6 +30,15 @@ const createBaseStyles = (): styleFn => () => ({
   'input:checked': {
     opacity: 1,
   },
+
+  '::-webkit-input-placeholder': {
+    color: 'red'
+  },
+  'input': {
+    '&::placeholder': {
+      color: 'red'
+    }
+  }
 })
 
 export { createBaseStyles }

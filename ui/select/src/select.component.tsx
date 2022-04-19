@@ -69,7 +69,7 @@ const Select: FC<SelectProps> = ({
       <Column fill>
         <Condition match={label !== ''}>
           <Text
-            color={disabled ? 'input.primary.disabled.font' : 'text.semiBlack'}
+            color={disabled ? 'text.lightGray' : 'text.semiBlack'}
             fontWeight='semiBold'
             fontSize='semiRegular'
           >
@@ -82,11 +82,12 @@ const Select: FC<SelectProps> = ({
           isSelected={!!selectedItem}
           disabled={disabled}
           {...buttonProps}
+          style={{backgroundColor: isOpen ? 'white' : ''}}
         >
           <Row>
             <Text
               fontSize='semiRegular'
-              color={value || selectedItems?.length > 0 ? 'text.accent' : 'text.lightGray'}
+              color={disabled ? 'text.semiGray' : 'text.accent'}
             >
               {value ||
                 selectedItems?.join(multiselectDivider || ', ') ||
@@ -95,7 +96,7 @@ const Select: FC<SelectProps> = ({
             </Text>
             <Layout flexGrow={1} />
             <ArrowContainer isOpen={isOpen}>
-              <ArrowDownIcon color={isOpen ? 'black' : 'gray'} />
+              <ArrowDownIcon width={6.5} height={14} color={isOpen ? 'black' : 'steel'} />
             </ArrowContainer>
           </Row>
         </Button>

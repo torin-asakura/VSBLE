@@ -27,7 +27,7 @@ const MultiselectMenuItem: FC<MultiselectMenuItemProps> = ({
     <Container {...hoverProps} {...props}>
       <Layout flexBasis={16} flexShrink={0} />
       <Column fill>
-        <Layout flexBasis={16} flexShrink={0} />
+        <Layout flexBasis={12} flexShrink={0} />
         <Layout fill>
           <Checkbox
             checked={selectedItems.includes(children)}
@@ -42,7 +42,7 @@ const MultiselectMenuItem: FC<MultiselectMenuItemProps> = ({
             </Text>
           </Checkbox>
         </Layout>
-        <Layout flexBasis={16} flexShrink={0} />
+        <Layout flexBasis={12} flexShrink={0} />
       </Column>
       <Layout flexBasis={16} flexShrink={0} />
     </Container>

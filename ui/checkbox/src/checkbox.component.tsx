@@ -59,7 +59,7 @@ export const Checkbox: FC<CheckboxProps> = ({
       />
       <Box checked={checked} hover={hover}>
         <Checkmark checked={checked}>
-          <CheckIcon width={12} height={10} />
+          <CheckIcon width={14} height={14} />
         </Checkmark>
       </Box>
       <Label position='end'>{children}</Label>

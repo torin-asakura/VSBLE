@@ -16,13 +16,17 @@ const MenuItem: FC<MenuItemProps> = ({ highlighted, children, ...props }) => (
   <Container {...props}>
     <Layout flexBasis={16} flexShrink={0} />
     <Column width='100%'>
-      <Layout flexBasis={16} flexShrink={0} />
+      <Layout flexBasis={8} flexShrink={0} />
+      <Column>
+        <Layout flexBasis={6} flexShrink={0} />
       <Layout>
         <Text fontSize='semiRegular' color={highlighted ? 'text.purple' : 'text.accent'}>
           {children}
         </Text>
       </Layout>
-      <Layout flexBasis={16} flexShrink={0} />
+        <Layout flexBasis={6} flexShrink={0} />
+      </Column>
+      <Layout flexBasis={8} flexShrink={0} />
     </Column>
     <Layout flexBasis={16} flexShrink={0} />
   </Container>

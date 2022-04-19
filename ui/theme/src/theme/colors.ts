@@ -2,8 +2,11 @@ const colors = {
   background: {
     black: 'rgba(0, 0, 0, 1)',
     transparentBlack: 'rgba(0, 0, 0, 0.7)',
+    primary: 'rgba(80, 80, 80, 1)',
     gray: 'rgba(70, 70, 70, 1)',
+    steel: 'rgba(128, 128, 128, 1)',
     lightGray: 'rgba(153, 153, 153, 1)',
+    semiGray: 'rgba(195, 195, 195, 1)',
     white: 'rgba(255, 255, 255, 1)',
     beige: 'rgba(247,247,247,1)',
     purple: 'rgba(133,98,206,1)',
@@ -102,9 +105,9 @@ const colors = {
         border: 'rgba(235,235,235,1)',
       },
       disabled: {
-        background: 'rgba(255, 255, 255, 1)',
+        background: 'rgba(247, 247, 247, 1)',
         font: 'rgba(195,195,195,1)',
-        border: 'rgba(195,195,195,1)',
+        border: 'transparent',
       },
     },
     danger: {
@@ -158,9 +161,9 @@ const colors = {
         border: 'rgba(133, 98, 206, 1)',
       },
       hover: {
-        background: 'rgba(133,98,206,1)',
+        background: 'rgba(117, 87, 181, 1)',
         font: 'rgba(255, 255, 255, 1)',
-        border: 'rgba(133, 98, 206, 1)',
+        border: 'rgba(117, 87, 181, 1)',
       },
       pressed: {
         background: 'rgba(117, 87, 181, 1)',
@@ -230,19 +233,19 @@ const colors = {
         background: 'transparent',
         border: 'transparent',
         placeholder: 'rgba(235,235,235,1)',
-        font: 'rgba(0,0,0,1)',
+        font: 'rgba(40,40,40,1)',
       },
       hover: {
         background: 'transparent',
         border: 'transparent',
         placeholder: 'rgba(235,235,235,1)',
-        font: 'rgba(0,0,0,1)',
+        font: 'rgba(40,40,40,1)',
       },
       focus: {
         background: 'transparent',
         border: 'transparent',
         placeholder: 'rgba(235,235,235,1)',
-        font: 'rgba(0,0,0,1)',
+        font: 'rgba(40,40,40,1)',
       },
     },
   },

@@ -7,6 +7,7 @@ export const baseMenuStyles: styleFn = ({ triggerBounds }) => ({
   listStyleType: 'none',
   outline: 'none',
   padding: 0,
+  marginTop: 4,
   width: triggerBounds ? triggerBounds.width : 'auto',
 })
 

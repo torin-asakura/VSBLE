@@ -119,7 +119,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
           />
           <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
         </InputElement>
-        <Condition match={hint !== ''}>
+        <Condition match={!!hint}>
           <Layout flexShrink={0} flexBasis={8} />
           <Text fontSize='semiRegular' color='text.lightGray'>
             {hint}

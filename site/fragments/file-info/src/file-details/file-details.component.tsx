@@ -13,6 +13,7 @@ import { Layout }            from '@ui/layout'
 import { Column }            from '@ui/layout'
 import { Text }              from '@ui/text'
 import { Repeater }          from '@ui/utils'
+import { useHover }          from '@ui/utils'
 
 import { PricesInfo }        from '../prices-info'
 import { Slider }            from '../slider'
@@ -20,6 +21,8 @@ import { Tags }              from '../tags'
 import { useMockedFileInfo } from '../data'
 
 const FileDetails: FC = () => {
+  const [hover, setHover] = useHover()
+
   const { formatMessage } = useIntl()
   const { images } = useMockedFileInfo()
 
@@ -113,10 +116,12 @@ const FileDetails: FC = () => {
                     />
                   </Button>
                   <Layout flexShrink={0} flexBasis={8} />
-                  <Button variant='secondary'>
-                    <DownloadIcon />
-                    <FormattedMessage id='file_page.download_comp' defaultMessage='Download Comp' />
-                  </Button>
+                  <Column height='auto' {...setHover}>
+                    <Button variant='secondary'>
+                      <DownloadIcon color={hover ? 'purple' : 'black'}/>
+                      <FormattedMessage id='file_page.download_comp' defaultMessage='Download Comp' />
+                    </Button>
+                  </Column>
                 </Column>
               </Box>
             </Layout>

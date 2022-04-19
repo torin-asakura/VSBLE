@@ -146,13 +146,13 @@ const Filters: FC = () => {
                     type='number'
                     onChange={(value) => followersVar({ ...followers, min: Number(value) })}
                   />
-                  <Layout flexBasis={12} />
+                  <Layout flexBasis={12} flexShrink={0} />
                   <Layout height={44} alignItems='center'>
                     <Text fontSize='semiRegular' fontWeight='semiBold'>
                       -
                     </Text>
                   </Layout>
-                  <Layout flexBasis={12} />
+                  <Layout flexBasis={12} flexShrink={0} />
                   <Input
                     placeholder={formatMessage({ id: 'filters.max', defaultMessage: 'Max' })}
                     type='number'

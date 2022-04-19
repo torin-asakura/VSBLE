@@ -72,7 +72,7 @@ export const checkmarkAppearanceStyles = createCheckAppearanceStyles({
   color: theme.colors.checkbox.checked.checkmark,
 })
 export const checkmarkShapeStyles = createCheckShapeStyles({
-  size: 12,
+  size: 14,
 })
 export const checkmarkCheckStyles = ifProp(
   'checked',
