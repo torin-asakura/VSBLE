@@ -16,7 +16,7 @@ const Slider: FC = ({ children }) => {
   const [arrowRightHover, setArrowRightHover] = useHover()
 
   const [active, setActive] = useState<number>(0)
-console.log(active)
+
   const handleLeftArrow = () => {
     if (Array.isArray(children)) {
       if (active === 0) {

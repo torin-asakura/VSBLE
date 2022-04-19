@@ -1,5 +1,3 @@
-import {}          from '..'
-
 import { styleFn } from 'styled-system'
 
 const createBaseStyles = (): styleFn => () => ({
