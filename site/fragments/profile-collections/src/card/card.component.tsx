@@ -16,39 +16,48 @@ import { CardProps }        from './card.interfaces'
 
 const Card: FC<CardProps> = ({ imageSrc }) => {
   const [hover, hoverProps] = useHover()
+  const [blackoutHover, blackoutHoverProps] = useHover()
 
   return (
     <Box width={['100%', '100%', 272]} justifyContent={['center', 'center', 'flex-start']}>
       <Column fill>
-        <NextLink path='/file'>
-          <Box
-            width='100%'
-            // @ts-ignore
-            cursor='pointer'
-            position='relative'
-            {...hoverProps}
-          >
-            <Condition match={hover}>
-              <Box
-                width='100%'
-                position='absolute'
-                justifyContent='flex-end'
-                bottom='8px'
-                right='8px'
-                zIndex={1}
-              >
-                <Button variant='secondary'>
-                  <FormattedMessage id='creator_page.make_cover' defaultMessage='Make Cover' />
-                </Button>
-                <Layout flexBasis={8} />
-                <Button variant='purple' style={{ paddingLeft: '12px', paddingRight: '12px' }}>
-                  <FolderCheckIcon fontSize='17px' />
-                </Button>
-              </Box>
-            </Condition>
-            <ImageBlock src={imageSrc} width='100%' height='100%' />
-          </Box>
-        </NextLink>
+        <Box
+          width='100%'
+          // @ts-ignore
+          cursor='pointer'
+          position='relative'
+          {...hoverProps}
+        >
+          <Condition match={hover}>
+            <Box
+              width='100%'
+              position='absolute'
+              justifyContent='flex-end'
+              bottom='8px'
+              right='8px'
+              zIndex={1}
+              {...blackoutHoverProps}
+            >
+              <Button variant='secondary'>
+                <FormattedMessage id='creator_page.make_cover' defaultMessage='Make Cover' />
+              </Button>
+              <Layout flexBasis={8} />
+              <Button variant='purple' style={{paddingLeft: '12px', paddingRight: '12px'}}>
+                <FolderCheckIcon fontSize='17px' />
+              </Button>
+            </Box>
+          </Condition>
+          <NextLink path='/file'>
+            <Box
+              width='100%'
+              height='100%'
+              background='black'
+              {...blackoutHoverProps}
+            >
+              <ImageBlock src={imageSrc} width='100%' height='100%' style={{opacity: blackoutHover ? '0.8' : '1'}} />
+            </Box>
+          </NextLink>
+        </Box>
         <Layout flexShrink={0} flexBasis={16} />
       </Column>
     </Box>

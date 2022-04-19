@@ -26,6 +26,7 @@ import { Select }            from '@ui/select'
 import { Switch }            from '@ui/switch'
 import { Option }            from '@ui/switch'
 import { Text }              from '@ui/text'
+import { InputPlaceholder }  from '@ui/input'
 import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
@@ -90,14 +91,16 @@ const Filters: FC = () => {
         <Column fill>
           <Row id='search'>
             <Condition match={search} smooth>
-              <Input
-                size='giant'
-                variant='ghost'
-                value={searchValue}
-                onChange={searchValueVar}
-                placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
-                textAlign='center'
-              />
+              <InputPlaceholder>
+                <Input
+                  size='giant'
+                  variant='ghost'
+                  value={searchValue}
+                  onChange={searchValueVar}
+                  placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
+                  textAlign='center'
+                />
+              </InputPlaceholder>
             </Condition>
           </Row>
           <Condition match={search}>
@@ -146,13 +149,13 @@ const Filters: FC = () => {
                     type='number'
                     onChange={(value) => followersVar({ ...followers, min: Number(value) })}
                   />
-                  <Layout flexBasis={12} />
+                  <Layout flexBasis={12} flexShrink={0} />
                   <Layout height={44} alignItems='center'>
                     <Text fontSize='semiRegular' fontWeight='semiBold'>
                       -
                     </Text>
                   </Layout>
-                  <Layout flexBasis={12} />
+                  <Layout flexBasis={12} flexShrink={0} />
                   <Input
                     placeholder={formatMessage({ id: 'filters.max', defaultMessage: 'Max' })}
                     type='number'

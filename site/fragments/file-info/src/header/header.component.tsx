@@ -14,7 +14,8 @@ import { Text }             from '@ui/text'
 import { useHover }         from '@ui/utils'
 
 const Header: FC = () => {
-  const [hover, hoverProps] = useHover()
+  const [likeHover, setLikeHover] = useHover()
+  const [closeHover, setCloseHover] = useHover()
 
   return (
     <Box width='100%' height={44} justifyContent='center'>
@@ -29,16 +30,16 @@ const Header: FC = () => {
               </Text>
             </Layout>
             <Layout flexGrow={1} />
-            <Layout {...hoverProps}>
+            <Layout {...setLikeHover}>
               <Button variant='secondary'>
-                <LikeIcon color={hover ? 'purple' : 'black'} />
+                <LikeIcon color={likeHover ? 'purple' : 'black'} />
                 <FormattedMessage id='file_page.file_info' defaultMessage='Like' />
               </Button>
             </Layout>
             <Layout flexBasis={32} />
-            <Layout>
+            <Layout {...setCloseHover}>
               <NextLink path='/profile'>
-                <CloseIcon />
+                <CloseIcon color={closeHover ? 'purple' : 'black'} />
               </NextLink>
             </Layout>
           </Row>

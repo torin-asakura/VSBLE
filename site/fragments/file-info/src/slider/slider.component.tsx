@@ -9,8 +9,12 @@ import { Box }                from '@ui/layout'
 import { Row }                from '@ui/layout'
 import { Layout }             from '@ui/layout'
 import { Column }             from '@ui/layout'
+import { useHover }           from '@ui/utils'
 
 const Slider: FC = ({ children }) => {
+  const [arrowLeftHover, setArrowLeftHover] = useHover()
+  const [arrowRightHover, setArrowRightHover] = useHover()
+
   const [active, setActive] = useState<number>(0)
 
   const handleLeftArrow = () => {
@@ -19,7 +23,7 @@ const Slider: FC = ({ children }) => {
         setActive(children.length - 1)
       }
 
-      setActive(active - 1)
+      setActive(Math.max(active - 1, 0))
     }
   }
 
@@ -29,7 +33,7 @@ const Slider: FC = ({ children }) => {
         setActive(0)
       }
 
-      setActive(active + 1)
+      setActive(Math.min(active + 1, children.length - 1))
     }
   }
 
@@ -47,8 +51,9 @@ const Slider: FC = ({ children }) => {
               justifyContent='center'
               alignItems='center'
               borderRadius='full'
+              {...setArrowLeftHover}
             >
-              <ArrowLeftLongIcon />
+              <ArrowLeftLongIcon color={arrowLeftHover ? 'purple' : 'black'} />
             </Box>
           </Button>
         </Layout>
@@ -78,8 +83,9 @@ const Slider: FC = ({ children }) => {
               justifyContent='center'
               alignItems='center'
               borderRadius='full'
+              {...setArrowRightHover}
             >
-              <ArrowRightLongIcon />
+              <ArrowRightLongIcon color={arrowRightHover ? 'purple' : 'black'} />
             </Box>
           </Button>
         </Layout>

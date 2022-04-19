@@ -11,6 +11,7 @@ import { Row }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Text }             from '@ui/text'
+import { useHover }         from '@ui/utils'
 import { sedcardVar }       from '@site/store'
 import { archiveVar }       from '@site/store'
 import { nftVar }           from '@site/store'
@@ -18,6 +19,10 @@ import { nftVar }           from '@site/store'
 import { useMockedCards }   from '../data'
 
 const Tabs: FC = () => {
+  const [sedcardHover, setSedcardHover] = useHover()
+  const [archiveHover, setArchiveHover] = useHover()
+  const [nftHover, setNFTHover] = useHover()
+
   const { cards } = useMockedCards()
 
   const sedcard = useReactiveVar<boolean>(sedcardVar)
@@ -48,6 +53,8 @@ const Tabs: FC = () => {
                           color={sedcard ? 'text.accent' : 'text.gray'}
                           fontWeight='bold'
                           lineHeight='extra'
+                          style={{color: sedcardHover ? 'black' : ''}}
+                          {...setSedcardHover}
                         >
                           <FormattedMessage
                             id='creator-page.tab_sedcard'
@@ -70,6 +77,8 @@ const Tabs: FC = () => {
                     lineHeight='extra'
                     verticalAlign='top'
                     paddingLeft='8px'
+                    style={{color: sedcardHover ? 'gray' : ''}}
+                    {...setSedcardHover}
                   >
                     {cards.length}
                   </Text>
@@ -93,6 +102,8 @@ const Tabs: FC = () => {
                           color={archive ? 'text.accent' : 'text.gray'}
                           fontWeight='bold'
                           lineHeight='extra'
+                          style={{color: archiveHover ? 'black' : ''}}
+                          {...setArchiveHover}
                         >
                           <FormattedMessage
                             id='creator-page.tab_archive'
@@ -115,6 +126,8 @@ const Tabs: FC = () => {
                     lineHeight='extra'
                     verticalAlign='top'
                     paddingLeft='8px'
+                    style={{color: archiveHover ? 'gray' : ''}}
+                    {...setArchiveHover}
                   >
                     {cards.length}
                   </Text>
@@ -138,6 +151,8 @@ const Tabs: FC = () => {
                           color={nft ? 'text.accent' : 'text.gray'}
                           fontWeight='bold'
                           lineHeight='extra'
+                          style={{color: nftHover ? 'black' : ''}}
+                          {...setNFTHover}
                         >
                           <FormattedMessage id='creator-page.tab_nft' defaultMessage='NFT' />
                         </Text>
@@ -157,6 +172,8 @@ const Tabs: FC = () => {
                     lineHeight='extra'
                     verticalAlign='top'
                     paddingLeft='8px'
+                    style={{color: nftHover ? 'gray' : ''}}
+                    {...setNFTHover}
                   >
                     0
                   </Text>

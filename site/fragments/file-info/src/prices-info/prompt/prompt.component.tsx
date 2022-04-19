@@ -19,6 +19,7 @@ import { useTooltip }      from './use-tooltip.hook'
 const Container = styled.div({
   display: 'flex',
   flexDirection: 'column',
+  marginRight: 3,
   width: 200,
   padding: '16px',
   color: '#fff',
@@ -29,7 +30,7 @@ const Container = styled.div({
 
 const ArrowContainer = styled.div({
   transform: 'rotate(180deg)',
-  marginRight: '15px',
+  marginRight: '27px',
 })
 
 const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
@@ -38,12 +39,12 @@ const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
   const { layerProps, triggerProps, render } = useTooltip()
 
   return (
-    <Box style={{ cursor: 'pointer' }} {...hoverProps} {...triggerProps}>
+    <Box style={{ cursor: 'pointer' }} {...triggerProps}>
       {render(
         <Column height='auto' {...layerProps}>
           <Column justifyContent='center' alignItems='center'>
             <ArrowContainer>
-              <Arrow backgroundColor='rgba(60, 60, 60, 1)' angle={35} size={15} />
+              <Arrow backgroundColor='rgba(60, 60, 60, 1)' angle={40} size={15} />
             </ArrowContainer>
           </Column>
           <Container>
@@ -91,8 +92,8 @@ const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
           </Container>
         </Column>
       )}
-      <Layout>
-        <InformationIcon color={hover ? 'black' : 'lightGray'} width='1.5rem' height='1.5rem' />
+      <Layout {...hoverProps}>
+        <InformationIcon color={hover ? 'primary' : 'lightGray'} width='1.5rem' height='1.5rem' />
       </Layout>
     </Box>
   )

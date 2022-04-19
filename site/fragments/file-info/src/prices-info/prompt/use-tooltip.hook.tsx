@@ -17,7 +17,11 @@ const useTooltip = () => {
   const render = (children) => renderLayer(isOpen && children)
 
   return {
-    triggerProps: { ...triggerProps, onClick: () => setOpen(!isOpen) },
+    triggerProps: {
+      ...triggerProps,
+      onMouseEnter: () => setOpen(true),
+      onMouseLeave: () => setOpen(false),
+    },
     layerProps: {
       ...layerProps,
       style: {

@@ -26,8 +26,10 @@ import { appearanceStyles }         from './input.styles'
 import { labelAppearanceStyles }    from './input.styles'
 import { labelShapeStyles }         from './input.styles'
 import { textareaStyles }           from './input.styles'
+import { placeholderStyles }        from './placeholder-attachment'
 
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles)
+export const InputPlaceholder = styled(Row)(placeholderStyles)
 export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 
 export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
@@ -119,7 +121,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
           />
           <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
         </InputElement>
-        <Condition match={hint !== ''}>
+        <Condition match={!!hint}>
           <Layout flexShrink={0} flexBasis={8} />
           <Text fontSize='semiRegular' color='text.lightGray'>
             {hint}
