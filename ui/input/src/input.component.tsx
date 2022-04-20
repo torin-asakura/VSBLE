@@ -20,6 +20,7 @@ import { useHover }                 from '@ui/utils'
 
 import { InputProps }               from './input.interfaces'
 import { ShowPasswordAttachment }   from './show-password-attachment'
+import { SearchAttachment }         from './search-attachment'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
@@ -76,7 +77,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
   return (
     <Row>
       <Column fill>
-        <Condition match={label !== ''}>
+        <Condition match={!!label}>
           <Row>
             <Label disabled={disabled}>{label}</Label>
             <Condition match={!!maxLength}>
@@ -120,6 +121,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             maxLength={maxLength}
           />
           <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
+          <SearchAttachment type={type} />
         </InputElement>
         <Condition match={!!hint}>
           <Layout flexShrink={0} flexBasis={8} />

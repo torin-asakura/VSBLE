@@ -9,6 +9,7 @@ import { useIntl }           from 'react-intl'
 import { Role }              from '@site/store'
 import { Location }          from '@site/store'
 import { Followers }         from '@site/store'
+import { SearchValue }       from '@site/store'
 import { Expertise }         from '@site/store'
 import { Videography }       from '@site/store'
 import { Studio }            from '@site/store'
@@ -24,21 +25,24 @@ import { Select }            from '@ui/select'
 import { Switch }            from '@ui/switch'
 import { Option }            from '@ui/switch'
 import { Text }              from '@ui/text'
+import { InputPlaceholder }  from '@ui/input'
 import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
 import { expertiseVar }      from '@site/store'
 import { studioVar }         from '@site/store'
+import { searchValueVar }    from '@site/store'
 import { postproductionVar } from '@site/store'
 import { videographyVar }    from '@site/store'
 
-const Filters: FC = () => {
+const ArtbuyerFilters: FC = () => {
   const { formatMessage } = useIntl()
   const [filters, setFilters] = useState<boolean>(false)
 
   const role = useReactiveVar<Role>(roleVar)
   const location = useReactiveVar<Location>(locationVar)
   const followers = useReactiveVar<Followers>(followersVar)
+  const searchValue = useReactiveVar<SearchValue>(searchValueVar)
   const videography = useReactiveVar<Videography>(videographyVar)
   const expertise = useReactiveVar<Expertise>(expertiseVar)
   const studio = useReactiveVar<Studio>(studioVar)
@@ -82,6 +86,19 @@ const Filters: FC = () => {
       <Layout width={['100%', '100%', 1136]}>
         <Layout flexBasis={24} />
         <Column fill>
+          <Row id='search'>
+            <InputPlaceholder>
+              <Input
+                size='giant'
+                variant='ghost'
+                value={searchValue}
+                onChange={searchValueVar}
+                placeholder={formatMessage({id: 'filters.search', defaultMessage: 'Search'})}
+                textAlign='center'
+              />
+            </InputPlaceholder>
+          </Row>
+          <Layout flexBasis={56} />
           <Layout width='100%' flexDirection={['column', 'column', 'row']}>
             <Switch active={role}>
               {options.map(({ value, mutuallyExclusive }) => (
@@ -217,9 +234,9 @@ const Filters: FC = () => {
             </Condition>
           </Row>
         </Column>
-        <Layout flexBasis={24}/>
+        <Layout flexBasis={24} />
       </Layout>
     </Row>
   )
 }
-export { Filters }
+export { ArtbuyerFilters }

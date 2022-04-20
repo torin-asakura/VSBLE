@@ -4,7 +4,9 @@ import { WithUser }         from '@atls/react-user'
 import { WithoutUser }      from '@atls/react-user'
 
 import React                from 'react'
+import { useState }         from 'react'
 import { FormattedMessage } from 'react-intl'
+import { useIntl }          from 'react-intl'
 
 import { Avatar }           from '@ui/avatar'
 import { Button }           from '@ui/button'
@@ -20,15 +22,40 @@ import { Box }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Row }              from '@ui/layout'
+import { Text }             from '@ui/text'
 import { NextLink }         from '@ui/link'
 import { Logo }             from '@ui/logo'
+import { Input }            from '@ui/input'
+import { useHover }         from '@ui/utils'
 import { searchVar }        from '@site/store'
+import { searchValueVar }   from '@site/store'
+
+import { useReactiveVar }   from '@apollo/client'
 
 import { Link }             from './link'
 
 export const Navigation = () => {
+  const { formatMessage } = useIntl()
+
+  const [searchHover, setSearchHover] = useHover()
+  const [result, setResult] = useState<string>('')
+
+  const search = useReactiveVar(searchVar)
+
+  searchValueVar(result)
+
   const user = {
     role: 'artbuyer',
+  }
+
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      window.location.href='/search'
+    }
+  }
+
+  const handleChange = (event) => {
+    setResult(event)
   }
 
   return (
@@ -41,16 +68,32 @@ export const Navigation = () => {
             <Layout>
               <Logo />
             </Layout>
+            <Condition match={search}>
+              <Layout display={['none', 'none', 'flex']}>
+                <Layout flexBasis={47} />
+                <Layout width={['100%', '100%', 655]} height='48px' alignItems='center'>
+                  <Input
+                    type='search'
+                    placeholder={formatMessage({ id: 'navigation.search', defaultMessage: 'Search' })}
+                    value={result}
+                    onChange={handleChange}
+                    onKeyPress={handleKeyPress}
+                    style={{ flexDirection: 'row-reverse' }}
+                  />
+                </Layout>
+              </Layout>
+            </Condition>
             <Layout flexGrow={1} />
-            <Layout>
-              <Button size='ghost' variant='ghost' onClick={() => searchVar(true)}>
-                <Link
-                  icon={(hover) => <LoupeIcon color={hover ? 'black' : 'gray'} />}
-                  text={<FormattedMessage id='navigation.search' defaultMessage='Search' />}
-                  path='#search'
-                />
-              </Button>
-            </Layout>
+            <Condition match={!search}>
+              <Layout {...setSearchHover}>
+                <Button size='ghost' variant='ghost' onClick={() => searchVar(true)}>
+                  <LoupeIcon color={searchHover ? 'black' : 'gray'} />
+                  <Text fontSize='semiRegular' color={searchHover ? 'black' : 'text.primary'}>
+                    <FormattedMessage id='navigation.search' defaultMessage='Search' />
+                  </Text>
+                </Button>
+              </Layout>
+            </Condition>
             <Layout flexBasis={24} />
             <WithUser>
               <Layout>
@@ -91,7 +134,7 @@ export const Navigation = () => {
                   path='#cart'
                 />
               </Layout>
-              <Layout flexBasis={24} />
+              <Layout flexBasis={24} flexShrink={0} />
               <Condition match={user.role === 'creator'}>
                 <Layout>
                   <Button>
