@@ -217,7 +217,7 @@ const Filters: FC = () => {
             </Condition>
           </Row>
         </Column>
-        <Layout flexBasis={24}/>
+        <Layout flexBasis={24} />
       </Layout>
     </Row>
   )

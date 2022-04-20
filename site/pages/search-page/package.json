@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
+  "dependencies": {
+    "@site/store": "workspace:0.0.1"
+  },
   "devDependencies": {
+    "@apollo/client": "3.5.10",
     "@site/creators-fragment": "workspace:0.0.1",
     "@site/filters-fragment": "workspace:0.0.1",
     "@site/navigation-fragment": "workspace:0.0.1",

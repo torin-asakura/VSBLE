@@ -46,7 +46,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.5.10":
+"@apollo/client@npm:3.5.10, @apollo/client@npm:^3.5.10":
   version: 3.5.10
   resolution: "@apollo/client@npm:3.5.10"
   dependencies:
@@ -2120,9 +2120,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@site/search-page@workspace:site/pages/search-page"
   dependencies:
+    "@apollo/client": 3.5.10
     "@site/creators-fragment": "workspace:0.0.1"
     "@site/filters-fragment": "workspace:0.0.1"
     "@site/navigation-fragment": "workspace:0.0.1"
+    "@site/store": "workspace:0.0.1"
     "@types/react": ^17.0.38
     "@types/styled-system": ^5.1.15
     "@ui/layout": "workspace:0.0.1"

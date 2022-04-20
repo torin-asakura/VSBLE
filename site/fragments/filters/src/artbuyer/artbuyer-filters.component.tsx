@@ -18,6 +18,7 @@ import { Button }            from '@ui/button'
 import { Condition }         from '@ui/condition'
 import { FilterIcon }        from '@ui/icons'
 import { Input }             from '@ui/input'
+import { InputPlaceholder }  from '@ui/input'
 import { Column }            from '@ui/layout'
 import { Layout }            from '@ui/layout'
 import { Row }               from '@ui/layout'
@@ -25,7 +26,6 @@ import { Select }            from '@ui/select'
 import { Switch }            from '@ui/switch'
 import { Option }            from '@ui/switch'
 import { Text }              from '@ui/text'
-import { InputPlaceholder }  from '@ui/input'
 import { roleVar }           from '@site/store'
 import { locationVar }       from '@site/store'
 import { followersVar }      from '@site/store'
@@ -93,7 +93,7 @@ const ArtbuyerFilters: FC = () => {
                 variant='ghost'
                 value={searchValue}
                 onChange={searchValueVar}
-                placeholder={formatMessage({id: 'filters.search', defaultMessage: 'Search'})}
+                placeholder={formatMessage({ id: 'filters.search', defaultMessage: 'Search' })}
                 textAlign='center'
               />
             </InputPlaceholder>

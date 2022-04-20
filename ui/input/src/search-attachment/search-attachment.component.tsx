@@ -5,7 +5,6 @@ import React                     from 'react'
 import { FC }                    from 'react'
 import { useMemo }               from 'react'
 
-import { CancelIcon }            from '@ui/icons'
 import { SearchIcon }            from '@ui/icons'
 
 import { SearchAttachmentProps } from './search-attachment.interface'
@@ -18,7 +17,6 @@ const SearchAttachment: FC<SearchAttachmentProps> = ({ type }) => {
   return type === 'search' ? (
     <Attachment>
       <SearchIcon width={16} height={16} />
-      <CancelIcon width={6} height={6} />
     </Attachment>
   ) : null
 }

@@ -2,7 +2,6 @@ import styled                       from '@emotion/styled'
 import { RawInput }                 from '@atls-ui-parts/input'
 import { useChangeValue }           from '@atls-ui-parts/input'
 import { createTextareaProps }      from '@atls-ui-parts/input'
-import { ConditionalRender }        from '@atls-ui-parts/conditional-render'
 
 import React                        from 'react'
 import { ForwardRefRenderFunction } from 'react'
@@ -10,7 +9,6 @@ import { forwardRef }               from 'react'
 import { useState }                 from 'react'
 import { useRef }                   from 'react'
 import { useEffect }                from 'react'
-import { useMemo }                  from 'react'
 
 import { Condition }                from '@ui/condition'
 import { Row }                      from '@ui/layout'
@@ -20,21 +18,26 @@ import { Text }                     from '@ui/text'
 import { doNothing }                from '@shared/utils'
 import { useHover }                 from '@ui/utils'
 
+import { CrossAttachment }          from './cross-attachment'
 import { InputProps }               from './input.interfaces'
-import { ShowPasswordAttachment }   from './show-password-attachment'
-import { addonContainerStyles }     from './search-attachment'
 import { SearchAttachment }         from './search-attachment'
-import { addonPositionStyles }      from './search-attachment'
-import { cancelButtonStyles }       from './search-attachment'
+import { ShowPasswordAttachment }   from './show-password-attachment'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
 import { labelAppearanceStyles }    from './input.styles'
 import { labelShapeStyles }         from './input.styles'
 import { textareaStyles }           from './input.styles'
+import { cancelButtonStyles }       from './input.styles'
 import { placeholderStyles }        from './placeholder-attachment'
 
-export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles, cancelButtonStyles)
+export const InputElement = styled.div(
+  baseStyles,
+  shapeStyles,
+  appearanceStyles,
+  textareaStyles,
+  cancelButtonStyles
+)
 export const InputPlaceholder = styled(Row)(placeholderStyles)
 export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 
@@ -60,6 +63,8 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
   const [hidden, setHidden] = useState<boolean>(true)
   const [hover, hoverProps] = useHover()
 
+  const crossRef = useRef(null)
+
   const { containerProps, rawInputProps } = createTextareaProps()
 
   if (!ref) {
@@ -68,7 +73,11 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
   }
 
   useEffect(() => {
-    const handler = () => setFocus(false)
+    const handler = (event) => {
+      if (crossRef && crossRef.current && event.relatedTarget === crossRef.current) {
+        // do nothing
+      } else setFocus(false)
+    }
 
     if (ref && (ref as any).current) {
       ;(ref as any).current.addEventListener('focusout', handler)
@@ -78,9 +87,6 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
 
     return doNothing
   }, [ref])
-
-  const Addon = useMemo(() => styled(ConditionalRender())(baseStyles, shapeStyles, addonPositionStyles), [])
-  const AddonsContainer = useMemo(() => styled.div(addonContainerStyles), [])
 
   return (
     <Row>
@@ -110,6 +116,7 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
           hover={hover}
           {...hoverProps}
         >
+          <SearchAttachment type={type} />
           <RawInput
             ref={ref}
             {...props}
@@ -129,13 +136,12 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             maxLength={maxLength}
           />
           <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
-          <Condition match={type === 'search'}>
-            <AddonsContainer>
-              <Addon position='after'>
-                <SearchAttachment type={type} />
-              </Addon>
-            </AddonsContainer>
-          </Condition>
+          <CrossAttachment
+            type={type}
+            focus={focus}
+            setValue={onChange || doNothing}
+            ref={crossRef}
+          />
         </InputElement>
         <Condition match={!!hint}>
           <Layout flexShrink={0} flexBasis={8} />

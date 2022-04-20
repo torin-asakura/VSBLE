@@ -19,11 +19,11 @@ const MenuItem: FC<MenuItemProps> = ({ highlighted, children, ...props }) => (
       <Layout flexBasis={8} flexShrink={0} />
       <Column>
         <Layout flexBasis={6} flexShrink={0} />
-      <Layout>
-        <Text fontSize='semiRegular' color={highlighted ? 'text.purple' : 'text.accent'}>
-          {children}
-        </Text>
-      </Layout>
+        <Layout>
+          <Text fontSize='semiRegular' color={highlighted ? 'text.purple' : 'text.accent'}>
+            {children}
+          </Text>
+        </Layout>
         <Layout flexBasis={6} flexShrink={0} />
       </Column>
       <Layout flexBasis={8} flexShrink={0} />

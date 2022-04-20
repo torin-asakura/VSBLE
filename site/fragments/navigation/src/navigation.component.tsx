@@ -2,15 +2,12 @@
 
 import { WithUser }         from '@atls/react-user'
 import { WithoutUser }      from '@atls/react-user'
+import { useReactiveVar }   from '@apollo/client'
 
 import React                from 'react'
-import { useState }         from 'react'
 import { FormattedMessage } from 'react-intl'
-import { useIntl }          from 'react-intl'
-
 import { useRouter }        from 'next/router'
-
-import { useReactiveVar }   from '@apollo/client'
+import { useIntl }          from 'react-intl'
 
 import { Avatar }           from '@ui/avatar'
 import { Button }           from '@ui/button'
@@ -22,17 +19,17 @@ import { InboxIcon }        from '@ui/icons'
 import { BookmarkIcon }     from '@ui/icons'
 import { ShoppingCartIcon } from '@ui/icons'
 import { UploadIcon }       from '@ui/icons'
+import { Input }            from '@ui/input'
 import { Box }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Row }              from '@ui/layout'
-import { Text }             from '@ui/text'
 import { NextLink }         from '@ui/link'
 import { Logo }             from '@ui/logo'
-import { Input }            from '@ui/input'
-import { useHover }         from '@ui/utils'
+import { Text }             from '@ui/text'
 import { searchVar }        from '@site/store'
 import { searchValueVar }   from '@site/store'
+import { useHover }         from '@ui/utils'
 
 import { Link }             from './link'
 
@@ -41,19 +38,14 @@ export const Navigation = () => {
   const router = useRouter()
 
   const [searchHover, setSearchHover] = useHover()
-  const [result, setResult] = useState<string>('')
 
   const search = useReactiveVar(searchVar)
+  const searchValue = useReactiveVar(searchValueVar)
 
   const handleKeyPress = (event) => {
-    if(event.key === 'Enter') {
+    if (event.key === 'Enter') {
       router.push('/search')
-      searchValueVar(result)
     }
-  }
-
-  const handleChange = (event) => {
-    setResult(event)
   }
 
   const user = {
@@ -67,7 +59,7 @@ export const Navigation = () => {
       justifyContent='center'
       backgroundColor='white'
       zIndex={10}
-      style={{position: 'sticky', top: '0'}}
+      style={{ position: 'sticky', top: '0' }}
     >
       <Layout width={['100%', '100%', 1440]}>
         <Layout flexShrink={0} flexBasis={24} />
@@ -83,9 +75,12 @@ export const Navigation = () => {
                 <Layout width={['100%', '100%', 655]} height='48px' alignItems='center'>
                   <Input
                     type='search'
-                    placeholder={formatMessage({ id: 'navigation.search', defaultMessage: 'Search' })}
-                    value={result}
-                    onChange={handleChange}
+                    placeholder={formatMessage({
+                      id: 'navigation.search',
+                      defaultMessage: 'Search',
+                    })}
+                    value={searchValue}
+                    onChange={searchValueVar}
                     onKeyPress={handleKeyPress}
                   />
                 </Layout>
