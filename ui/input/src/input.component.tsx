@@ -2,6 +2,7 @@ import styled                       from '@emotion/styled'
 import { RawInput }                 from '@atls-ui-parts/input'
 import { useChangeValue }           from '@atls-ui-parts/input'
 import { createTextareaProps }      from '@atls-ui-parts/input'
+import { ConditionalRender }        from '@atls-ui-parts/conditional-render'
 
 import React                        from 'react'
 import { ForwardRefRenderFunction } from 'react'
@@ -9,6 +10,7 @@ import { forwardRef }               from 'react'
 import { useState }                 from 'react'
 import { useRef }                   from 'react'
 import { useEffect }                from 'react'
+import { useMemo }                  from 'react'
 
 import { Condition }                from '@ui/condition'
 import { Row }                      from '@ui/layout'
@@ -20,7 +22,10 @@ import { useHover }                 from '@ui/utils'
 
 import { InputProps }               from './input.interfaces'
 import { ShowPasswordAttachment }   from './show-password-attachment'
+import { addonContainerStyles }     from './search-attachment'
 import { SearchAttachment }         from './search-attachment'
+import { addonPositionStyles }      from './search-attachment'
+import { cancelButtonStyles }       from './search-attachment'
 import { baseStyles }               from './input.styles'
 import { shapeStyles }              from './input.styles'
 import { appearanceStyles }         from './input.styles'
@@ -28,7 +33,6 @@ import { labelAppearanceStyles }    from './input.styles'
 import { labelShapeStyles }         from './input.styles'
 import { textareaStyles }           from './input.styles'
 import { placeholderStyles }        from './placeholder-attachment'
-import { cancelButtonStyles }       from './search-attachment'
 
 export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles, cancelButtonStyles)
 export const InputPlaceholder = styled(Row)(placeholderStyles)
@@ -74,6 +78,9 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
 
     return doNothing
   }, [ref])
+
+  const Addon = useMemo(() => styled(ConditionalRender())(baseStyles, shapeStyles, addonPositionStyles), [])
+  const AddonsContainer = useMemo(() => styled.div(addonContainerStyles), [])
 
   return (
     <Row>
@@ -122,7 +129,13 @@ export const InputWithoutRef: ForwardRefRenderFunction<HTMLInputElement, InputPr
             maxLength={maxLength}
           />
           <ShowPasswordAttachment type={type} hidden={hidden} setHidden={setHidden} />
-          <SearchAttachment type={type} />
+          <Condition match={type === 'search'}>
+            <AddonsContainer>
+              <Addon position='after'>
+                <SearchAttachment type={type} />
+              </Addon>
+            </AddonsContainer>
+          </Condition>
         </InputElement>
         <Condition match={!!hint}>
           <Layout flexShrink={0} flexBasis={8} />

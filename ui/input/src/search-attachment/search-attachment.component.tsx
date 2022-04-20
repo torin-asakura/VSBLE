@@ -5,15 +5,15 @@ import React                     from 'react'
 import { FC }                    from 'react'
 import { useMemo }               from 'react'
 
-import { CancelIcon }           from '@ui/icons'
-import { SearchIcon }           from '@ui/icons'
+import { CancelIcon }            from '@ui/icons'
+import { SearchIcon }            from '@ui/icons'
 
 import { SearchAttachmentProps } from './search-attachment.interface'
-import {addonStyles, baseStyles} from './search-attachment.styles'
+import { baseStyles }            from './search-attachment.styles'
 import { positionStyles }        from './search-attachment.styles'
 
-const SearchAttachment: FC<SearchAttachmentProps> = ({ type}) => {
-  const Attachment = useMemo(() => styled(ConditionalRender())(baseStyles, positionStyles, addonStyles), [])
+const SearchAttachment: FC<SearchAttachmentProps> = ({ type }) => {
+  const Attachment = useMemo(() => styled(ConditionalRender())(baseStyles, positionStyles), [])
 
   return type === 'search' ? (
     <Attachment>
