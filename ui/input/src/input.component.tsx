@@ -28,8 +28,9 @@ import { labelAppearanceStyles }    from './input.styles'
 import { labelShapeStyles }         from './input.styles'
 import { textareaStyles }           from './input.styles'
 import { placeholderStyles }        from './placeholder-attachment'
+import { cancelButtonStyles }       from './search-attachment'
 
-export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles)
+export const InputElement = styled.div(baseStyles, shapeStyles, appearanceStyles, textareaStyles, cancelButtonStyles)
 export const InputPlaceholder = styled(Row)(placeholderStyles)
 export const Label = styled(Text)(labelAppearanceStyles, labelShapeStyles)
 

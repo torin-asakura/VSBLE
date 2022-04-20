@@ -8,6 +8,10 @@ import { useState }         from 'react'
 import { FormattedMessage } from 'react-intl'
 import { useIntl }          from 'react-intl'
 
+import { useRouter }        from 'next/router'
+
+import { useReactiveVar }   from '@apollo/client'
+
 import { Avatar }           from '@ui/avatar'
 import { Button }           from '@ui/button'
 import { Condition }        from '@ui/condition'
@@ -30,27 +34,21 @@ import { useHover }         from '@ui/utils'
 import { searchVar }        from '@site/store'
 import { searchValueVar }   from '@site/store'
 
-import { useReactiveVar }   from '@apollo/client'
-
 import { Link }             from './link'
 
 export const Navigation = () => {
   const { formatMessage } = useIntl()
+  const router = useRouter()
 
   const [searchHover, setSearchHover] = useHover()
   const [result, setResult] = useState<string>('')
 
   const search = useReactiveVar(searchVar)
 
-  searchValueVar(result)
-
-  const user = {
-    role: 'artbuyer',
-  }
-
   const handleKeyPress = (event) => {
-    if(event.key === 'Enter'){
-      window.location.href='/search'
+    if(event.key === 'Enter') {
+      router.push('/search')
+      searchValueVar(result)
     }
   }
 
@@ -58,8 +56,19 @@ export const Navigation = () => {
     setResult(event)
   }
 
+  const user = {
+    role: 'artbuyer',
+  }
+
   return (
-    <Box height={72} width='100%' justifyContent='center'>
+    <Box
+      height={72}
+      width='100%'
+      justifyContent='center'
+      backgroundColor='white'
+      zIndex={10}
+      style={{position: 'sticky', top: '0'}}
+    >
       <Layout width={['100%', '100%', 1440]}>
         <Layout flexShrink={0} flexBasis={24} />
         <Column fill>
@@ -78,7 +87,6 @@ export const Navigation = () => {
                     value={result}
                     onChange={handleChange}
                     onKeyPress={handleKeyPress}
-                    style={{ flexDirection: 'row-reverse' }}
                   />
                 </Layout>
               </Layout>

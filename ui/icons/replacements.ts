@@ -36,5 +36,5 @@ export const replacements = {
   DownloadIcon: getReplacement('background')('black'),
   ArrowRightLongIcon: getReplacement('background')('black'),
   ArrowLeftLongIcon: getReplacement('background')('black'),
-  InformationIcon: getReplacement('background')('black'),
+  InformationIcon: getReplacement('background')('#999999'),
 }
