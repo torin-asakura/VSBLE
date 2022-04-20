@@ -82,13 +82,10 @@ const Select: FC<SelectProps> = ({
           isSelected={!!selectedItem}
           disabled={disabled}
           {...buttonProps}
-          style={{backgroundColor: isOpen ? 'white' : ''}}
+          style={{ backgroundColor: isOpen ? 'white' : '' }}
         >
           <Row>
-            <Text
-              fontSize='semiRegular'
-              color={disabled ? 'text.semiGray' : 'text.accent'}
-            >
+            <Text fontSize='semiRegular' color={disabled ? 'text.semiGray' : 'text.accent'}>
               {value ||
                 selectedItems?.join(multiselectDivider || ', ') ||
                 selectedItem ||

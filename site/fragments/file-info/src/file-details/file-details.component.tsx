@@ -118,8 +118,11 @@ const FileDetails: FC = () => {
                   <Layout flexShrink={0} flexBasis={8} />
                   <Column height='auto' {...setHover}>
                     <Button variant='secondary'>
-                      <DownloadIcon color={hover ? 'purple' : 'black'}/>
-                      <FormattedMessage id='file_page.download_comp' defaultMessage='Download Comp' />
+                      <DownloadIcon color={hover ? 'purple' : 'black'} />
+                      <FormattedMessage
+                        id='file_page.download_comp'
+                        defaultMessage='Download Comp'
+                      />
                     </Button>
                   </Column>
                 </Column>

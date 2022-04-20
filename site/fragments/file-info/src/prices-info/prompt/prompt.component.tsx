@@ -41,7 +41,7 @@ const Prompt: FC<PromptProps> = ({ license, info, vatInfo }) => {
   return (
     <Box style={{ cursor: 'pointer' }} {...triggerProps}>
       {render(
-        <Column height='auto' {...layerProps}>
+        <Column height='auto' {...layerProps} {...hoverProps}>
           <Column justifyContent='center' alignItems='center'>
             <ArrowContainer>
               <Arrow backgroundColor='rgba(60, 60, 60, 1)' angle={40} size={15} />

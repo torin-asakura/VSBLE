@@ -1,4 +1,4 @@
-const doNothing = () => {
+const doNothing = (...args) => {
   // do nothing
 }
 

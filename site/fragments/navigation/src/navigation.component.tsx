@@ -2,9 +2,12 @@
 
 import { WithUser }         from '@atls/react-user'
 import { WithoutUser }      from '@atls/react-user'
+import { useReactiveVar }   from '@apollo/client'
 
 import React                from 'react'
 import { FormattedMessage } from 'react-intl'
+import { useRouter }        from 'next/router'
+import { useIntl }          from 'react-intl'
 
 import { Avatar }           from '@ui/avatar'
 import { Button }           from '@ui/button'
@@ -16,23 +19,48 @@ import { InboxIcon }        from '@ui/icons'
 import { BookmarkIcon }     from '@ui/icons'
 import { ShoppingCartIcon } from '@ui/icons'
 import { UploadIcon }       from '@ui/icons'
+import { Input }            from '@ui/input'
 import { Box }              from '@ui/layout'
 import { Layout }           from '@ui/layout'
 import { Column }           from '@ui/layout'
 import { Row }              from '@ui/layout'
 import { NextLink }         from '@ui/link'
 import { Logo }             from '@ui/logo'
+import { Text }             from '@ui/text'
 import { searchVar }        from '@site/store'
+import { searchValueVar }   from '@site/store'
+import { useHover }         from '@ui/utils'
 
 import { Link }             from './link'
 
 export const Navigation = () => {
+  const { formatMessage } = useIntl()
+  const router = useRouter()
+
+  const [searchHover, setSearchHover] = useHover()
+
+  const search = useReactiveVar(searchVar)
+  const searchValue = useReactiveVar(searchValueVar)
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      router.push('/search')
+    }
+  }
+
   const user = {
     role: 'artbuyer',
   }
 
   return (
-    <Box height={72} width='100%' justifyContent='center'>
+    <Box
+      height={72}
+      width='100%'
+      justifyContent='center'
+      backgroundColor='white'
+      zIndex={10}
+      style={{ position: 'sticky', top: '0' }}
+    >
       <Layout width={['100%', '100%', 1440]}>
         <Layout flexShrink={0} flexBasis={24} />
         <Column fill>
@@ -41,16 +69,34 @@ export const Navigation = () => {
             <Layout>
               <Logo />
             </Layout>
+            <Condition match={search}>
+              <Layout display={['none', 'none', 'flex']}>
+                <Layout flexBasis={47} />
+                <Layout width={['100%', '100%', 655]} height='48px' alignItems='center'>
+                  <Input
+                    type='search'
+                    placeholder={formatMessage({
+                      id: 'navigation.search',
+                      defaultMessage: 'Search',
+                    })}
+                    value={searchValue}
+                    onChange={searchValueVar}
+                    onKeyPress={handleKeyPress}
+                  />
+                </Layout>
+              </Layout>
+            </Condition>
             <Layout flexGrow={1} />
-            <Layout>
-              <Button size='ghost' variant='ghost' onClick={() => searchVar(true)}>
-                <Link
-                  icon={(hover) => <LoupeIcon color={hover ? 'black' : 'gray'} />}
-                  text={<FormattedMessage id='navigation.search' defaultMessage='Search' />}
-                  path='#search'
-                />
-              </Button>
-            </Layout>
+            <Condition match={!search}>
+              <Layout {...setSearchHover}>
+                <Button size='ghost' variant='ghost' onClick={() => searchVar(true)}>
+                  <LoupeIcon color={searchHover ? 'black' : 'gray'} />
+                  <Text fontSize='semiRegular' color={searchHover ? 'black' : 'text.primary'}>
+                    <FormattedMessage id='navigation.search' defaultMessage='Search' />
+                  </Text>
+                </Button>
+              </Layout>
+            </Condition>
             <Layout flexBasis={24} />
             <WithUser>
               <Layout>
@@ -91,7 +137,7 @@ export const Navigation = () => {
                   path='#cart'
                 />
               </Layout>
-              <Layout flexBasis={24} />
+              <Layout flexBasis={24} flexShrink={0} />
               <Condition match={user.role === 'creator'}>
                 <Layout>
                   <Button>

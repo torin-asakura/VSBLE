@@ -9,9 +9,10 @@ const useTooltip = () => {
   const { layerProps, triggerProps, renderLayer } = useLayer({
     isOpen,
     placement: 'bottom-center',
+
     onOutsideClick: close,
     onDisappear: close,
-    triggerOffset: 0,
+    triggerOffset: -10,
   })
 
   const render = (children) => renderLayer(isOpen && children)

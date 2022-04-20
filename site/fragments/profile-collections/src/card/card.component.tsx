@@ -42,19 +42,19 @@ const Card: FC<CardProps> = ({ imageSrc }) => {
                 <FormattedMessage id='creator_page.make_cover' defaultMessage='Make Cover' />
               </Button>
               <Layout flexBasis={8} />
-              <Button variant='purple' style={{paddingLeft: '12px', paddingRight: '12px'}}>
+              <Button variant='purple' style={{ paddingLeft: '12px', paddingRight: '12px' }}>
                 <FolderCheckIcon fontSize='17px' />
               </Button>
             </Box>
           </Condition>
           <NextLink path='/file'>
-            <Box
-              width='100%'
-              height='100%'
-              background='black'
-              {...blackoutHoverProps}
-            >
-              <ImageBlock src={imageSrc} width='100%' height='100%' style={{opacity: blackoutHover ? '0.8' : '1'}} />
+            <Box width='100%' height='100%' background='black' {...blackoutHoverProps}>
+              <ImageBlock
+                src={imageSrc}
+                width='100%'
+                height='100%'
+                style={{ opacity: blackoutHover ? '0.8' : '1' }}
+              />
             </Box>
           </NextLink>
         </Box>

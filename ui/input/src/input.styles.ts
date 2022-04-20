@@ -89,6 +89,12 @@ export const textareaStyles: styleFn = ifProp(prop('textarea', false), {
   paddingBottom: 12,
 })
 
+export const cancelButtonStyles = (): styleFn => () => ({
+  'input[type="search"]::-webkit-search-cancel-button': {
+    '-webkit-appearance': 'none',
+  },
+})
+
 export const shapeStyles = switchProp(prop('size', 'normal'), {
   normal: shapeNormalSizeStyles,
   giant: shapeGiantSizeStyles,
